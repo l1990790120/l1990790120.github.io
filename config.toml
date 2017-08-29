@@ -1,0 +1,56 @@
+baseurl = "https://l1990790120.github.io/"
+languageCode = "en-us"
+title = "LC"
+theme = "hugo-type-theme"
+# Enable comments by entering your Disqus shortname
+disqusShortname = "l1990790120"
+# Add your tracking code to enable Google Analytics
+googleAnalytics = "UA-71133003-1"
+# Posts per page
+paginate = 5
+# Comment the themesDir option if you use this theme in production
+# themesDir = "../.."
+
+[params]
+	author = "Lulu Cheng"
+	description = "LC"
+	# The keywords will be added as a meta tag. Delimit them with a comma.
+	keywords = "Machine Learning, Economics, Politics, Social Science, Software Engineering"
+	# Either show custom avatar on the top
+	# left by adding the filename in below
+	avatar = "profile_pic.jpg"
+	# or use Gravatar by adding your email address to generate a unique avatar
+	# gravatar = "l1990790120@gmail.com"
+
+	headerText = ""
+	# To add a header background to the main site, save your image under static/img/.
+	# If now image path is provided, a orange background will be shown instead.
+	headerImage = "profile_pic.jpg"
+	copyright = "Released under the MIT license<br>Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)"
+
+
+	[params.social]
+		# Insert your accout name and the icon will be shown in the right menu
+		rss = true
+		homepage = true
+		email = "l1990790120@gmail.com"
+		behance = ""
+		bitbucket =""
+		dribbble = ""
+		facebook = "l1990790120"
+		flickr = ""
+		github = "l1990790120"
+		googleplus = ""
+		instagram = "l1990790120"
+		linkedin = "luluchengengineeratheart"
+		pinterest = ""
+		reddit = "l1990790120"
+		soundcloud = ""
+		stackexchange = ""
+		steam = ""
+		tumblr = ""
+		twitter = "l1990790120"
+		wordpress = ""
+		youtube = "l1990790120"
+		gitlab = ""
+		trello = ""
