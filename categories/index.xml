@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on LC</title>
-    <link>http://l1990790120.github.io/categories/</link>
+    <link>https://l1990790120.github.io/categories/</link>
     <description>Recent content in Categories on LC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Released under the MIT license&lt;br&gt;Powered by [Hugo](//gohugo.io/) with the [Type Theme](//github.com/digitalcraftsman/hugo-type-theme)</copyright>
     
-	<atom:link href="http://l1990790120.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://l1990790120.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
