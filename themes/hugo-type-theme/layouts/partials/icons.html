@@ -181,3 +181,11 @@
 	</a>
 </li>
 {{- end }}
+
+{{ with .Site.Params.social.medium -}}
+<li>
+	<a href="https://medium.com/@{{ $.Site.Params.social.medium }}" title="{{ $.Site.Data.l10n.medium }}">
+		<i class="fa fa-fw fa-medium"></i>
+	</a>
+</li>
+{{- end }}
