@@ -620,6 +620,10 @@ header .meta {
 
 /* CUSTOM CSS */
 
+.content {
+	margin-top: 5%;
+}
+
 /* see #6 */
 .highlighttable td, th {
 	padding: 0;
