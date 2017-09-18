@@ -637,3 +637,7 @@ td.code {
 nav.site-nav .fa:hover {
 	color: #1ABC9C;
 }
+
+.mpld3-figure {
+    height: 240px !important;
+}
