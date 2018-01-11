@@ -19,7 +19,7 @@ Edgewater, NJ 07047
 
 * Development: Scala, Python, R, Java, Go
 * Data: Redshift, Spark, Hive, Presto, Couchbase, MongoDB, Oracle
-* Infrastructure: Docker, AWS EMR, Hadoop, Kafka, Bash
+* Infrastructure: Kubernetes, Docker, AWS EMR, Glue, Athena, Hadoop, Kafka, Bash
 * Visualization/Web App: Python (flask), html, css, javascript (d3.js, dc.js, crossfilter.js), Tableau, Alteryx
 
 ### Education
@@ -36,11 +36,14 @@ Edgewater, NJ 07047
 
 ### Work Experience
 
+* Senior Software Engineer, PeerIQ, New York, NY  
+2018-01 to Present
 * Software Engineer, PeerIQ, New York, NY  
-2017-02 to Present
-	* Design and develop big data infrastructure and applications process 20 yrs+ consumer transaction records on AWS EMR with Spark (scala), maintain and support a wide range of query engine such as hive and presto, scheduling (airflow) and notebook tools (jupyter, zeppelin) to support analytics needs.
+2017-02 to 2018-01
+	* Design and develop big data infrastructure and spark ETL jobs process 20 yrs+ consumer credit records on AWS EMR with Spark (scala) maintain and support a wide range of query engine such as hive and presto, scheduling (airflow) and notebook tools (jupyter, zeppelin) to support analytics query needs. Serverless big data warehouse architecture design with S3 as data store and AWS athena (presto) as query engine.
 	* Design and implement highly scalable production grade machine learning environment to support internal data science needs.
-	* Develop highly scalable, 15~20x faster valuation microservices with python, go and kafak.
+	* Develop highly scalable, 15~20x faster valuation microservices with python, go through kafak managed with kubernetes.
+	* Design and develop internal/external data API for ETL automation to provide continuous automated data quality monitoring tool for ETL pipeline.
 * Data Analyst, McGraw Hill Education, New York, NY  
 2015-05 to 2017-02  
 Work with management and leadership to develop analytics and dashboards around company strategy and operation
