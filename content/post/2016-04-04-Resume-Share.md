@@ -18,7 +18,7 @@ Edgewater, NJ 07047
 ### Technical Skills
 
 * Development: Scala, Python, R, Java, Go
-* Data: Redshift, Spark, Hive, Presto, Couchbase, MongoDB, Oracle
+* Data: Redshift, Airflow, Spark, Hive, Presto, Couchbase, MongoDB, Oracle
 * Infrastructure: Kubernetes, Docker, AWS EMR, Glue, Athena, Hadoop, Kafka, Bash
 * Visualization/Web App: Python (flask), html, css, javascript (d3.js, dc.js, crossfilter.js), Tableau, Alteryx
 
@@ -40,9 +40,9 @@ Edgewater, NJ 07047
 2018-01 to Present
 * Software Engineer, PeerIQ, New York, NY  
 2017-02 to 2018-01
-	* Design and develop big data infrastructure and spark ETL jobs process 20 yrs+ consumer credit records on AWS EMR with Spark (scala) maintain and support a wide range of query engine such as hive and presto, scheduling (airflow) and notebook tools (jupyter, zeppelin) to support analytics query needs. Serverless big data warehouse architecture design with S3 as data store and AWS athena (presto) as query engine.
-	* Design and implement highly scalable production grade machine learning environment to support internal data science needs.
-	* Develop highly scalable, 15~20x faster valuation microservices with python, go through kafak managed with kubernetes.
+	* Design and develop big data infrastructure and spark ETL jobs process 20 yrs+ consumer credit records on AWS EMR with Spark (scala) maintain and support a wide range of query engine such as hive and presto, scheduling (airflow) and notebook tools (jupyter, zeppelin) to support analytics query needs. [Serverless big data warehouse architecture design with S3 as data store and AWS athena (presto) as query engine](https://medium.com/@l1990790120/how-we-do-serverless-big-data-etl-olap-queries-15979a71574).
+	* Design highly scalable production grade machine learning environment to support internal data science needs.
+	* Develop highly scalable, 15~20x faster valuation/projection microservices with python, go through kafak managed with kubernetes.
 	* Design and develop internal/external data API for ETL automation to provide continuous automated data quality monitoring tool for ETL pipeline.
 * Data Analyst, McGraw Hill Education, New York, NY  
 2015-05 to 2017-02  
@@ -50,7 +50,7 @@ Work with management and leadership to develop analytics and dashboards around c
 	* Implement classification algorithms (SVM, Logistic Regression, Decision Tree, Random Forest, KNN and other ensemble methods) to predict fraud orders from 400+ million transaction data
 	* Text mining on customer service inquiries to tag and identify high-demand issues
 	* Develop forecast approach using unsupervised algorithms (EM and Kmeans) to group similar time-series trends and ARIMA model to forecast on group-aggregate trends
-		* [Forecast 7000 US colleges enrollment in the next three years](http://l1990790120.github.io/2015/12/14/college-enrollment-forecast-inst-level.html)
+		* [Forecast 7000 US colleges enrollment in the next three years](https://l1990790120.github.io/post/2015-12-14-college-enrollment-forecast-inst-level/)
 		* Cluster sales patterns on 1.5+ million titles and use classification algorithms to predict the sales patterns of new titles using only non-transactional features
 	* Apply unsupervised algorithm on 16+ million student records to create segmentation and analyze usage behavior
 	* Work with technical teams and business teams to develop ETL in python that parse text data from legacy system into csv feed for Oracle Supply and Demand Planning system

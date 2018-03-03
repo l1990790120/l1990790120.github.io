@@ -31,11 +31,11 @@ I graduated with MS in Computer Science specialized in machine learning and AI, 
         <h4> <i class="fa fa-commenting-o"></i> Languages I Speak </h4>
         <ul>
             <li>to Computers:</li>
-            <p class="amp-right">Scala, Python, Java, AWS, Bash</p>
+            <p class="amp-right">Scala, Python, Go, Java, AWS, Bash</p>
             <li>to Data:</li>
-            <p class="amp-right">SQL, R, Spark, Matlab, SPSS, SAS, STATA</p>
+            <p class="amp-right">Hive, Presto, Spark, SQL, R, Matlab, SPSS, SAS, STATA</p>
             <li>to Web Browsers:</li>
-            <p class="amp-right">html, css, javascript, python-flask, d3.js, dc.js</p>
+            <p class="amp-right">html, css, javascript, python-flask, scala-play, d3.js, dc.js</p>
             <li>to Real People:</li>
             <p class="amp-right">English and Mandarin</p>
         </ul>
