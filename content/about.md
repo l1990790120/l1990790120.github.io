@@ -16,7 +16,7 @@ disableComments = true
 
 #### Hi, I am Lulu
 
-I graduated with MS in Computer Science specialized in machine learning and AI, MA in Economics and BA in Political Science. Currently I am software developer at fin-tech startup developing big-data applications and infrastructure. While not building new stuff, I enjoy thinking how software and infrastructure **by design** and leverage/re-purpose/combine new technologies could help organizations and people do things better and quicker. <a data-toggle="collapse" data-target=".tldr">tl;dr</a>
+I graduated with MS in Computer Science specialized in machine learning and AI, MA in Economics and BA in Political Science. Currently I am software developer at fin-tech startup building distributed systems, big-data applications and (preferably serverless) infrastructure. While not building new stuff, I enjoy thinking how software and infrastructure **by design** and leverage/re-purpose/combine new technologies could help organizations and people do things better and quicker. <a data-toggle="collapse" data-target=".tldr">tl;dr</a>
 
 <div class="tldr collapse" style="margin-top: 2%">
     Data has always been the center of my interest. I've always been the one brings new technologies that offer users the best experience possible. Over the years, I've worked with data in petabyte scale on 200 nodes cluster and few thousand records survey data in pandas, both exploratory analysis and production grade ETL architecture design and development. I've run what people used to call 'statistical' analysis on survey data as well as large scale distributed machine learning algorithms on sales data. I've worked with various business functions - customer service, supply chain, manufacturing, market research, politics, health care to develop customized BI solutions from infrastructure to ETL pipelines to dashboards, I've built in <code>d3.js</code> (free) as well as tableau ($$$$), with small organizations with a team of 5 to enterprise with teams across 5 continents. I am always excited about new data problems everyday whether that's infrastructure or application or analytics to support product, technology is just moving so fast that no two days are the same.
@@ -52,6 +52,7 @@ I graduated with MS in Computer Science specialized in machine learning and AI, 
 
 <p class="amp-left">I am currently Software Engineer at PeerIQ (New York, NY), where I build</p>
 
+* Breaking legacy system into more microservice and container-based architecture. Swapping big-boxes with more distributable, flexible serverless infrastructure with minimal code changes.
 * Big data applications and systems to analyze hundreds of billions of consumer credit records in spark, scala, hive, presto or whatever that works
 * Breaking down monolith application into microservices with kafka, python and go.
 

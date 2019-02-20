@@ -18,9 +18,10 @@ Edgewater, NJ 07047
 ### Technical Skills
 
 * Development: Scala, Python, R, Java, Go
-* Data: Redshift, Airflow, Spark, Hive, Presto, Couchbase, MongoDB, Oracle
-* Infrastructure: Kubernetes, Docker, AWS EMR, Glue, Athena, Hadoop, Kafka, Bash
-* Visualization/Web App: Python (flask), html, css, javascript (d3.js, dc.js, crossfilter.js), Tableau, Alteryx
+* Data: Redshift, Cassandra, Kafka, MQ, Airflow, Superset, Spark, Hive, Presto, Couchbase, MongoDB, Oracle
+* Infrastructure: Kubernetes, Docker, AWS, EMR, Lambda, Batch, Hadoop, Bash
+* Visualization/Web App: Python (django, flask), html, css, javascript (d3.js, dc.js, crossfilter.js)
+* BI: Tableau, Alteryx
 
 ### Education
 
@@ -38,6 +39,14 @@ Edgewater, NJ 07047
 
 * Senior Software Engineer, PeerIQ, New York, NY  
 2018-01 to Present
+	* Leading the efforts to transform existing data systems to highly distributable, scalable while maintaining flexibility. [Transitioning legacy monolithe ETL application to microservice-architecture leveraging serverless container-based infrastructure, microservice, messaging bus and on-demand function calls (Lambda) with minimum business interruptions and code changes.](https://medium.com/@l1990790120/the-battles-of-etl-bottlenecks-and-how-to-fight-them-bd242dfc6733)
+	* [Designing and building distributed, serverless ETL system that process with drastically heterogeneous data volumne (GB ~ <5TB)](https://medium.com/@l1990790120/why-spark-is-not-the-distributed-framework-of-the-future-ab974ea75308)
+		1. Reduce run time from days+ and dozens of datasets that weren't able to finish to < 30 mins
+		2. Without touching a line of business logic code base (10000+ lines)
+		3. Up to 50% cost savings on the infrastructure (Ability to scale 1 to 1000 instances only when needed in < 5 mins)
+		4. Increase developer productivity. The serverless setup, allow users to run any version at the same time at any scale for quick validation. Users are able to debug one specific record in and step through with minimal local environment setup.
+	* Designing and building ML models to recommend system parameters based on system logs to offer true zero configuration (other than what needs to be processed) on complex distributed system.
+	* Leading and coaching a team of data engineers. Managing dynamic competing client requests, internal projects to improve data system's scalability and reliability, supporting engineering of our data products with limited resources.
 * Software Engineer, PeerIQ, New York, NY  
 2017-02 to 2018-01
 	* Design and develop big data infrastructure and spark ETL jobs process 20 yrs+ consumer credit records on AWS EMR with Spark (scala) maintain and support a wide range of query engine such as hive and presto, scheduling (airflow) and notebook tools (jupyter, zeppelin) to support analytics query needs. [Serverless big data warehouse architecture design with S3 as data store and AWS athena (presto) as query engine](https://medium.com/@l1990790120/how-we-do-serverless-big-data-etl-olap-queries-15979a71574).
