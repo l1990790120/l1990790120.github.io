@@ -81,6 +81,14 @@ Work with major brands in eCommerce, retail and technology:
 ### Volunteer
 
 * Data Expert, [Datakind](http://www.datakind.org/), New York, NY  
+2018-06 to 2018-12
+  * Work with [Plentiful](https://www.plentifulapp.com/) to analyze their 
+
+* Data Expert, [Datakind](http://www.datakind.org/), New York, NY  
+2018-06 to 2018-12
+  * Work with [Commit](https://commitpartnership.org/) (education) to setup their big data infrastructure to support data analytics project in Azure
+
+* Data Expert, [Datakind](http://www.datakind.org/), New York, NY  
 2016-04 to 2016-10
   * Work with [Threshold](http://www.thresholds.org/) (health care) to setup their analytical data warehouse in MongoDB and develop dashboard in flask + d3
 
@@ -95,3 +103,6 @@ Work with major brands in eCommerce, retail and technology:
 	* An Introduction to Interactive Programming in Python, Rice University
 	* Practical Machine Learning, John Hopkins University
 	* Machine Learning, Stanford University
+* [udacity](https://www.udacity.com/)
+  * Grow with Google Challenge Scholarship 
+  * Tensorflow free course
