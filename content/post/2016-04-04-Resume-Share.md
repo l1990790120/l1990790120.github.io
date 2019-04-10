@@ -38,7 +38,7 @@ Edgewater, NJ 07047
 ### Work Experience
 
 * Senior Software Engineer, PeerIQ, New York, NY  
-2018-01 to Present
+2018-01 to 2019-04
 	* Leading the efforts to transform existing data systems to highly distributable, scalable while maintaining flexibility. [Transitioning legacy monolithe ETL application to microservice-architecture leveraging serverless container-based infrastructure, microservice, messaging bus and on-demand function calls (Lambda) with minimum business interruptions and code changes.](https://medium.com/@l1990790120/the-battles-of-etl-bottlenecks-and-how-to-fight-them-bd242dfc6733)
 	* [Designing and building distributed, serverless ETL system that process with drastically heterogeneous data volumne (GB ~ <5TB)](https://medium.com/@l1990790120/why-spark-is-not-the-distributed-framework-of-the-future-ab974ea75308)
 		1. Reduce run time from days+ and dozens of datasets that weren't able to finish to < 30 mins
@@ -81,12 +81,12 @@ Work with major brands in eCommerce, retail and technology:
 ### Volunteer
 
 * Data Expert, [Datakind](http://www.datakind.org/), New York, NY  
-2018-06 to 2018-12
-  * Work with [Plentiful](https://www.plentifulapp.com/) to analyze their 
+2019-04 to Present
+  * Work with [Plentiful](https://www.plentifulapp.com/) to analyze their pantry and survey data
 
 * Data Expert, [Datakind](http://www.datakind.org/), New York, NY  
 2018-06 to 2018-12
-  * Work with [Commit](https://commitpartnership.org/) (education) to setup their big data infrastructure to support data analytics project in Azure
+  * Work with [Commit](https://commitpartnership.org/) (education) to setup their big data infrastructure to support data science efforts on Azure
 
 * Data Expert, [Datakind](http://www.datakind.org/), New York, NY  
 2016-04 to 2016-10
