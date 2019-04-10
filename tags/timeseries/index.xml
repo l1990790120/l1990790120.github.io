@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Timeseries on LC</title>
+    <title>timeseries on LC</title>
     <link>https://l1990790120.github.io/tags/timeseries/</link>
-    <description>Recent content in Timeseries on LC</description>
+    <description>Recent content in timeseries on LC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 29 Dec 2015 10:07:30 +0000</lastBuildDate>
