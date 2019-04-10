@@ -11,6 +11,10 @@ paginate = 5
 # Comment the themesDir option if you use this theme in production
 # themesDir = "../.."
 
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+
 [params]
 	author = "Lulu Cheng"
 	description = "LC"
@@ -31,7 +35,7 @@ paginate = 5
 
 	[params.social]
 		# Insert your accout name and the icon will be shown in the right menu
-		rss = true
+		rss = false
 		homepage = true
 		email = "l1990790120@gmail.com"
 		behance = ""
