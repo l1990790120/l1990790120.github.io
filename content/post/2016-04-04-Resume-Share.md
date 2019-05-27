@@ -37,6 +37,9 @@ Edgewater, NJ 07047
 
 ### Work Experience
 
+* Senior Data Engineer, Deloitte Digital, New York, NY  
+2019-05 to Present
+
 * Senior Software Engineer, PeerIQ, New York, NY  
 2018-01 to 2019-04
 	* Leading the efforts to transform existing data systems to highly distributable, scalable while maintaining flexibility. [Transitioning legacy monolithe ETL application to microservice-architecture leveraging serverless container-based infrastructure, microservice, messaging bus and on-demand function calls (Lambda) with minimum business interruptions and code changes.](https://medium.com/@l1990790120/the-battles-of-etl-bottlenecks-and-how-to-fight-them-bd242dfc6733)

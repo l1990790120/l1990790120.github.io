@@ -42,7 +42,7 @@ git worktree prune
 git branch -D master
 mkdir public
 git worktree add -B master public origin/master
-hugo
+~/go/bin/hugo
 cd public && git add --all && git commit -m "Publishing to master" && git push && cd ..
 ```
 
