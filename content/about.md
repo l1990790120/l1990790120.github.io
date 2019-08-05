@@ -50,10 +50,12 @@ I graduated with MS in Computer Science specialized in machine learning and AI, 
 
 #### <i class="fa fa-suitcase"></i> Where I Work
 
-<p class="amp-left">Currently I am Software Engineer at Deloitte Digital (New York, NY), where I am ...</p>
-* Still trying to figure it out
+<p class="amp-left">Currently I am Senior Data Engineer at Deloitte Digital (New York, NY), where I am ...</p>
 
-<p class="amp-left">Prior to that, I was Software Engineer at PeerIQ (New York, NY), where I build</p>
+* Setting up automated AI/ML infrastructure and projects shortening data science's process from experiment to production.
+* End to end auto-scalable infrastructure and deployment: [Airflow](https://airflow.apache.org/), [MLFlow](https://mlflow.org/) running on [Kubernetes](https://kubernetes.io/) (EKS) running ML jobs with EMR and [H2O](https://www.h2o.ai/) Cluster.
+
+<p class="amp-left">Prior to that, I was Software Engineer at PeerIQ (New York, NY), where I built</p>
 
 * Breaking legacy system into more microservice and container-based architecture. Swapping big-boxes with more distributable, flexible serverless infrastructure with minimal code changes.
 * Big data applications and systems to analyze hundreds of billions of consumer credit records in spark, scala, hive, presto or whatever that works
