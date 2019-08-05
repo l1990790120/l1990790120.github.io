@@ -85,7 +85,7 @@ Work with major brands in eCommerce, retail and technology:
 ### Volunteer
 
 * Data Expert, [Datakind](http://www.datakind.org/), New York, NY  
-2019-04 to Present
+2019-04 to 2019-05
   * Work with [Plentiful](https://www.plentifulapp.com/) to analyze their pantry and survey data
 
 * Data Expert, [Datakind](http://www.datakind.org/), New York, NY  
