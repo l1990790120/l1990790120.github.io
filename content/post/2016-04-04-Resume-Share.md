@@ -8,8 +8,7 @@ Hide = true
 
 <!--more-->
 
-## Lulu Cheng
-Edgewater, NJ 07047  
+New York, NY, 10013
 [lulu.cheng90@gmail.com](mailto:lulu.cheng90@gmail.com)  
 [l1990790120.github.io/about](http://l1990790120.github.io/about)  
 
