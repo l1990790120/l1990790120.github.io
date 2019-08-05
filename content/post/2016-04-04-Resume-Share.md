@@ -1,14 +1,14 @@
 +++
 date = "2016-04-04T11:53:30.000Z"
 tags = []
-title = "Lulu Cheng - Resume"
+title = "Lulu Cheng"
 disableComments = true
 Hide = true
 +++
 
 <!--more-->
 
-New York, NY, 10013
+New York, NY, 10013 <br>
 [lulu.cheng90@gmail.com](mailto:lulu.cheng90@gmail.com)  
 [l1990790120.github.io/about](http://l1990790120.github.io/about)  
 
