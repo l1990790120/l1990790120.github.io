@@ -14,12 +14,20 @@ disableComments = true
 </div>
 </div>
 
-#### Hi, I am Lulu
+#### Hello, I am Lulu, I enable companies to capitalize on their data at ease with technology
 
-I graduated with MS in Computer Science specialized in machine learning and AI, MA in Economics and BA in Political Science. Currently I am software developer at Deloitte Digital building distributed systems, big-data applications and (preferably serverless) infrastructure. While not building new stuff, I enjoy thinking how software and infrastructure **by design** and leverage/re-purpose/combine new technologies could help organizations and people do things better and quicker. <a data-toggle="collapse" data-target=".tldr">tl;dr</a>
+**Thinking about analyzing data from 100s of sources and varying sizes but scared of the costs and technical complexity involved?**   
+I build and design distributed system to transform hundreds of TBs of files into ready-to-use data in a matter of minutes.
+
+**Have an internal data system or backend applications serving data for the web and analytics but running too slow?**     
+I fix and re-architect difficult to scale monolithe applications into microservices that's cloud native and running in container or serverlessly.
+
+If you have these problems, I would like to solve them for you. <a data-toggle="collapse" data-target=".tldr">tl;dr</a>
 
 <div class="tldr collapse" style="margin-top: 2%">
-    Data has always been the center of my interest. I've always been the one brings new technologies that offer users the best experience possible. Over the years, I've worked with data in petabyte scale on 200 nodes cluster and few thousand records survey data in pandas, both exploratory analysis and production grade ETL architecture design and development. I've run what people used to call 'statistical' analysis on survey data as well as large scale distributed machine learning algorithms on sales data. I've worked with various business functions - customer service, supply chain, manufacturing, market research, politics, health care to develop customized BI solutions from infrastructure to ETL pipelines to dashboards, I've built in <code>d3.js</code> (free) as well as tableau ($$$$), with small organizations with a team of 5 to enterprise with teams across 5 continents. I am always excited about new data problems everyday whether that's infrastructure or application or analytics to support product, technology is just moving so fast that no two days are the same.
+    Graduated with MS in Computer Science specialized in machine learning and AI, MA in Economics and BA in Political Science. Currently I am senior data engineer at Deloitte Digital building streamlined and automated machine learning pipeline to shorten data science's experiment to production time. <br>
+    While not building new stuff, I enjoy thinking how software and infrastructure <b>by design</b> and leverage/re-purpose/combine new technologies could help organizations and people do things better and quicker.<br>
+    Data has always been the center of my interest. Over past 7 years, I've worked with data in petabyte scale on 200 nodes cluster and few thousand records survey data in pandas, both exploratory analysis and production grade ETL architecture design and development. I've run what people used to call 'statistical' analysis on survey data as well as large scale distributed machine learning algorithms on sales data. I've worked with various business functions - customer service, supply chain, manufacturing, market research, politics, health care to develop customized BI solutions from infrastructure to ETL pipelines to dashboards, I've built in <code>d3.js</code> (free) as well as tableau ($$$$), with small organizations with a team of 5 to enterprise with teams across 5 continents. I am always excited about new data problems everyday whether that's infrastructure or application or analytics to support product, technology is just moving so fast that no two days are the same.
 
 </div>
 

@@ -14,7 +14,7 @@ New York, NY, 10013
 
 -------------
 
-### Technical Skills
+### Technology
 
 * Development: Scala, Python, R, Java, Go
 * Data: Redshift, Cassandra, Kafka, MQ, Airflow, Superset, Spark, Hive, Presto, Couchbase, MongoDB, Oracle
