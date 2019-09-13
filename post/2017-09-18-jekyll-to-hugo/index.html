@@ -174,19 +174,19 @@
 
 <p>Hugo turned out to be quite simple to update and flexible just enough with the functionality I am looking for. While I am mostly backend and data, I know how html/css/javascript works, at the very least, I know how to poke around, change the values and get the effect I want - it wasn&rsquo;t so easy for me to figure out jekyll but hugo to me is very straightforward. The migration turned out to be easy. Other than the headers on each post, I just copy and paste the notebook html files and it works - took me less than couple mins!</p>
 
-<h1 id="embedding-jupyter-notebook-in-post">Embedding jupyter notebook in post</h1>
+<h2 id="embedding-jupyter-notebook-in-post">Embedding jupyter notebook in post</h2>
 
 <p>The difficult part is the integration and css formatting. This post here <a href="https://sharmamohit.com/post/jupyter-notebooks-in-blog/">https://sharmamohit.com/post/jupyter-notebooks-in-blog/</a> has been a great help. Since I am a data person, I am not a fan of duplication of fragment of code without automated pipeline - if a data is generated from source code, we should track the source code not the generated file.</p>
 
 <p>As an alternative, here&rsquo;s what I did and what I didn&rsquo;t do -</p>
 
-<h2 id="not-working">Not working</h2>
+<h3 id="not-working">Not working</h3>
 
 <ul>
 <li>If you google how to embed notebook in hugo, first thing you might see is to use blackfriday, my frustration being - the formatting are just not cooperating, even though it&rsquo;s probably the closest option to jekyll&rsquo;s embeding tag.</li>
 </ul>
 
-<h2 id="sort-of-working">Sort of working</h2>
+<h3 id="sort-of-working">Sort of working</h3>
 
 <p>I&rsquo;ve created a custom shortcode to embed jupyter notebook html -</p>
 
@@ -196,7 +196,7 @@
 
 <p>Easy enough, in the post markdown, just put <code>{{% jupyter_notebook &ldquo;static/&lt;some notebook&gt;.html&rdquo; %}}</code>. However, there&rsquo;s some limit to the length of file. I happen to use go from time to time so I upped that limit and recompiled hugo to make this work.</p>
 
-<h1 id="publishing-to-github">Publishing to github</h1>
+<h2 id="publishing-to-github">Publishing to github</h2>
 
 <p>This is pretty much the same as jekyll. I just wanted to share the easiest way I&rsquo;ve found. The best reference I could&rsquo;ve found is this <a href="https://discourse.gohugo.io/t/simple-deployment-to-gh-pages/5003">https://discourse.gohugo.io/t/simple-deployment-to-gh-pages/5003</a>. Couple tweaks I needed to make, for personal github page you need to push to <code>master</code> not <code>gh-page</code>. What worked for me is to default the branch to <code>develop</code> and then make subtree branch of public folder to <code>master</code>.</p>
 
