@@ -18,8 +18,9 @@ New York, NY, 10013
 
 * Development: Scala, Python, R, Java, Go
 * Data: Redshift, Cassandra, Kafka, MQ, Airflow, Superset, Spark, Hive, Presto, Couchbase, MongoDB, Oracle
-* Infrastructure: Kubernetes, Helm, Docker, AWS, Jenkins, EMR, Lambda, Batch, Hadoop, Bash
+* Infrastructure: Kubernetes, Helm, Docker, Cloud Run, GKE, AWS, GCP, Jenkins, Cloud Build, EMR, Lambda, Batch, Hadoop, Bash
 * Visualization/Web App: Python (django, flask), html, css, javascript (d3.js, dc.js, crossfilter.js)
+* Machine Learning: MLFlow, Kubeflow, XGBoost, LightGBM
 * BI: Tableau, Alteryx
 
 ### Education
@@ -38,8 +39,8 @@ New York, NY, 10013
 
 * **Senior Data Engineer**, Deloitte Digital, New York, NY  
 2019-05 to Present
-  * Integrating data science stack (such as [Airflow](https://airflow.apache.org/), [MLFlow](https://mlflow.org/), [H2O](https://www.h2o.ai/), [XGBoost](https://xgboost.readthedocs.io/))  into a streamlined project template, unified CI/CD processes and modules to shorten experiment to production time.
-  * Setup infrastructure from scratch and python modules for data scientists and analysts to quickly schedule and scale hyper parameter search, track experiments on [Kubernetes](https://kubernetes.io/) with Airflow and MLflow.
+  * Integrating data science stack ([Airflow](https://airflow.apache.org/), [MLFlow](https://mlflow.org/), [H2O](https://www.h2o.ai/), [XGBoost](https://xgboost.readthedocs.io/)) into streamlined, yml configurable project template, unified CI/CD processes to validate, build and deploy optimized training docker images.
+  * Setup infrastructure from scratch and contribute python modules for data scientists and analysts to quickly schedule and scale hyperparameter search, track experiments on [Kubernetes](https://kubernetes.io/) with Airflow, MLflow and [Kubeflow](kubeflow.org/).
 
 * **Senior Software Engineer**, PeerIQ, New York, NY  
 2018-01 to 2019-04  
