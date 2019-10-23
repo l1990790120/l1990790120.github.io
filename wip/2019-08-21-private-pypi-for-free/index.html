@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<title>Hosting Pypicloud on Google Cloud Run for Free&middot; LC</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Lulu Cheng">
+	<meta name="description" content="LC">
+	<meta name="keywords" content="Machine Learning, Economics, Politics, Social Science, Software Engineering">
+	<meta name="generator" content="Hugo 0.56.0-DEV" />
+
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	
+	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- JS -->
+	<script src="https://l1990790120.github.io/js/autohide-navbar.js"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://l1990790120.github.io/css/main.css">
+
+	
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="https://l1990790120.github.io/favicon.ico" type="image/x-icon">
+
+	<!-- RSS -->
+	
+
+	<!-- Font Awesome -->
+	<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+    <div class="autohide-navbar navbar-fixed-top">
+    <header class="site-header">
+	<div class="branding">
+		<a href="https://l1990790120.github.io/">
+		<img class="avatar" src="https://l1990790120.github.io/profile_pic.jpg" alt=""/>
+		</a>
+		<h1 class="site-title">
+			<a href="https://l1990790120.github.io/">LC</a>
+		</h1>
+	</div>
+	<nav class="site-nav">
+		<ul>
+	      	<li><a href="/about/"> About </a></li>
+
+	      	<li>
+	<a href="https://l1990790120.github.io/" title="">
+		<i class="fa fa-fw fa-home"></i>
+	</a>
+</li>
+
+
+
+<li>
+	<a href="mailto:l1990790120@gmail.com" title="Email">
+		<i class="fa fa-fw fa-envelope"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+<li>
+	<a href="https://www.facebook.com/l1990790120" title="Facebook">
+		<i class="fa fa-fw fa-facebook"></i>
+	</a>
+</li>
+
+
+
+<li>
+	<a href="https://github.com/l1990790120" title="GitHub">
+		<i class="fa fa-fw fa-github"></i>
+	</a>
+</li>
+
+
+
+<li>
+	<a href="http://instagram.com/l1990790120" title="Instagram">
+		<i class="fa fa-fw fa-instagram"></i>
+	</a>
+</li>
+
+<li>
+	<a href="https://www.linkedin.com/in/luluchengengineeratheart" title="LinkedIn">
+		<i class="fa fa-fw fa-linkedin"></i>
+	</a>
+</li>
+
+
+
+<li>
+	<a href="https://www.reddit.com/user/l1990790120" title="Reddit">
+		<i class="fa fa-fw fa-reddit"></i>
+	</a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+	<a href="https://twitter.com/l1990790120" title="Twitter">
+		<i class="fa fa-fw fa-twitter"></i>
+	</a>
+</li>
+
+
+
+<li>
+	<a href="https://www.youtube.com/user/l1990790120" title="YouTube">
+		<i class="fa fa-fw fa-youtube"></i>
+	</a>
+</li>
+
+
+
+
+
+<li>
+	<a href="https://medium.com/@l1990790120" title="">
+		<i class="fa fa-fw fa-medium"></i>
+	</a>
+</li>
+
+	    </ul>
+	</nav>
+</header>
+
+    </div>
+
+    <div class="content">
+    <article>
+		<header>
+			<h1 class="title">Hosting Pypicloud on Google Cloud Run for Free</h1>
+			<p class="meta">
+    August 21, 2019 &middot; 6 minute read
+
+    
+        &middot; Tags:
+            <a href="https://l1990790120.github.io/tags/gce">gce</a>
+            , <a href="https://l1990790120.github.io/tags/gcp">gcp</a>
+            , <a href="https://l1990790120.github.io/tags/gcs">gcs</a>
+            , <a href="https://l1990790120.github.io/tags/pypi">pypi</a>
+            , <a href="https://l1990790120.github.io/tags/python">python</a>
+            , <a href="https://l1990790120.github.io/tags/redis">redis</a>
+            , <a href="https://l1990790120.github.io/tags/serverless">serverless</a>
+            
+</p>
+
+		</header>
+	
+	<section class="post">
+		<section class="post-content">
+			<p>I was thinking how to run a free private pypi. There are a couple hosted options such as <a href="https://gemfury.com/">https://gemfury.com/</a> or <a href="https://pydist.com/">https://pydist.com/</a> available for as little as $9 per month if you are willing to pay. <strong>BUT</strong> &ndash; if you are not, read on. I will walk through how to host pypicloud on google cloud&rsquo;s free tier: mine is running at <a href="https://pypi.apiobuild.com/">https://pypi.apiobuild.com/</a>.</p>
+
+<h2 id="options-options-options">Options, Options, Options</h2>
+
+<p>There are a couple options going through my head:</p>
+
+<ol>
+<li>Running pypicloud docker container on <a href="https://cloud.google.com/compute/">google compute engine</a> (VM).<br />
+This is probably the most straightforward way, however, one needs to figure out ssl cert and configure ngnix on his/her own.</li>
+<li>Running pypicloud docker container on <a href="https://cloud.google.com/kubernetes-engine/">gke</a> (kubernetes cluster).<br />
+This is probably what I&rsquo;d do at work as I can always assume there&rsquo;s enough applications to share cluster resources and someone to pay for it. Actually, running gke with minimum 3 nodes of n1-stanrdard costs around 70 bucks per month &ndash; nope, I am willing to spend some time to save $840 a year.</li>
+<li>Running pypicloud docker container serverlessly on <a href="https://cloud.google.com/run/">cloud run</a><br />
+Eventually I landed on this option as ssl cert is already configured and deployment is relatively easy with <a href="https://cloud.google.com/cloud-build/">cloud build</a>. With the number of requests I make &ndash; it&rsquo;s essentially free.</li>
+</ol>
+
+<p>I went with the third option since it&rsquo;s the cheapest one. Obviously how much it costs depends on your usage, for a couple python packages (I have 5) and extremely light usages (packages pulled in CI and docker build for a couple repository), it&rsquo;s practically free.</p>
+
+<h2 id="option-3">Option 3</h2>
+
+<h3 id="prerequisite">Prerequisite</h3>
+
+<p>Before we go over how to achieve this, there are a couple assumptions made about in this guide:</p>
+
+<ol>
+<li>You have google cloud account and you have permissions to use cloud run. Note: I have also offered a more &ldquo;productionized&rdquo; deployment to deploy with cloud build, so if you wish to use cloud build for deployment, make sure you have permissions to push images to gcr and use cloud build itself.</li>
+<li>You need gcloud client installed if you wish to use cloud build</li>
+</ol>
+
+<h3 id="application-components">Application Components</h3>
+
+<p>To host pypicloud, there are a couple components in additional to the application itself.</p>
+
+
+<div class="mermaid" align="center">
+graph TD
+    Pypicloud(Cloud Run: Pypicloud Application)
+    subgraph "Cloud Build: Build Docker Image and Deploy on GCE"
+    Pypicloud --- GCS(GCS Bucket:<br> Package Artifact)
+    Pypicloud --- GCE("GCE (n1-standard):<br> Redis running docker on as caching layer")
+    end
+</div>
+<script async src="https://unpkg.com/mermaid@8.2.3/dist/mermaid.min.js"></script>
+
+<p>There&rsquo;s an easy but less productionized way and a productionized way but less</p>
+
+<ol>
+<li>It&rsquo;s possible to wrap deployment of pypicloud itself in <a href="https://github.com/GoogleCloudPlatform/cloud-run-button">cloud run button</a>. However, this means assume GCS bucket&rsquo;s already created and redis&rsquo; up and running somewhere, if you are just trying it out, it might be easier to just manually create a gcs bucket and ignore the caching layer. Note: pypicloud does let you run in-memory caching, however, because we are running &ldquo;serverlessly&rdquo;, it basically means no cache.</li>
+<li>Use cloud build to code up deployment of all three resources.</li>
+</ol>
+
+<p>Below I will walk though, you should also be able to use this foundation and improvise on caching backend and/or extend other pypicloud functionality.</p>
+
+<h3 id="step-1-building-custom-pypicloud-image">Step 1. Building Custom Pypicloud Image</h3>
+
+<p>First and for most, we need a pypicloud image for cloud run to use. Actually, pypicloud already provided a Dockerfile here: <a href="https://github.com/stevearc/pypicloud-docker/blob/master/py3-alpine/Dockerfile">https://github.com/stevearc/pypicloud-docker/blob/master/py3-alpine/Dockerfile</a>.</p>
+
+<h5 id="security-first">Security First</h5>
+
+<p>Because we are running it serverless, it introduces some interesting complications on secret management. There are two secrets we need to store for pypicloud to work, pypicloud configuration itself as it might contain database url and <a href="https://cloud.google.com/docs/authentication/production">creds.json</a> to access gcs.<br />
+Now, even if these files are tiny, I do not like the idea of fetching secrets from blob store in general, both from a security standpoint, but also we introduce latency in fetching these files, and because it&rsquo;s serverless, we may need to fetch them more often than hosting long running process in a conventional way. For very light usage (like mine), the performance may be acceptable fetching these files from blob storage on the fly, however, blob storage is not designed for high frequency access, let alone web scale, if hit by high volume, it&rsquo;s likely to timeout.</p>
+
+<p>Therefore, to accommodate this, I took their docker image as a base and add installed gcloud cli to decrypt secret on the fly.</p>
+
+<h5 id="generate-pypicloud-configuration">Generate pypicloud Configuration</h5>
+
+<p>In the same <a href="https://github.com/stevearc/pypicloud-docker/">pypicloud-docker repo</a>, they actually also covered how to generate <code>config.ini</code>, so this is purely a copy-and-paste from the repo.</p>
+
+<pre><code class="language-bash">docker run -it --rm -v $(pwd):/out stevearc/pypicloud make-config -r /out/config.ini
+</code></pre>
+
+<p>It&rsquo;s better to review the config and make sure authentication and db url are updated accordingly. If you wish to enable redis instead of in-memory caching, you&rsquo;ll need to add the following lines to the <code>config.ini</code>. Note, for security, I have also set password for the caching layer.</p>
+
+<pre><code class="language-yml">pypi.db = redis
+db.url = &lt;redis url&gt;
+</code></pre>
+
+<p>There are also other caching backend, refer to <a href="https://pypicloud.readthedocs.io/en/latest/topics/cache.html">https://pypicloud.readthedocs.io/en/latest/topics/cache.html</a> for full documentation.</p>
+
+<h5 id="generate-creds-json-for-gcs">Generate <code>creds.json</code> for GCS</h5>
+
+<p>To access google storage, one first needs to create a service account with access to gcs and generate a <code>creds.json</code> using the account. One can generate this through command line or in google cloud console. Refer to [<a href="https://cloud.google.com/iam/docs/creating-managing-service-accounts">https://cloud.google.com/iam/docs/creating-managing-service-accounts</a>] for how to create service account with the right permission.</p>
+
+<pre><code class="language-bash">gcloud iam service-accounts keys create creds.json --iam-account &lt;account&gt;
+</code></pre>
+
+<h5 id="encrypt-and-decrypt-the-secrets">Encrypt and Decrypt the Secrets</h5>
+
+<p>Now that we have all the pieces we need to run pypicloud, we need to find a way to pass it to pypicloud on cloud run. Google cloud also have kms service available for encryption and decryption. First we need to create key ring and key itself. Refer to <a href="https://cloud.google.com/kms/docs/creating-keys">https://cloud.google.com/kms/docs/creating-keys</a> for details. Once the key is created, we can then use it for encryption/decryption.</p>
+
+<p>For encryption, we first encrypt the file with the key we just created, and then base64 encode and output save locally for the time being.</p>
+
+<pre><code class="language-bash"># encrypt the file
+FILE=&lt;creds.json|config.ini&gt;
+
+gcloud kms encrypt \
+    --plaintext-file=$FILE \
+    --ciphertext-file=$FILE.enc \
+    --location=global \
+    --keyring=&lt;&gt; \
+    --key=&lt;&gt;
+
+# base64 encode the encrypted file
+base64 &lt;&lt;&lt; $FILE.enc &gt; $FILE.enc.base64
+</code></pre>
+
+<p>The file generated can be then can be passed into pypicloud container as environment variables and decrypted on the spot. For decryption, we simply invoke another gcloud cli command.</p>
+
+<pre><code class="language-bash">FILE=&lt;creds.json|config.ini&gt;
+
+gcloud kms decrypt \
+    --ciphertext-file=$FILE.enc.base64 \
+    --plaintext-file=$FILE \
+    --location=global \
+    --keyring=&lt;&gt; \
+    --key=&lt;&gt;
+</code></pre>
+
+<p>Except, although this might work locally, when invoked in cloud run, we need to give the service account that cloud run application is using the kms decryption permission.</p>
+
+<pre><code class="language-bash">gcloud kms keys add-iam-policy-binding boo-pypicloud \
+    --location global \
+    --keyring &lt;&gt; \
+    --member &lt;&gt; \
+    --role roles/cloudkms.cryptoKeyDecrypter
+</code></pre>
+
+<h4 id="summary">Summary</h4>
+
+<p>Finally, everything we need to run the Dockerfile is ready. You can find the Dockerfile to decrypt these secrets on the fly here: <a href="https://github.com/l1990790120/gcloud-run-pypicloud/blob/master/Dockerfile">https://github.com/l1990790120/gcloud-run-pypicloud/blob/master/Dockerfile</a>.</p>
+
+<p>The image simply installs pypicloud and gcloud cli. In <code>start.sh</code>, it&rsquo;ll take encrypted, base64 coded string from environment variable, decrypt and echo it into local files. You can find full implementation here: <a href="https://github.com/l1990790120/gcloud-run-pypicloud/blob/master/start.sh">https://github.com/l1990790120/gcloud-run-pypicloud/blob/master/start.sh</a></p>
+		</section>
+		
+		<hr>
+		<section class="post-comment">
+			<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "l1990790120" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+		</section>
+		
+	</section>
+	</article>
+    </div>
+
+    <footer class="site-footer">
+	<p class="text">&copy; 2019 - Released under the MIT license<br>Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
+</footer>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-71133003-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

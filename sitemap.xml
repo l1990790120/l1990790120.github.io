@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://l1990790120.github.io/post/2019-08-21-private-pypi-for-free/</loc>
+    <loc>https://l1990790120.github.io/wip/2019-08-21-private-pypi-for-free/</loc>
     <lastmod>2019-08-21T23:59:00+00:00</lastmod>
   </url>
   
@@ -14,13 +14,13 @@
   </url>
   
   <url>
-    <loc>https://l1990790120.github.io/post/</loc>
+    <loc>https://l1990790120.github.io/tags/</loc>
     <lastmod>2019-08-21T23:59:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://l1990790120.github.io/tags/</loc>
+    <loc>https://l1990790120.github.io/wip/</loc>
     <lastmod>2019-08-21T23:59:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -70,6 +70,12 @@
   <url>
     <loc>https://l1990790120.github.io/post/2017-09-18-jekyll-to-hugo/</loc>
     <lastmod>2017-09-18T10:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://l1990790120.github.io/post/</loc>
+    <lastmod>2017-09-18T10:55:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
