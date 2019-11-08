@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on LC</title>
@@ -6,73 +6,10 @@
     <description>Recent content in Tags on LC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Aug 2019 23:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 Sep 2017 10:55:00 +0000</lastBuildDate>
     
 	<atom:link href="https://l1990790120.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>gce</title>
-      <link>https://l1990790120.github.io/tags/gce/</link>
-      <pubDate>Wed, 21 Aug 2019 23:59:00 +0000</pubDate>
-      
-      <guid>https://l1990790120.github.io/tags/gce/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gcp</title>
-      <link>https://l1990790120.github.io/tags/gcp/</link>
-      <pubDate>Wed, 21 Aug 2019 23:59:00 +0000</pubDate>
-      
-      <guid>https://l1990790120.github.io/tags/gcp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>gcs</title>
-      <link>https://l1990790120.github.io/tags/gcs/</link>
-      <pubDate>Wed, 21 Aug 2019 23:59:00 +0000</pubDate>
-      
-      <guid>https://l1990790120.github.io/tags/gcs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pypi</title>
-      <link>https://l1990790120.github.io/tags/pypi/</link>
-      <pubDate>Wed, 21 Aug 2019 23:59:00 +0000</pubDate>
-      
-      <guid>https://l1990790120.github.io/tags/pypi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>https://l1990790120.github.io/tags/python/</link>
-      <pubDate>Wed, 21 Aug 2019 23:59:00 +0000</pubDate>
-      
-      <guid>https://l1990790120.github.io/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>redis</title>
-      <link>https://l1990790120.github.io/tags/redis/</link>
-      <pubDate>Wed, 21 Aug 2019 23:59:00 +0000</pubDate>
-      
-      <guid>https://l1990790120.github.io/tags/redis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>serverless</title>
-      <link>https://l1990790120.github.io/tags/serverless/</link>
-      <pubDate>Wed, 21 Aug 2019 23:59:00 +0000</pubDate>
-      
-      <guid>https://l1990790120.github.io/tags/serverless/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>blog</title>
@@ -116,6 +53,15 @@
       <pubDate>Mon, 16 May 2016 12:11:00 +0000</pubDate>
       
       <guid>https://l1990790120.github.io/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://l1990790120.github.io/tags/python/</link>
+      <pubDate>Mon, 16 May 2016 12:11:00 +0000</pubDate>
+      
+      <guid>https://l1990790120.github.io/tags/python/</guid>
       <description></description>
     </item>
     

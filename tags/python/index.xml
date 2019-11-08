@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>python on LC</title>
@@ -6,19 +6,10 @@
     <description>Recent content in python on LC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Aug 2019 23:59:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 May 2016 12:11:00 +0000</lastBuildDate>
     
 	<atom:link href="https://l1990790120.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Hosting Pypicloud on Google Cloud Run for Free</title>
-      <link>https://l1990790120.github.io/wip/2019-08-21-private-pypi-for-free/</link>
-      <pubDate>Wed, 21 Aug 2019 23:59:00 +0000</pubDate>
-      
-      <guid>https://l1990790120.github.io/wip/2019-08-21-private-pypi-for-free/</guid>
-      <description>&lt;p&gt;I was thinking how to run a free private pypi. There are a couple hosted options such as &lt;a href=&#34;https://gemfury.com/&#34;&gt;https://gemfury.com/&lt;/a&gt; or &lt;a href=&#34;https://pydist.com/&#34;&gt;https://pydist.com/&lt;/a&gt; available for as little as $9 per month if you are willing to pay. &lt;strong&gt;BUT&lt;/strong&gt; &amp;ndash; if you are not, read on. I will walk through how to host pypicloud on google cloud&amp;rsquo;s free tier: mine is running at &lt;a href=&#34;https://pypi.apiobuild.com/&#34;&gt;https://pypi.apiobuild.com/&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>Classify Unbalanced Cases with Harvard edX MOOC Dataset</title>
