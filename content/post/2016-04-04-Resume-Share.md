@@ -39,8 +39,8 @@ New York, NY, 10013
 
 * **Senior Data Engineer**, Deloitte Digital, New York, NY  
 2019-05 to Present
-  * Integrating data science stack ([Airflow](https://airflow.apache.org/), [MLFlow](https://mlflow.org/), [H2O](https://www.h2o.ai/), [XGBoost](https://xgboost.readthedocs.io/)) into streamlined, yml configurable project template, unified CI/CD processes to validate, build and deploy optimized model training docker images and containers running on kubeflow.
-  * Setup infrastructure from scratch and contribute python modules for data scientists and analysts to quickly schedule and scale hyperparameter search, track experiments on [Kubernetes](https://kubernetes.io/) with Airflow, MLflow and [Kubeflow](kubeflow.org/).
+  * Working with various teams to research and evaluate use cases. Integrating data science stack ([Kubeflow](https://www.kubeflow.org/), [MLFlow](https://mlflow.org/), [H2O](https://www.h2o.ai/), [XGBoost](https://xgboost.readthedocs.io/), [Jupyter](https://jupyter.org/),[EMR](https://aws.amazon.com/emr/)) into streamlined, yml configurable pipelines with unified CI/CD processes to validate, build and scale model training containers on [Kubernetes](https://kubernetes.io/).
+  * Building end to end infrastructure and toolings deployments and python modules for data scientists and analysts to quickly schedule and scale hyperparameter search, track model metrics on [MLFlow](https://mlflow.org/) and [Kubeflow](https://www.kubeflow.org/).
 
 * **Senior Software Engineer**, PeerIQ, New York, NY  
 2018-01 to 2019-04  

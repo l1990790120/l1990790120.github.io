@@ -60,8 +60,8 @@ If you have these problems, I would like to solve them for you. <a data-toggle="
 
 <p class="amp-left">Currently I am Senior Data Engineer at Deloitte Digital (New York, NY), where I am ...</p>
 
-* Setting up automated AI/ML infrastructure and projects shortening data science's process from experiment to production.
-* End to end auto-scalable infrastructure and deployment: [Airflow](https://airflow.apache.org/), [MLFlow](https://mlflow.org/) running on [Kubernetes](https://kubernetes.io/) (EKS) running ML jobs with EMR and [H2O](https://www.h2o.ai/) Cluster.
+* Building integrated and automated AI/ML infrastructure and toolings shortening data science's experiment to production time. 
+* Research, evaluate and implement a wide range of open source  AI/ML and container based CI/CD tools to support data engineering and data science: [Kubeflow](https://www.kubeflow.org/), [MLFlow](https://mlflow.org/), [H2O](https://www.h2o.ai/), [Papermill](https://github.com/nteract/papermill), [Argo](https://argoproj.github.io/) and so on.
 
 <p class="amp-left">Prior to that, I was Software Engineer at PeerIQ (New York, NY), where I built</p>
 
