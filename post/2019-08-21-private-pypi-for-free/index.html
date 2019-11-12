@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-	<title>Hosting Pypicloud on Google Cloud Run for Free&middot; LC</title>
+	<title>&middot; LC</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Lulu Cheng">
@@ -154,27 +154,24 @@
     <div class="content">
     <article>
 		<header>
-			<h1 class="title">Hosting Pypicloud on Google Cloud Run for Free</h1>
+			<h1 class="title"></h1>
 			<p class="meta">
-    August 21, 2019 &middot; 6 minute read
+    January 1, 0001 &middot; 7 minute read
 
     
-        &middot; Tags:
-            <a href="https://l1990790120.github.io/tags/gce">gce</a>
-            , <a href="https://l1990790120.github.io/tags/gcp">gcp</a>
-            , <a href="https://l1990790120.github.io/tags/gcs">gcs</a>
-            , <a href="https://l1990790120.github.io/tags/pypi">pypi</a>
-            , <a href="https://l1990790120.github.io/tags/python">python</a>
-            , <a href="https://l1990790120.github.io/tags/redis">redis</a>
-            , <a href="https://l1990790120.github.io/tags/serverless">serverless</a>
-            
 </p>
 
 		</header>
 	
 	<section class="post">
 		<section class="post-content">
-			<p>I was thinking how to run a free private pypi. There are a couple hosted options such as <a href="https://gemfury.com/">https://gemfury.com/</a> or <a href="https://pydist.com/">https://pydist.com/</a> available for as little as $9 per month if you are willing to pay. <strong>BUT</strong> &ndash; if you are not, read on. I will walk through how to host pypicloud on google cloud&rsquo;s free tier: mine is running at <a href="https://pypi.apiobuild.com/">https://pypi.apiobuild.com/</a>.</p>
+			<p>+++
+title = &ldquo;Hosting Pypicloud on Google Cloud Run for Free&rdquo;
+date = &ldquo;2019-08-21T23:59:00.000Z&rdquo;
+tags= [&ldquo;pypi&rdquo;, &ldquo;gcp&rdquo;, &ldquo;python&rdquo;, &ldquo;serverless&rdquo;, &ldquo;gce&rdquo;, &ldquo;gcs&rdquo;, &ldquo;redis&rdquo;]
++++</p>
+
+<p>I was thinking how to run a free private pypi. There are a couple hosted options such as <a href="https://gemfury.com/">https://gemfury.com/</a> or <a href="https://pydist.com/">https://pydist.com/</a> available for as little as $9 per month if you are willing to pay. <strong>BUT</strong> &ndash; if you are not, read on. I will walk through how to host pypicloud on google cloud&rsquo;s free tier: mine is running at <a href="https://pypi.apiobuild.com/">https://pypi.apiobuild.com/</a>.</p>
 
 <h2 id="options-options-options">Options, Options, Options</h2>
 
@@ -211,42 +208,83 @@ Eventually I landed on this option as ssl cert is already configured and deploym
 graph TD
     Pypicloud(Cloud Run: Pypicloud Application)
     subgraph "Cloud Build: Build Docker Image and Deploy on GCE"
-    Pypicloud --- GCS(GCS Bucket:<br> Package Artifact)
+    Pypicloud --- GCS(GCS Bucket:<br> Package Artifacts)
     Pypicloud --- GCE("GCE (n1-standard):<br> Redis running docker on as caching layer")
     end
 </div>
 <script async src="https://unpkg.com/mermaid@8.2.3/dist/mermaid.min.js"></script>
 
-<p>There&rsquo;s an easy but less productionized way and a productionized way but less</p>
+<p>Most people are probably not running this for critical production CI/CD systems, so I want to offer a more manual but easier way first. However, for those who&rsquo;s looking for more end-to-end IaC (Infrastructure as Code) deployment, I&rsquo;ve marked the optional scripts in the stesp.</p>
+
+<h4 id="deploy-with-cloud-run-button">Deploy with Cloud Run Button</h4>
+
+<p>It&rsquo;s possible to wrap pypicloud deployment in <a href="https://github.com/GoogleCloudPlatform/cloud-run-button">cloud run button</a>. This assumes secrets, GCS bucket&rsquo;s already created and no caching layer. If you just want to try it out quickly, I recommend you to do it this way.<br />
+<em>Note: pypicloud does let you run in-memory caching, however, because we are running &ldquo;serverlessly&rdquo;, it basically means no cache.</em></p>
+
+<h4 id="deploy-with-cloud-build">Deploy with Cloud Build</h4>
+
+<p>Use cloud build to script out deployment of all resources required. This includes creating GCS bucket, secrets, and a redis running on tiny vm for caching.</p>
+
+<h3 id="steps">Steps</h3>
+
+<p>Below I will walk though the basic steps, you should use this foundation and improvise on caching backend and/or extend other pypicloud functionality.</p>
+
+<h4 id="1-creating-required-resources">1. Creating Required Resources</h4>
+
+<p>Depending how you are deploying pypicloud.</p>
+
+<h5 id="1-1-deploy-with-cloud-run-button">1.1 Deploy with Cloud Run Button</h5>
+
+<p>If you are deploying with cloud run button, you will have to manually create</p>
 
 <ol>
-<li>It&rsquo;s possible to wrap deployment of pypicloud itself in <a href="https://github.com/GoogleCloudPlatform/cloud-run-button">cloud run button</a>. However, this means assume GCS bucket&rsquo;s already created and redis&rsquo; up and running somewhere, if you are just trying it out, it might be easier to just manually create a gcs bucket and ignore the caching layer. Note: pypicloud does let you run in-memory caching, however, because we are running &ldquo;serverlessly&rdquo;, it basically means no cache.</li>
-<li>Use cloud build to code up deployment of all three resources.</li>
+<li>GCS Bucket: to store artifacts</li>
+<li>Service Account: Used as role to [<a href="https://cloud.google.com/storage/docs/creating-buckets">https://cloud.google.com/storage/docs/creating-buckets</a>]</li>
+
+<li><p>Create keyring for encryption/decryption
+<a href="https://cloud.google.com/kms/docs/creating-keys#kms-create-keyring-cli">https://cloud.google.com/kms/docs/creating-keys#kms-create-keyring-cli</a></p>
+
+<pre><code class="language-bash">gcloud kms keyrings create [KEYRING_NAME] --location [LOCATION]
+</code></pre>
+
+<ol>
+<li></li>
 </ol>
 
-<p>Below I will walk though, you should also be able to use this foundation and improvise on caching backend and/or extend other pypicloud functionality.</p>
+<h5 id="1-2-deploy-with-cloud-build">1.2 Deploy with Cloud Build</h5>
 
-<h3 id="step-1-building-custom-pypicloud-image">Step 1. Building Custom Pypicloud Image</h3>
+<h4 id="2-building-custom-pypicloud-image">2. Building Custom Pypicloud Image</h4>
 
 <p>First and for most, we need a pypicloud image for cloud run to use. Actually, pypicloud already provided a Dockerfile here: <a href="https://github.com/stevearc/pypicloud-docker/blob/master/py3-alpine/Dockerfile">https://github.com/stevearc/pypicloud-docker/blob/master/py3-alpine/Dockerfile</a>.</p>
 
-<h5 id="security-first">Security First</h5>
+<h5 id="safety-first">Safety First</h5>
 
-<p>Because we are running it serverless, it introduces some interesting complications on secret management. There are two secrets we need to store for pypicloud to work, pypicloud configuration itself as it might contain database url and <a href="https://cloud.google.com/docs/authentication/production">creds.json</a> to access gcs.<br />
-Now, even if these files are tiny, I do not like the idea of fetching secrets from blob store in general, both from a security standpoint, but also we introduce latency in fetching these files, and because it&rsquo;s serverless, we may need to fetch them more often than hosting long running process in a conventional way. For very light usage (like mine), the performance may be acceptable fetching these files from blob storage on the fly, however, blob storage is not designed for high frequency access, let alone web scale, if hit by high volume, it&rsquo;s likely to timeout.</p>
+<p>Because we are running it serverless, it introduces some interesting complications on secret management. To run pypicloud, we will need two secrets:</p>
 
-<p>Therefore, to accommodate this, I took their docker image as a base and add installed gcloud cli to decrypt secret on the fly.</p>
+<ul>
+<li>pypicloud configuration as it might contain database url</li>
+<li><a href="https://cloud.google.com/docs/authentication/production">creds.json</a> to access gcs</li>
+</ul>
+
+<p>Now, even if these files are tiny, I do not like the idea of fetching secrets from blob store in general, both from a security standpoint, but also we introduce latency in fetching these files, and because it&rsquo;s serverless, we may need to fetch them more often than hosting long running process in a conventional way.</p>
+
+<p>For very light usage (like mine), the performance may be acceptable fetching these files from blob storage on the fly, however, blob storage is not designed for high frequency access, let alone web scale, if hit by high volume, it&rsquo;s likely to timeout.</p>
+
+<p>To accommodate this, <strong>I took pypicloud&rsquo;s example docker image as a base and add installed gcloud cli to decrypt secret where encrypted secret are provided as environment variable on the fly.</strong></p>
 
 <h5 id="generate-pypicloud-configuration">Generate pypicloud Configuration</h5>
 
 <p>In the same <a href="https://github.com/stevearc/pypicloud-docker/">pypicloud-docker repo</a>, they actually also covered how to generate <code>config.ini</code>, so this is purely a copy-and-paste from the repo.</p>
 
 <pre><code class="language-bash">docker run -it --rm -v $(pwd):/out stevearc/pypicloud make-config -r /out/config.ini
-</code></pre>
+</code></pre></li>
+</ol>
 
 <p>It&rsquo;s better to review the config and make sure authentication and db url are updated accordingly. If you wish to enable redis instead of in-memory caching, you&rsquo;ll need to add the following lines to the <code>config.ini</code>. Note, for security, I have also set password for the caching layer.</p>
 
-<pre><code class="language-yml">pypi.db = redis
+<pre><code class="language-bash">#!config.ini
+
+pypi.db = redis
 db.url = &lt;redis url&gt;
 </code></pre>
 
@@ -256,7 +294,40 @@ db.url = &lt;redis url&gt;
 
 <p>To access google storage, one first needs to create a service account with access to gcs and generate a <code>creds.json</code> using the account. One can generate this through command line or in google cloud console. Refer to [<a href="https://cloud.google.com/iam/docs/creating-managing-service-accounts">https://cloud.google.com/iam/docs/creating-managing-service-accounts</a>] for how to create service account with the right permission.</p>
 
-<pre><code class="language-bash">gcloud iam service-accounts keys create creds.json --iam-account &lt;account&gt;
+<pre><code class="language-bash">gcloud iam service-accounts keys create creds.json --iam-account &lt;service account&gt;
+</code></pre>
+
+<p>When invoked in cloud run, we need to give the service account permissions to:</p>
+
+<ul>
+<li>Access GCS</li>
+</ul>
+
+<pre><code class="language-bash">gcloud projects add-iam-policy-binding &lt;project&gt; \
+    --member &lt;service account&gt; \
+    --role roles/storage.admin
+</code></pre>
+
+<ul>
+<li>Decrypt Secret with Key
+<br /></li>
+</ul>
+
+<pre><code class="language-bash">gcloud kms keys add-iam-policy-binding &lt;project&gt; \
+    --location global \
+    --keyring &lt;&gt; \
+    --member &lt;service account&gt; \
+    --role roles/cloudkms.cryptoKeyDecrypter
+</code></pre>
+
+<ul>
+<li>Deploy to Cloud Run<br />
+(Optional: This is only required if you are planning to use cloud build for automated build and deploy steps)*</li>
+</ul>
+
+<pre><code class="language-bash">gcloud projects add-iam-policy-binding &lt;project&gt; \
+    --member &lt;service account&gt; \
+    --role roles/run.admin
 </code></pre>
 
 <h5 id="encrypt-and-decrypt-the-secrets">Encrypt and Decrypt the Secrets</h5>
@@ -291,16 +362,7 @@ gcloud kms decrypt \
     --key=&lt;&gt;
 </code></pre>
 
-<p>Except, although this might work locally, when invoked in cloud run, we need to give the service account that cloud run application is using the kms decryption permission.</p>
-
-<pre><code class="language-bash">gcloud kms keys add-iam-policy-binding boo-pypicloud \
-    --location global \
-    --keyring &lt;&gt; \
-    --member &lt;&gt; \
-    --role roles/cloudkms.cryptoKeyDecrypter
-</code></pre>
-
-<h4 id="summary">Summary</h4>
+<h5 id="summary">Summary</h5>
 
 <p>Finally, everything we need to run the Dockerfile is ready. You can find the Dockerfile to decrypt these secrets on the fly here: <a href="https://github.com/l1990790120/gcloud-run-pypicloud/blob/master/Dockerfile">https://github.com/l1990790120/gcloud-run-pypicloud/blob/master/Dockerfile</a>.</p>
 
