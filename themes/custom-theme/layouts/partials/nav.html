@@ -1,0 +1,78 @@
+<script>
+	// scroll functions
+	(function ($) {
+
+	var previousScroll = 20;
+		// scroll functions
+		$(window).scroll(function(e) {
+		
+			// add/remove class to navbar when scrolling to hide/show
+			var scroll = $(window).scrollTop();
+			if (scroll >= previousScroll) {
+				$('.navbar').addClass("navbar-hide");
+			
+			}else if (scroll < previousScroll) {
+				$('.navbar').removeClass("navbar-hide");
+			}
+			previousScroll = scroll;
+		
+		});
+		
+	})(jQuery);    
+</script>
+
+<style>
+	.navbar {
+		transition: top 0.5s ease;
+	}
+
+	.navbar-hide {
+		top: -100px;
+	}
+</style>
+
+<nav class="navbar fixed-top navbar-expand-md navbar-light bg-white">
+	<a class="navbar-brand" href="{{ .Site.BaseURL }}">
+		{{ with .Site.Params.gravatar -}}
+		<img
+			class="avatar"
+			src="https://www.gravatar.com/avatar/{{ . | md5 }}?s=100&d=identicon"
+			alt=""
+		/>
+		{{- else -}}
+		<img
+			class="avatar"
+			src="{{ .Site.BaseURL }}{{ .Site.Params.avatar }}"
+			alt=""
+		/>
+		{{- end }}
+	</a>
+	<a class="navbar-brand" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+
+	<button
+		class="navbar-toggler"
+		type="button"
+		data-toggle="collapse"
+		data-target="#navbarSupportedContent"
+		aria-controls="navbarSupportedContent"
+		aria-expanded="false"
+		aria-label="Toggle navigation"
+	>
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			{{ range .Site.Menus.main -}}
+
+			<li class="nav-item">
+				<a class="nav-link" href="{{ .URL }}"
+					>{{ .Name }}
+					<span class="sr-only">(current)</span>
+				</a>
+			</li>
+			{{- end }}
+		</ul>
+		{{ partial "icons.html" . }}
+	</div>
+</nav>

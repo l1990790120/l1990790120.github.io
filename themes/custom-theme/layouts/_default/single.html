@@ -1,0 +1,25 @@
+{{ define "main" -}}
+<div class="top-container">
+	{{ if and (isset .Params "featureimage") (not (eq .Params.featureimage "")) -}}
+	<div class="row" style="background-image: url('{{ .Site.BaseURL }}{{ .Params.featureimage }}')">
+		<h1 class="title">{{ .Title }}</h1>
+	</div>
+	{{- else -}}
+	<div class="pt-3">
+		<h1 class="title text-center">{{ .Title }}</h1>
+	</div>
+	{{- end }}
+
+	{{ if not .Params.hideMeta }}
+	 {{ partial "post-meta" . }}
+	{{ end }}
+
+	{{ .Content }}
+
+
+	{{ if (not (eq .Site.DisqusShortname "")) | and (not .Params.disableComments) }}
+	<hr>
+		{{ template "_internal/disqus.html" . }}
+	{{ end }}
+</div>
+{{- end }}

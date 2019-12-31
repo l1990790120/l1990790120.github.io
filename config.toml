@@ -1,19 +1,27 @@
 baseurl = "https://l1990790120.github.io/"
 languageCode = "en-us"
 title = "LC"
-theme = "hugo-type-theme"
+theme = "custom-theme"
 # Enable comments by entering your Disqus shortname
 disqusShortname = "l1990790120"
 # Add your tracking code to enable Google Analytics
 googleAnalytics = "UA-71133003-1"
 # Posts per page
-paginate = 5
+paginate = 10
 # Comment the themesDir option if you use this theme in production
 # themesDir = "../.."
 
 [[menu.main]]
     name = "About"
     url = "/about/"
+
+[[menu.main]]
+    name = "Generative Art"
+    url = "/generative-art/"
+
+[[menu.main]]
+    name = "Blog"
+    url = "/"
 
 [params]
 	author = "Lulu Cheng"
@@ -22,7 +30,7 @@ paginate = 5
 	keywords = "Machine Learning, Economics, Politics, Social Science, Software Engineering"
 	# Either show custom avatar on the top
 	# left by adding the filename in below
-	avatar = "profile_pic.jpg"
+	avatar = "profile.png"
 	# or use Gravatar by adding your email address to generate a unique avatar
 	# gravatar = "l1990790120@gmail.com"
 
@@ -36,7 +44,7 @@ paginate = 5
 	[params.social]
 		# Insert your accout name and the icon will be shown in the right menu
 		rss = false
-		homepage = true
+		homepage = false
 		email = "l1990790120@gmail.com"
 		behance = ""
 		bitbucket =""
@@ -44,10 +52,9 @@ paginate = 5
 		facebook = "l1990790120"
 		flickr = ""
 		github = "l1990790120"
-		googleplus = ""
 		instagram = "l1990790120"
 		linkedin = "luluchengengineeratheart"
-		pinterest = ""
+		pinterest = "l1990790120"
 		reddit = "l1990790120"
 		soundcloud = ""
 		stackexchange = ""
