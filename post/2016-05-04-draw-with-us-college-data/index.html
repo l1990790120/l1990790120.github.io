@@ -46,12 +46,25 @@
 	<body>
 		<script>
 	
-	$(window).scroll(function(e) {
+	(function ($) {
+
+	var previousScroll = 20;
 		
-		$(".navbar")[$(window).scrollTop() >= 150 ? "addClass" : "removeClass"](
-			"navbar-hide"
-		);
-	});
+		$(window).scroll(function(e) {
+		
+			
+			var scroll = $(window).scrollTop();
+			if (scroll >= previousScroll) {
+				$('.navbar').addClass("navbar-hide");
+			
+			}else if (scroll < previousScroll) {
+				$('.navbar').removeClass("navbar-hide");
+			}
+			previousScroll = scroll;
+		
+		});
+		
+	})(jQuery);    
 </script>
 
 <style>
