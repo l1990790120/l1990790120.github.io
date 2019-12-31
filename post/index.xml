@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on LC</title>
@@ -72,21 +72,6 @@
       
       <guid>https://l1990790120.github.io/post/2015-12-08-college-enrollment-forecast-state-level/</guid>
       <description>&lt;p&gt;Using ARIMA to forecast college enrollment for 2015 and 2016 at state level.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://l1990790120.github.io/post/2019-08-21-private-pypi-for-free/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://l1990790120.github.io/post/2019-08-21-private-pypi-for-free/</guid>
-      <description>&lt;p&gt;+++
-title = &amp;ldquo;Hosting Pypicloud on Google Cloud Run for Free&amp;rdquo;
-date = &amp;ldquo;2019-08-21T23:59:00.000Z&amp;rdquo;
-tags= [&amp;ldquo;pypi&amp;rdquo;, &amp;ldquo;gcp&amp;rdquo;, &amp;ldquo;python&amp;rdquo;, &amp;ldquo;serverless&amp;rdquo;, &amp;ldquo;gce&amp;rdquo;, &amp;ldquo;gcs&amp;rdquo;, &amp;ldquo;redis&amp;rdquo;]
-+++&lt;/p&gt;
-
-&lt;p&gt;I was thinking how to run a free private pypi. There are a couple hosted options such as &lt;a href=&#34;https://gemfury.com/&#34;&gt;https://gemfury.com/&lt;/a&gt; or &lt;a href=&#34;https://pydist.com/&#34;&gt;https://pydist.com/&lt;/a&gt; available for as little as $9 per month if you are willing to pay. &lt;strong&gt;BUT&lt;/strong&gt; &amp;ndash; if you are not, read on. I will walk through how to host pypicloud on google cloud&amp;rsquo;s free tier: mine is running at &lt;a href=&#34;https://pypi.apiobuild.com/&#34;&gt;https://pypi.apiobuild.com/&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
+	<head>
 	<title>Classify Unbalanced Cases with Harvard edX MOOC Dataset&middot; LC</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Lulu Cheng">
 	<meta name="description" content="LC">
 	<meta name="keywords" content="Machine Learning, Economics, Politics, Social Science, Software Engineering">
-	<meta name="generator" content="Hugo 0.56.0-DEV" />
+	<meta name="generator" content="Hugo 0.60.0-DEV" />
 
 	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="/css/theme.css"/>
 	
 	
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-	<!-- JS -->
-	<script src="https://l1990790120.github.io/js/autohide-navbar.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://l1990790120.github.io/css/main.css">
@@ -46,137 +43,164 @@
   <script>hljs.initHighlightingOnLoad();</script>
 </head>
 
-<body>
-    <div class="autohide-navbar navbar-fixed-top">
-    <header class="site-header">
-	<div class="branding">
-		<a href="https://l1990790120.github.io/">
-		<img class="avatar" src="https://l1990790120.github.io/profile_pic.jpg" alt=""/>
-		</a>
-		<h1 class="site-title">
-			<a href="https://l1990790120.github.io/">LC</a>
-		</h1>
+	<body>
+		<script>
+	
+	$(window).scroll(function(e) {
+		
+		$(".navbar")[$(window).scrollTop() >= 150 ? "addClass" : "removeClass"](
+			"navbar-hide"
+		);
+	});
+</script>
+
+<style>
+	.navbar {
+		transition: top 0.5s ease;
+	}
+
+	.navbar-hide {
+		top: -100px;
+	}
+</style>
+
+<nav class="navbar fixed-top navbar-expand-md navbar-light bg-white">
+	<a class="navbar-brand" href="https://l1990790120.github.io/">
+		<img
+			class="avatar"
+			src="https://l1990790120.github.io/profile.png"
+			alt=""
+		/>
+	</a>
+	<a class="navbar-brand" href="https://l1990790120.github.io/">LC</a>
+
+	<button
+		class="navbar-toggler"
+		type="button"
+		data-toggle="collapse"
+		data-target="#navbarSupportedContent"
+		aria-controls="navbarSupportedContent"
+		aria-expanded="false"
+		aria-label="Toggle navigation"
+	>
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="/about/"
+					>About
+					<span class="sr-only">(current)</span>
+				</a>
+			</li><li class="nav-item">
+				<a class="nav-link" href="/"
+					>Blog
+					<span class="sr-only">(current)</span>
+				</a>
+			</li><li class="nav-item">
+				<a class="nav-link" href="/generative-art/"
+					>Generative Art
+					<span class="sr-only">(current)</span>
+				</a>
+			</li>
+		</ul>
+		  <a
+	href="mailto:l1990790120@gmail.com"
+	title="Email"
+>
+	<i class="fa fa-fw fa-envelope"></i>
+</a>    <a
+	href="https://www.facebook.com/l1990790120"
+	title="Facebook"
+>
+	<i class="fa fa-fw fa-facebook"></i>
+</a>  <a
+	href="https://github.com/l1990790120"
+	title="GitHub"
+>
+	<i class="fa fa-fw fa-github"></i>
+</a> <a
+	href="http://instagram.com/l1990790120"
+	title="Instagram"
+>
+	<i class="fa fa-fw fa-instagram"></i>
+</a> <a
+	href="https://www.linkedin.com/in/luluchengengineeratheart"
+	title="LinkedIn"
+>
+	<i class="fa fa-fw fa-linkedin"></i>
+</a> <a
+	href="http://www.pinterest.com/l1990790120"
+	title="Pinterest"
+>
+	<i class="fa fa-fw fa-pinterest"></i>
+</a> <a
+	href="https://www.reddit.com/user/l1990790120"
+	title="Reddit"
+>
+	<i class="fa fa-fw fa-reddit"></i>
+</a>     <a
+	href="https://twitter.com/l1990790120"
+	title="Twitter"
+>
+	<i class="fa fa-fw fa-twitter"></i>
+</a>  <a
+	href="https://www.youtube.com/user/l1990790120"
+	title="YouTube"
+>
+	<i class="fa fa-fw fa-youtube"></i>
+</a>   <a
+	href="https://medium.com/@l1990790120"
+	title=""
+>
+	<i class="fa fa-fw fa-medium"></i>
+</a>
+
 	</div>
-	<nav class="site-nav">
-		<ul>
-	      	<li><a href="/about/"> About </a></li>
-
-	      	<li>
-	<a href="https://l1990790120.github.io/" title="">
-		<i class="fa fa-fw fa-home"></i>
-	</a>
-</li>
+</nav>
 
 
+		<div class="container">
+			<div class="top-container">
+	<div class="pt-3">
+		<h1 class="title text-center">Classify Unbalanced Cases with Harvard edX MOOC Dataset</h1>
+	</div>
 
-<li>
-	<a href="mailto:l1990790120@gmail.com" title="Email">
-		<i class="fa fa-fw fa-envelope"></i>
-	</a>
-</li>
+	
+	 <style>
+.post-meta{
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    font-size: 90%;
+}
+</style>
 
-
-
-
-
-
-
-<li>
-	<a href="https://www.facebook.com/l1990790120" title="Facebook">
-		<i class="fa fa-fw fa-facebook"></i>
-	</a>
-</li>
-
-
-
-<li>
-	<a href="https://github.com/l1990790120" title="GitHub">
-		<i class="fa fa-fw fa-github"></i>
-	</a>
-</li>
-
-
-
-<li>
-	<a href="http://instagram.com/l1990790120" title="Instagram">
-		<i class="fa fa-fw fa-instagram"></i>
-	</a>
-</li>
-
-<li>
-	<a href="https://www.linkedin.com/in/luluchengengineeratheart" title="LinkedIn">
-		<i class="fa fa-fw fa-linkedin"></i>
-	</a>
-</li>
-
-
-
-<li>
-	<a href="https://www.reddit.com/user/l1990790120" title="Reddit">
-		<i class="fa fa-fw fa-reddit"></i>
-	</a>
-</li>
-
-
-
-
-
-
-
-
-
-<li>
-	<a href="https://twitter.com/l1990790120" title="Twitter">
-		<i class="fa fa-fw fa-twitter"></i>
-	</a>
-</li>
-
-
-
-<li>
-	<a href="https://www.youtube.com/user/l1990790120" title="YouTube">
-		<i class="fa fa-fw fa-youtube"></i>
-	</a>
-</li>
-
-
-
-
-
-<li>
-	<a href="https://medium.com/@l1990790120" title="">
-		<i class="fa fa-fw fa-medium"></i>
-	</a>
-</li>
-
-	    </ul>
-	</nav>
-</header>
-
+<div>
+    <div class="row text-secondary post-meta py-1">
+        2016/05/16
+        
+        &middot; 
+        
+        6
+        minute read
     </div>
 
-    <div class="content">
-    <article>
-		<header>
-			<h1 class="title">Classify Unbalanced Cases with Harvard edX MOOC Dataset</h1>
-			<p class="meta">
-    May 16, 2016 &middot; 6 minute read
-
-    
-        &middot; Tags:
-            <a href="https://l1990790120.github.io/tags/data-viz">data-viz</a>
-            , <a href="https://l1990790120.github.io/tags/education">education</a>
-            , <a href="https://l1990790120.github.io/tags/highered">highered</a>
-            , <a href="https://l1990790120.github.io/tags/machine-learning">machine learning</a>
-            , <a href="https://l1990790120.github.io/tags/python">python</a>
+    <div class="row post-meta pb-3 pt-1">
+        
+        <a href="https://l1990790120.github.io/tags/data-viz" class="badge badge-light">data-viz</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/education" class="badge badge-light">education</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/highered" class="badge badge-light">highered</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/machine-learning" class="badge badge-light">machine learning</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/python" class="badge badge-light">python</a>
             
-</p>
-
-		</header>
+    </div>
+</div>
 	
-	<section class="post">
-		<section class="post-content">
-			<p>I&rsquo;ve run a couple classification ML algorithm on the dataset. What makes this problem interesting is that most of the students did not pass the course. I&rsquo;ve re-sampled the positive cases multiple times to make the algorithms punish the false positive cases more severely.</p>
+
+	<p>I&rsquo;ve run a couple classification ML algorithm on the dataset. What makes this problem interesting is that most of the students did not pass the course. I&rsquo;ve re-sampled the positive cases multiple times to make the algorithms punish the false positive cases more severely.</p>
+
+<hr>
 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -12991,11 +13015,11 @@ YBERERH52f8BMrrhGDtzULcAAAAASUVORK5CYII=
 </div></p>
 
 <p></div></p>
-		</section>
-		
-		<hr>
-		<section class="post-comment">
-			<div id="disqus_thread"></div>
+
+
+	
+	<hr>
+		<div id="disqus_thread"></div>
 <script type="application/javascript">
     var disqus_config = function () {
     
@@ -13015,17 +13039,11 @@ YBERERH52f8BMrrhGDtzULcAAAAASUVORK5CYII=
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-		</section>
+	
+</div>
+		</div>
+
 		
-	</section>
-	</article>
-    </div>
-
-    <footer class="site-footer">
-	<p class="text">&copy; 2019 - Released under the MIT license<br>Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
-</footer>
-
-
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -13039,5 +13057,5 @@ if (!doNotTrack) {
 }
 </script>
 
-</body>
+	</body>
 </html>

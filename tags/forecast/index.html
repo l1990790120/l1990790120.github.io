@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
+	<head>
 	<title>forecast&middot; LC</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Lulu Cheng">
 	<meta name="description" content="LC">
 	<meta name="keywords" content="Machine Learning, Economics, Politics, Social Science, Software Engineering">
-	<meta name="generator" content="Hugo 0.56.0-DEV" />
+	<meta name="generator" content="Hugo 0.60.0-DEV" />
 
 	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="/css/theme.css"/>
 	
 	
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-	<!-- JS -->
-	<script src="https://l1990790120.github.io/js/autohide-navbar.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 	<!-- CSS -->
 	<link rel="stylesheet" href="https://l1990790120.github.io/css/main.css">
@@ -43,262 +40,417 @@
   <script>hljs.initHighlightingOnLoad();</script>
 </head>
 
-<body>
-    <div class="autohide-navbar navbar-fixed-top">
-    <header class="site-header">
-	<div class="branding">
-		<a href="https://l1990790120.github.io/">
-		<img class="avatar" src="https://l1990790120.github.io/profile_pic.jpg" alt=""/>
-		</a>
-		<h1 class="site-title">
-			<a href="https://l1990790120.github.io/">LC</a>
-		</h1>
+	<body>
+		<script>
+	
+	$(window).scroll(function(e) {
+		
+		$(".navbar")[$(window).scrollTop() >= 150 ? "addClass" : "removeClass"](
+			"navbar-hide"
+		);
+	});
+</script>
+
+<style>
+	.navbar {
+		transition: top 0.5s ease;
+	}
+
+	.navbar-hide {
+		top: -100px;
+	}
+</style>
+
+<nav class="navbar fixed-top navbar-expand-md navbar-light bg-white">
+	<a class="navbar-brand" href="https://l1990790120.github.io/">
+		<img
+			class="avatar"
+			src="https://l1990790120.github.io/profile.png"
+			alt=""
+		/>
+	</a>
+	<a class="navbar-brand" href="https://l1990790120.github.io/">LC</a>
+
+	<button
+		class="navbar-toggler"
+		type="button"
+		data-toggle="collapse"
+		data-target="#navbarSupportedContent"
+		aria-controls="navbarSupportedContent"
+		aria-expanded="false"
+		aria-label="Toggle navigation"
+	>
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="/about/"
+					>About
+					<span class="sr-only">(current)</span>
+				</a>
+			</li><li class="nav-item">
+				<a class="nav-link" href="/"
+					>Blog
+					<span class="sr-only">(current)</span>
+				</a>
+			</li><li class="nav-item">
+				<a class="nav-link" href="/generative-art/"
+					>Generative Art
+					<span class="sr-only">(current)</span>
+				</a>
+			</li>
+		</ul>
+		  <a
+	href="mailto:l1990790120@gmail.com"
+	title="Email"
+>
+	<i class="fa fa-fw fa-envelope"></i>
+</a>    <a
+	href="https://www.facebook.com/l1990790120"
+	title="Facebook"
+>
+	<i class="fa fa-fw fa-facebook"></i>
+</a>  <a
+	href="https://github.com/l1990790120"
+	title="GitHub"
+>
+	<i class="fa fa-fw fa-github"></i>
+</a> <a
+	href="http://instagram.com/l1990790120"
+	title="Instagram"
+>
+	<i class="fa fa-fw fa-instagram"></i>
+</a> <a
+	href="https://www.linkedin.com/in/luluchengengineeratheart"
+	title="LinkedIn"
+>
+	<i class="fa fa-fw fa-linkedin"></i>
+</a> <a
+	href="http://www.pinterest.com/l1990790120"
+	title="Pinterest"
+>
+	<i class="fa fa-fw fa-pinterest"></i>
+</a> <a
+	href="https://www.reddit.com/user/l1990790120"
+	title="Reddit"
+>
+	<i class="fa fa-fw fa-reddit"></i>
+</a>     <a
+	href="https://twitter.com/l1990790120"
+	title="Twitter"
+>
+	<i class="fa fa-fw fa-twitter"></i>
+</a>  <a
+	href="https://www.youtube.com/user/l1990790120"
+	title="YouTube"
+>
+	<i class="fa fa-fw fa-youtube"></i>
+</a>   <a
+	href="https://medium.com/@l1990790120"
+	title=""
+>
+	<i class="fa fa-fw fa-medium"></i>
+</a>
+
 	</div>
-	<nav class="site-nav">
-		<ul>
-	      	<li><a href="/about/"> About </a></li>
-
-	      	<li>
-	<a href="https://l1990790120.github.io/" title="">
-		<i class="fa fa-fw fa-home"></i>
-	</a>
-</li>
+</nav>
 
 
+		<div class="container">
+			<div class="container">
+	
 
-<li>
-	<a href="mailto:l1990790120@gmail.com" title="Email">
-		<i class="fa fa-fw fa-envelope"></i>
-	</a>
-</li>
+	
+			<div class="row pt-3">
+				<h1>
+					<a class="post-link" href="https://l1990790120.github.io/post/2017-09-18-jekyll-to-hugo/">
+						Jekyll to Hugo
+					</a>
+				</h1>
+			</div>
 
+			<style>
+.post-meta{
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    font-size: 90%;
+}
+</style>
 
-
-
-
-
-
-<li>
-	<a href="https://www.facebook.com/l1990790120" title="Facebook">
-		<i class="fa fa-fw fa-facebook"></i>
-	</a>
-</li>
-
-
-
-<li>
-	<a href="https://github.com/l1990790120" title="GitHub">
-		<i class="fa fa-fw fa-github"></i>
-	</a>
-</li>
-
-
-
-<li>
-	<a href="http://instagram.com/l1990790120" title="Instagram">
-		<i class="fa fa-fw fa-instagram"></i>
-	</a>
-</li>
-
-<li>
-	<a href="https://www.linkedin.com/in/luluchengengineeratheart" title="LinkedIn">
-		<i class="fa fa-fw fa-linkedin"></i>
-	</a>
-</li>
-
-
-
-<li>
-	<a href="https://www.reddit.com/user/l1990790120" title="Reddit">
-		<i class="fa fa-fw fa-reddit"></i>
-	</a>
-</li>
-
-
-
-
-
-
-
-
-
-<li>
-	<a href="https://twitter.com/l1990790120" title="Twitter">
-		<i class="fa fa-fw fa-twitter"></i>
-	</a>
-</li>
-
-
-
-<li>
-	<a href="https://www.youtube.com/user/l1990790120" title="YouTube">
-		<i class="fa fa-fw fa-youtube"></i>
-	</a>
-</li>
-
-
-
-
-
-<li>
-	<a href="https://medium.com/@l1990790120" title="">
-		<i class="fa fa-fw fa-medium"></i>
-	</a>
-</li>
-
-	    </ul>
-	</nav>
-</header>
-
+<div>
+    <div class="row text-secondary post-meta py-1">
+        2017/09/18
+        
+        &middot; 
+        
+        3
+        minute read
     </div>
 
-    <div class="content">
-    <div class="posts">
-	
-	
-	<div class="post-teaser">
-		<header>
-		    <h1>
-		    <a class="post-link" href="https://l1990790120.github.io/post/2017-09-18-jekyll-to-hugo/">
-		        Jekyll to Hugo
-		    </a>
-		    </h1>
-		    <p class="meta">
-    September 18, 2017 &middot; 3 minute read
-
-    
-        &middot; Tags:
-            <a href="https://l1990790120.github.io/tags/blog">blog</a>
+    <div class="row post-meta pb-3 pt-1">
+        
+        <a href="https://l1990790120.github.io/tags/blog" class="badge badge-light">blog</a>
             
-</p>
+    </div>
+</div>
 
-		</header>
+			<div>
+				I use this little github site to host my jupyter notebook for machine learning projects I&rsquo;ve done and some toy examples of doing cool visualization with d3 with notebook and python. I&rsquo;ve been using jekyll for years but I finally got to a point where - I rarely maintain this site and because jekyll is such a flexible and extendable library, everytime I try to update something it&rsquo;s becoming difficult to navigate, I pulled the trigger to move to hugo recently.
+			</div>
 
-		<div class="excerpt">
-			I use this little github site to host my jupyter notebook for machine learning projects I&rsquo;ve done and some toy examples of doing cool visualization with d3 with notebook and python. I&rsquo;ve been using jekyll for years but I finally got to a point where - I rarely maintain this site and because jekyll is such a flexible and extendable library, everytime I try to update something it&rsquo;s becoming difficult to navigate, I pulled the trigger to move to hugo recently.
-			
-			<br>
-			<a class="button" href="https://l1990790120.github.io/post/2017-09-18-jekyll-to-hugo/">
-				Continue reading
-			</a>
-		</div>
-	</div>
-	
-	<div class="post-teaser">
-		<header>
-		    <h1>
-		    <a class="post-link" href="https://l1990790120.github.io/post/2016-05-16-classify-unbalanced-cases-with-harvard-edx-dataset/">
-		        Classify Unbalanced Cases with Harvard edX MOOC Dataset
-		    </a>
-		    </h1>
-		    <p class="meta">
-    May 16, 2016 &middot; 6 minute read
+			<div class="row pt-3">
+				<a class="btn btn-outline-primary btn-md" href="https://l1990790120.github.io/post/2017-09-18-jekyll-to-hugo/" role="button">
+					Continue reading
+				</a>
+			</div>
+		
+			<div class="row pt-3">
+				<h1>
+					<a class="post-link" href="https://l1990790120.github.io/post/2016-05-16-classify-unbalanced-cases-with-harvard-edx-dataset/">
+						Classify Unbalanced Cases with Harvard edX MOOC Dataset
+					</a>
+				</h1>
+			</div>
 
-    
-        &middot; Tags:
-            <a href="https://l1990790120.github.io/tags/data-viz">data-viz</a>
-            , <a href="https://l1990790120.github.io/tags/education">education</a>
-            , <a href="https://l1990790120.github.io/tags/highered">highered</a>
-            , <a href="https://l1990790120.github.io/tags/machine-learning">machine learning</a>
-            , <a href="https://l1990790120.github.io/tags/python">python</a>
+			<style>
+.post-meta{
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    font-size: 90%;
+}
+</style>
+
+<div>
+    <div class="row text-secondary post-meta py-1">
+        2016/05/16
+        
+        &middot; 
+        
+        6
+        minute read
+    </div>
+
+    <div class="row post-meta pb-3 pt-1">
+        
+        <a href="https://l1990790120.github.io/tags/data-viz" class="badge badge-light">data-viz</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/education" class="badge badge-light">education</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/highered" class="badge badge-light">highered</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/machine-learning" class="badge badge-light">machine learning</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/python" class="badge badge-light">python</a>
             
-</p>
+    </div>
+</div>
 
-		</header>
+			<div>
+				<p>I&rsquo;ve run a couple classification ML algorithm on the dataset. What makes this problem interesting is that most of the students did not pass the course. I&rsquo;ve re-sampled the positive cases multiple times to make the algorithms punish the false positive cases more severely.</p>
+			</div>
 
-		<div class="excerpt">
-			<p>I&rsquo;ve run a couple classification ML algorithm on the dataset. What makes this problem interesting is that most of the students did not pass the course. I&rsquo;ve re-sampled the positive cases multiple times to make the algorithms punish the false positive cases more severely.</p>
-			
-			<br>
-			<a class="button" href="https://l1990790120.github.io/post/2016-05-16-classify-unbalanced-cases-with-harvard-edx-dataset/">
-				Continue reading
-			</a>
-		</div>
-	</div>
-	
-	<div class="post-teaser">
-		<header>
-		    <h1>
-		    <a class="post-link" href="https://l1990790120.github.io/post/2016-05-04-draw-with-us-college-data/">
-		        Draw with US College Data
-		    </a>
-		    </h1>
-		    <p class="meta">
-    May 4, 2016 &middot; 233 minute read
+			<div class="row pt-3">
+				<a class="btn btn-outline-primary btn-md" href="https://l1990790120.github.io/post/2016-05-16-classify-unbalanced-cases-with-harvard-edx-dataset/" role="button">
+					Continue reading
+				</a>
+			</div>
+		
+			<div class="row pt-3">
+				<h1>
+					<a class="post-link" href="https://l1990790120.github.io/post/2016-05-04-draw-with-us-college-data/">
+						Draw with US College Data
+					</a>
+				</h1>
+			</div>
 
-    
-        &middot; Tags:
-            <a href="https://l1990790120.github.io/tags/data-vis">data-vis</a>
-            , <a href="https://l1990790120.github.io/tags/education">education</a>
-            , <a href="https://l1990790120.github.io/tags/highered">highered</a>
-            , <a href="https://l1990790120.github.io/tags/python">python</a>
+			<style>
+.post-meta{
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    font-size: 90%;
+}
+</style>
+
+<div>
+    <div class="row text-secondary post-meta py-1">
+        2016/05/04
+        
+        &middot; 
+        
+        233
+        minute read
+    </div>
+
+    <div class="row post-meta pb-3 pt-1">
+        
+        <a href="https://l1990790120.github.io/tags/data-vis" class="badge badge-light">data-vis</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/education" class="badge badge-light">education</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/highered" class="badge badge-light">highered</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/python" class="badge badge-light">python</a>
             
-</p>
+    </div>
+</div>
 
-		</header>
+			<div>
+				<p>Showcase on what you can do with IPEDS data API. Choropleth with d3. I&rsquo;ve also tried this on beaker notebook. More details to come!</p>
+			</div>
 
-		<div class="excerpt">
-			<p>Showcase on what you can do with IPEDS data API. Choropleth with d3. I&rsquo;ve also tried this on beaker notebook. More details to come!</p>
-			
-			<br>
-			<a class="button" href="https://l1990790120.github.io/post/2016-05-04-draw-with-us-college-data/">
-				Continue reading
-			</a>
-		</div>
-	</div>
-	
-	<div class="post-teaser">
-		<header>
-		    <h1>
-		    <a class="post-link" href="https://l1990790120.github.io/post/2015-12-29-airbnb-new-user-booking-trend.mmark/">
-		        Kaggle&#39;s Airbnb New User Booking Trend
-		    </a>
-		    </h1>
-		    <p class="meta">
-    December 29, 2015 &middot; 438 minute read
+			<div class="row pt-3">
+				<a class="btn btn-outline-primary btn-md" href="https://l1990790120.github.io/post/2016-05-04-draw-with-us-college-data/" role="button">
+					Continue reading
+				</a>
+			</div>
+		
+			<div class="row pt-3">
+				<h1>
+					<a class="post-link" href="https://l1990790120.github.io/post/2015-12-29-airbnb-new-user-booking-trend.mmark/">
+						Kaggle&#39;s Airbnb New User Booking Trend
+					</a>
+				</h1>
+			</div>
 
-    
-        &middot; Tags:
-            <a href="https://l1990790120.github.io/tags/d3">d3</a>
-            , <a href="https://l1990790120.github.io/tags/data-vis">data-vis</a>
-            , <a href="https://l1990790120.github.io/tags/deep-learning">deep-learning</a>
-            , <a href="https://l1990790120.github.io/tags/kaggle">kaggle</a>
-            , <a href="https://l1990790120.github.io/tags/machine-learning">machine-learning</a>
-            , <a href="https://l1990790120.github.io/tags/python">python</a>
-            , <a href="https://l1990790120.github.io/tags/timeseries">timeseries</a>
+			<style>
+.post-meta{
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    font-size: 90%;
+}
+</style>
+
+<div>
+    <div class="row text-secondary post-meta py-1">
+        2015/12/29
+        
+        &middot; 
+        
+        438
+        minute read
+    </div>
+
+    <div class="row post-meta pb-3 pt-1">
+        
+        <a href="https://l1990790120.github.io/tags/d3" class="badge badge-light">d3</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/data-vis" class="badge badge-light">data-vis</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/deep-learning" class="badge badge-light">deep-learning</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/kaggle" class="badge badge-light">kaggle</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/machine-learning" class="badge badge-light">machine-learning</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/python" class="badge badge-light">python</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/timeseries" class="badge badge-light">timeseries</a>
             
-</p>
+    </div>
+</div>
 
-		</header>
+			<div>
+				<p>Using <code>mpld3</code> to do visualization in ipython with Kaggle&rsquo;s airbnb data. First experience is great!</p>
+			</div>
 
-		<div class="excerpt">
-			<p>Using <code>mpld3</code> to do visualization in ipython with Kaggle&rsquo;s airbnb data. First experience is great!</p>
-			
-			<br>
-			<a class="button" href="https://l1990790120.github.io/post/2015-12-29-airbnb-new-user-booking-trend.mmark/">
-				Continue reading
-			</a>
-		</div>
-	</div>
+			<div class="row pt-3">
+				<a class="btn btn-outline-primary btn-md" href="https://l1990790120.github.io/post/2015-12-29-airbnb-new-user-booking-trend.mmark/" role="button">
+					Continue reading
+				</a>
+			</div>
+		
+			<div class="row pt-3">
+				<h1>
+					<a class="post-link" href="https://l1990790120.github.io/post/2015-12-14-college-enrollment-forecast-inst-level/">
+						College Enrollment Forecast (Institution Level)
+					</a>
+				</h1>
+			</div>
+
+			<style>
+.post-meta{
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    font-size: 90%;
+}
+</style>
+
+<div>
+    <div class="row text-secondary post-meta py-1">
+        2015/12/14
+        
+        &middot; 
+        
+        700
+        minute read
+    </div>
+
+    <div class="row post-meta pb-3 pt-1">
+        
+        <a href="https://l1990790120.github.io/tags/education" class="badge badge-light">education</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/forecast" class="badge badge-light">forecast</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/highered" class="badge badge-light">highered</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/python" class="badge badge-light">python</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/timeseries" class="badge badge-light">timeseries</a>
+            
+    </div>
+</div>
+
+			<div>
+				<p>Using ARIMA to forecast college enrollment for 2015 and 2016 at institution level.</p>
+			</div>
+
+			<div class="row pt-3">
+				<a class="btn btn-outline-primary btn-md" href="https://l1990790120.github.io/post/2015-12-14-college-enrollment-forecast-inst-level/" role="button">
+					Continue reading
+				</a>
+			</div>
+		
+			<div class="row pt-3">
+				<h1>
+					<a class="post-link" href="https://l1990790120.github.io/post/2015-12-08-college-enrollment-forecast-state-level/">
+						College Enrollment Forecast (State Level)
+					</a>
+				</h1>
+			</div>
+
+			<style>
+.post-meta{
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    font-size: 90%;
+}
+</style>
+
+<div>
+    <div class="row text-secondary post-meta py-1">
+        2015/12/08
+        
+        &middot; 
+        
+        7
+        minute read
+    </div>
+
+    <div class="row post-meta pb-3 pt-1">
+        
+        <a href="https://l1990790120.github.io/tags/education" class="badge badge-light">education</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/forecast" class="badge badge-light">forecast</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/highered" class="badge badge-light">highered</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/python" class="badge badge-light">python</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/timeseries" class="badge badge-light">timeseries</a>
+            
+    </div>
+</div>
+
+			<div>
+				<p>Using ARIMA to forecast college enrollment for 2015 and 2016 at state level.</p>
+			</div>
+
+			<div class="row pt-3">
+				<a class="btn btn-outline-primary btn-md" href="https://l1990790120.github.io/post/2015-12-08-college-enrollment-forecast-state-level/" role="button">
+					Continue reading
+				</a>
+			</div>
+		
+</div>
+
+	<div>
 	
 </div>
 
-	<div class="pagination">
-	
+		</div>
 
-		<a href="/tags/forecast/page/2/" class="button" >
-			Next
-			<i class="fa fa-chevron-right"></i>
-		</a>
-</div>
-
-    </div>
-
-    <footer class="site-footer">
-	<p class="text">&copy; 2019 - Released under the MIT license<br>Powered by <a href="//gohugo.io/">Hugo</a> with the <a href="//github.com/digitalcraftsman/hugo-type-theme">Type Theme</a></p>
-</footer>
-
-
+		
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
@@ -312,5 +464,5 @@ if (!doNotTrack) {
 }
 </script>
 
-</body>
+	</body>
 </html>
