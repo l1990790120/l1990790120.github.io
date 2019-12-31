@@ -27,6 +27,7 @@ disableComments = true
   </div>
 </div>
 
+<br>
 I am an abstract thinker, both mathematically and philosophically. I build and
 architect distributed systems for data and AI/ML applications. I enjoy good
 design with technology, always look for ways to make the world a better place.
@@ -80,7 +81,7 @@ design with technology, always look for ways to make the world a better place.
 
 #### <i class="fa fa-suitcase"></i> Where I Work
 
-Currently I am Senior Data Engineer at Deloitte Digital (New York, NY), where I ...  
+Currently I am Senior Data Engineer at Deloitte Digital (New York, NY), where I ...
 
 - Build integrated and automated AI/ML infrastructure and toolings to simplify and shorten data science's experiment to production cycle.
 - Research, evaluate, implement and contribute open source AI/ML toolings. Advocate for adoptions and coordinate migration process across group-wide teams to improve overall quality and efficiency of AI/ML applications.
