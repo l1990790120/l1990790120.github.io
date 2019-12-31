@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+	{{ partial "head.html" . }}
+	<body>
+		<div class="row">
+			{{ partial "nav.html" . }}
+		</div>
+
+		<div class="top-container">
+			<div class="row">
+				{{ if .Site.Params.headerText }}
+				<div 
+					class="row"
+					style="background-image: url('{{ .Site.BaseURL }}/img/{{ .Site.Params.headerImage }}')">
+					{{ .Site.Params.headerText | markdownify }}
+				</div>
+				{{ end }}
+				{{ partial "post-list.html" . }}
+				{{ partial "pagination.html" . }}
+				{{ partial "footer.html" . }}
+			</div>
+		</div>
+	</body>
+</html>
