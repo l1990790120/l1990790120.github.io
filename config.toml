@@ -66,3 +66,9 @@ paginate = 10
 		gitlab = ""
 		trello = ""
 		medium = "l1990790120"
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
