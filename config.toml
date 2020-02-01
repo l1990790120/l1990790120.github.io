@@ -67,6 +67,9 @@ paginate = 10
 		trello = ""
 		medium = "l1990790120"
 
+[taxonomies]
+  tag = "tags"
+
 [markup]
   defaultMarkdownHandler = "goldmark"
   [markup.goldmark]
