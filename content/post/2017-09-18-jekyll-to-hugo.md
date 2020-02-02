@@ -2,7 +2,6 @@
 title = "Jekyll to Hugo"
 date = "2017-09-18T10:55:00.000Z"
 tags = ["blog"]
-notebook=false
 +++
 
 I use this little github site to host my jupyter notebook for machine learning projects I've done and some toy examples of doing cool visualization with d3 with notebook and python. I've been using jekyll for years but I finally got to a point where - I rarely maintain this site and because jekyll is such a flexible and extendable library, everytime I try to update something it's becoming difficult to navigate, I pulled the trigger to move to hugo recently.
