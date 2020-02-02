@@ -1,4 +1,5 @@
 {{ define "main" -}}
+
 <div class="top-container">
 	{{ if and (isset .Params "featureimage") (not (eq .Params.featureimage "")) -}}
 	<div class="row" style="background-image: url('{{ .Site.BaseURL }}{{ .Params.featureimage }}')">
@@ -14,7 +15,11 @@
 	 {{ partial "post-meta" . }}
 	{{ end }}
 
+	{{ if and (isset .Params "notebook") (.Params.notebook) }}
 	{{ .Content }}
+	{{ else }}
+	{{ partial "headline-hash.html" .Content }}
+	{{ end }}
 
 
 	{{ if (not (eq .Site.DisqusShortname "")) | and (not .Params.disableComments) }}
