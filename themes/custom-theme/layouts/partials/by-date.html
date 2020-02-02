@@ -1,7 +1,7 @@
 <div class="container">
     {{ $paginator := .Paginate (where .Pages.ByDate.Reverse "Type" "post") }}
 
-    {{ range $paginator.Pages.ByDate -}}
+    {{ range $paginator.Pages.ByDate.Reverse -}}
     {{ if not .Params.Hide }}
     <div class="row pt-3">
         <h1>
