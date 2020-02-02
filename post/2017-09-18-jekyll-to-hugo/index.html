@@ -203,22 +203,24 @@
 </div>
 	
 
-	<p>I use this little github site to host my jupyter notebook for machine learning projects I've done and some toy examples of doing cool visualization with d3 with notebook and python. I've been using jekyll for years but I finally got to a point where - I rarely maintain this site and because jekyll is such a flexible and extendable library, everytime I try to update something it's becoming difficult to navigate, I pulled the trigger to move to hugo recently.</p>
+	
+	<div>
+  <p>I use this little github site to host my jupyter notebook for machine learning projects I've done and some toy examples of doing cool visualization with d3 with notebook and python. I've been using jekyll for years but I finally got to a point where - I rarely maintain this site and because jekyll is such a flexible and extendable library, everytime I try to update something it's becoming difficult to navigate, I pulled the trigger to move to hugo recently.</p>
 <p>Hugo turned out to be quite simple to update and flexible just enough with the functionality I am looking for. While I am mostly backend and data, I know how html/css/javascript works, at the very least, I know how to poke around, change the values and get the effect I want - it wasn't so easy for me to figure out jekyll but hugo to me is very straightforward. The migration turned out to be easy. Other than the headers on each post, I just copy and paste the notebook html files and it works - took me less than couple mins!</p>
-<h2 id="embedding-jupyter-notebook-in-post">Embedding jupyter notebook in post</h2>
-<p>The difficult part is the integration and css formatting. This post here <a href="https://sharmamohit.com/post/jupyter-notebooks-in-blog/">https://sharmamohit.com/post/jupyter-notebooks-in-blog/</a> has been a great help. Since I am a data person, I am not a fan of duplication of fragment of code without automated pipeline - if a data is generated from source code, we should track the source code not the generated file.</p>
+<h2 id="embedding-jupyter-notebook-in-post">Embedding jupyter notebook in post<a href="#embedding-jupyter-notebook-in-post" class="hanchor" ariaLabel="Anchor">   ¶</a> </h2>
+<p>The difficult part is the integration and css formatting. This post here <a href="https://sharmamohit.com/post/jupyter-notebooks-in-blog/"  target="_blank" >https://sharmamohit.com/post/jupyter-notebooks-in-blog/</a> has been a great help. Since I am a data person, I am not a fan of duplication of fragment of code without automated pipeline - if a data is generated from source code, we should track the source code not the generated file.</p>
 <p>As an alternative, here's what I did and what I didn't do -</p>
-<h3 id="not-working">Not working</h3>
+<h3 id="not-working">Not working<a href="#not-working" class="hanchor" ariaLabel="Anchor">   ¶</a> </h3>
 <ul>
 <li>If you google how to embed notebook in hugo, first thing you might see is to use blackfriday, my frustration being - the formatting are just not cooperating, even though it's probably the closest option to jekyll's embeding tag.</li>
 </ul>
-<h3 id="sort-of-working">Sort of working</h3>
+<h3 id="sort-of-working">Sort of working<a href="#sort-of-working" class="hanchor" ariaLabel="Anchor">   ¶</a> </h3>
 <p>I've created a custom shortcode to embed jupyter notebook html -</p>
 <pre><code>{{ $file := .Get 0 | readFile }}
 {{ htmlUnescape $file | safeHTML}}
 </code></pre><p>Easy enough, in the post markdown, just put <code>{{% jupyter_notebook &ldquo;static/&lt;some notebook&gt;.html&rdquo; %}}</code>. However, there's some limit to the length of file. I happen to use go from time to time so I upped that limit and recompiled hugo to make this work.</p>
-<h2 id="publishing-to-github">Publishing to github</h2>
-<p>This is pretty much the same as jekyll. I just wanted to share the easiest way I've found. The best reference I could've found is this <a href="https://discourse.gohugo.io/t/simple-deployment-to-gh-pages/5003">https://discourse.gohugo.io/t/simple-deployment-to-gh-pages/5003</a>. Couple tweaks I needed to make, for personal github page you need to push to <code>master</code> not <code>gh-page</code>. What worked for me is to default the branch to <code>develop</code> and then make subtree branch of public folder to <code>master</code>.</p>
+<h2 id="publishing-to-github">Publishing to github<a href="#publishing-to-github" class="hanchor" ariaLabel="Anchor">   ¶</a> </h2>
+<p>This is pretty much the same as jekyll. I just wanted to share the easiest way I've found. The best reference I could've found is this <a href="https://discourse.gohugo.io/t/simple-deployment-to-gh-pages/5003"  target="_blank" >https://discourse.gohugo.io/t/simple-deployment-to-gh-pages/5003</a>. Couple tweaks I needed to make, for personal github page you need to push to <code>master</code> not <code>gh-page</code>. What worked for me is to default the branch to <code>develop</code> and then make subtree branch of public folder to <code>master</code>.</p>
 <p>Go to the root dir and do -</p>
 <pre><code>rm -rf public
 git worktree prune
@@ -229,6 +231,20 @@ git worktree add -B master public origin/master
 cd public &amp;&amp; git add --all &amp;&amp; git commit -m &quot;Publishing to master&quot; &amp;&amp; git push &amp;&amp; cd ..
 </code></pre><p>Check your page you should be good to go.</p>
 
+</div>
+
+<style>
+  .hanchor {
+    font-size: 100%;
+    visibility: hidden;
+    color:silver;
+  }
+  h1:hover a, h2:hover a, h3:hover a, h4:hover a {
+    visibility: visible;
+    text-decoration: none;
+  }
+</style>
+	
 
 
 	

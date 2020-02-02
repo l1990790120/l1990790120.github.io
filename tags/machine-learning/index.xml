@@ -6,10 +6,19 @@
     <description>Recent content in machine-learning on LC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 May 2016 12:11:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Feb 2020 15:20:10 +0000</lastBuildDate>
     
 	<atom:link href="https://l1990790120.github.io/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Differences in Scaling Machine Learning and ETL Pipelines</title>
+      <link>https://l1990790120.github.io/post/2020-02-01-scaling-machine-learning-vs-data-pipeline/</link>
+      <pubDate>Sat, 01 Feb 2020 15:20:10 +0000</pubDate>
+      
+      <guid>https://l1990790120.github.io/post/2020-02-01-scaling-machine-learning-vs-data-pipeline/</guid>
+      <description>Data engineers rarely have a say in what&#39;s coming in the systems we&#39;ve built. This presents great challenges where data systems often need to be tolerant about unseen events and at the same time have extra monitoring or QA processes to allow human to determine if the exception actually signals a broader system failure. Machine learning systems have brought this challenge to a new level - in data pipelines, system failures are mostly deterministic or at least reproducible when certain conditions are met.</description>
+    </item>
     
     <item>
       <title>Classify Unbalanced Cases with Harvard edX MOOC Dataset</title>
