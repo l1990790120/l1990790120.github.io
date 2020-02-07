@@ -6,8 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="author" content="Lulu Cheng">
 	<meta name="description" content="LC">
-	<meta name="keywords" content="Machine Learning, Economics, Politics, Social Science, Software Engineering">
-	<meta name="generator" content="Hugo 0.56.0-DEV" />
+	<meta name="keywords" content="Tech, Data Engineering, Machine Learning, Data Science, Economics, Politics, Social Science, Software Engineering">
+	<meta name="generator" content="Hugo 0.63.0-DEV" />
 
 	
 	<link rel="stylesheet" href="https://l1990790120.github.io/css/theme.css"/>
@@ -212,10 +212,8 @@
 	
 
 	
-	<p>I&rsquo;ve run a couple classification ML algorithm on the dataset. What makes this problem interesting is that most of the students did not pass the course. I&rsquo;ve re-sampled the positive cases multiple times to make the algorithms punish the false positive cases more severely.</p>
-
+	<p>I've run a couple classification ML algorithm on the dataset. What makes this problem interesting is that most of the students did not pass the course. I've re-sampled the positive cases multiple times to make the algorithms punish the false positive cases more severely.</p>
 <hr>
-
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -226,9 +224,7 @@
 <h2 id="Goal">Goal<a class="anchor-link" href="#Goal">¶</a></h2><p>Now, I simply want to understand, base on the attributes in this dataset, can I succesfully predict whether the student will pass/fail (<code>certified == 1/0</code>) the course?</p>
 <h2 id="Common Pitfall: Unbalanced Cases!">Common Pitfall: Unbalanced Cases!<a class="anchor-link" href="#Common-Pitfall-Unbalanced-Cases">¶</a></h2>
 <p>In machine learning - classification especially, a common pitfall is to benchmark classification algorithm by accuracy when dealing with unbalanced cases, even if your algorithm don't work, if your data is extremely unbalanced, you could still get 97% accuracy just by returning true to all cases (assuming 3% false cases). It's often advised to compare precision and recall (here, I look at ROC - tpr vs fpr) instead of accuracy. However, what's more complicated is how to improve the performance - Here, I am demonstrating one way of dealing with it - increase the probability (punishment) of drawing minor cases by repeating sampling.</p><br>
-
 <p>This will be a fun exercise to explore different classification algorithms and do some visualization around.</p>
-
 </div>
 </div>
 </div>
@@ -245,40 +241,32 @@
 <span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 </pre></div>
-
-<p></div>
 </div>
-</div></p>
-
-<p></div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># load data</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&lsquo;data/HMXPC13_DI_v2_5-14-14.csv&rsquo;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/HMXPC13_DI_v2_5-14-14.csv'</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div></p>
-
-<p></div>
+</pre></div>
 </div>
-</div></p>
-
+</div>
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>(641138, 20)
 </pre>
 </div>
 </div>
-
 <div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
-
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
 <table border="1" class="dataframe">
@@ -427,21 +415,17 @@
 </table>
 </div>
 </div>
-
-<p></div></p>
-
-<p></div>
-</div></p>
-
-<p></div>
+</div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Whoo, not many missing values!</strong></p></p>
-
-<p></div>
+<p><strong>Whoo, not many missing values!</strong></p>
+</div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -453,23 +437,17 @@
     <span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="n">p</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">);</span>
-    <span class="n">p</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&lsquo;</span><span class="si">% o</span><span class="s1">f missing values by column&rsquo;</span><span class="p">);</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&lsquo;certified&rsquo;</span><span class="p">]),</span> <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&lsquo;certified freq&rsquo;</span><span class="p">);</span></p>
-
+    <span class="n">p</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'</span><span class="si">% o</span><span class="s1">f missing values by column'</span><span class="p">);</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'certified'</span><span class="p">]),</span> <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'certified freq'</span><span class="p">);</span>
 <p><span class="n">quick_profile</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div></p>
-
-<p></div>
 </div>
-</div></p>
-
+</div>
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
-
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlEAAAEfCAYAAABhxpNfAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XtcVHX+P/DXDMOIMChQaCYqhtAVFMEi8UJbtlgq3ojL
@@ -926,22 +904,18 @@ BVGEEEIIIRqgIIoQQgghRAMURBFCCCGEaOD/AFf2d701nxqXAAAAAElFTkSuQmCC
 "
 >
 </div>
-
-<p></div></p>
-
-<p></div>
-</div></p>
-
-<p></div>
+</div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Ohoh, Less than 3% negative cases!</strong> This means, we need to boost negative cases if possible.</p>
-<p><strong> Now, I am not interested to classify those that does nothing beyond registration. </strong> By definition, that&rsquo;s <code>nevents</code> is not <code>null</code>.</p></p>
-
-<p></div>
+<p><strong> Now, I am not interested to classify those that does nothing beyond registration. </strong> By definition, that's <code>nevents</code> is not <code>null</code>.</p>
+</div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -951,18 +925,13 @@ BVGEEEIIIRqgIIoQQgghRAMURBFCCCGEaOD/AFf2d701nxqXAAAAAElFTkSuQmCC
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="o">~</span><span class="n">df</span><span class="o">.</span><span class="n">nevents</span><span class="o">.</span><span class="n">isnull</span><span class="p">()]</span>
 <span class="n">quick_profile</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</pre></div></p>
-
-<p></div>
+</pre></div>
 </div>
-</div></p>
-
+</div>
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
-
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlEAAAEfCAYAAABhxpNfAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XtcVOXa+P/PwDApDCoaGoVJEezKUBEqEiUrLSzzjBwU
@@ -1440,21 +1409,17 @@ CCGEEEK0QJMoQgghhBAt0CSKEEIIIUQLNIkihBBCCNHC/wOZpbZLsWVpBAAAAABJRU5ErkJggg==
 "
 >
 </div>
-
-<p></div></p>
-
-<p></div>
-</div></p>
-
-<p></div>
+</div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Now,-let's-profile">Now, let&rsquo;s profile<a class="anchor-link" href="#Now,-let's-profile">¶</a></h5><p><strong>Discrete Variables</strong></p></p>
-
-<p></div>
+<h5 id="Now,-let's-profile">Now, let's profile<a class="anchor-link" href="#Now,-let's-profile">¶</a></h5><p><strong>Discrete Variables</strong></p>
+</div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -1463,21 +1428,16 @@ CCGEEEK0QJMoQgghhBAt0CSKEEIIIUQLNIkihBBCCNHC/wOZpbZLsWVpBAAAAABJRU5ErkJggg==
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[[</span><span class="s1">&lsquo;LoE_DI&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;certified&rsquo;</span><span class="p">]],</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&lsquo;LoE_DI&rsquo;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s1">&lsquo;certified&rsquo;</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[[</span><span class="s1">'LoE_DI'</span><span class="p">,</span> <span class="s1">'certified'</span><span class="p">]],</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">'LoE_DI'</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s1">'certified'</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">30</span><span class="p">);</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[[</span><span class="s1">&lsquo;gender&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;certified&rsquo;</span><span class="p">]],</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&lsquo;gender&rsquo;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s1">&lsquo;certified&rsquo;</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-</pre></div></p>
-
-<p></div>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[[</span><span class="s1">'gender'</span><span class="p">,</span> <span class="s1">'certified'</span><span class="p">]],</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">'gender'</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s1">'certified'</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</pre></div>
 </div>
-</div></p>
-
+</div>
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
-
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnQAAAE/CAYAAADPHl79AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3X1AlFXC//83T6PCAOJDZWJShJmGZZC5YtzaWulu+7XW
@@ -1856,33 +1816,25 @@ VyoAAAAASUVORK5CYII=
 "
 >
 </div>
-
-<p></div></p>
-
-<p></div>
-</div></p>
-
-<p></div>
+</div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[[</span><span class="s1">&lsquo;final_cc_cname_DI&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;certified&rsquo;</span><span class="p">]],</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&lsquo;final_cc_cname_DI&rsquo;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s1">&lsquo;certified&rsquo;</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[[</span><span class="s1">'final_cc_cname_DI'</span><span class="p">,</span> <span class="s1">'certified'</span><span class="p">]],</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">'final_cc_cname_DI'</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s1">'certified'</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">);</span>
-</pre></div></p>
-
-<p></div>
+</pre></div>
 </div>
-</div></p>
-
+</div>
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
-
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAuMAAAG5CAYAAAAkgDqoAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3XtAFOX+P/D3clkVlqtiaqgUl8wCo6X0hJJ19KSdTlSG
@@ -2519,21 +2471,17 @@ WGUAAAAASUVORK5CYII=
 "
 >
 </div>
-
-<p></div></p>
-
-<p></div>
-</div></p>
-
-<p></div>
+</div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Numeric Variables</strong></p></p>
-
-<p></div>
+<p><strong>Numeric Variables</strong></p>
+</div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -2541,33 +2489,24 @@ WGUAAAAASUVORK5CYII=
 <div class="prompt input_prompt">In [7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">grade</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&lsquo;nan&rsquo;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">grade</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&rsquo; &lsquo;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">grade</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">grade</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&lsquo;float64&rsquo;</span><span class="p">)</span></p>
-
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">grade</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'nan'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">grade</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">grade</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">grade</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'float64'</span><span class="p">)</span>
 <p><span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span>
-    <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[[</span><span class="s1">&lsquo;YoB&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;grade&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;certified&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;nevents&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;ndays_act&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;nplay_video&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;nchapters&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;nforum_posts&rsquo;</span><span class="p">]]</span><span class="o">.</span><span class="n">dropna</span><span class="p">(),</span>
-    <span class="n">hue</span><span class="o">=</span><span class="s2">&ldquo;certified&rdquo;</span><span class="p">)</span>
+<span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">[[</span><span class="s1">'YoB'</span><span class="p">,</span> <span class="s1">'grade'</span><span class="p">,</span> <span class="s1">'certified'</span><span class="p">,</span> <span class="s1">'nevents'</span><span class="p">,</span> <span class="s1">'ndays_act'</span><span class="p">,</span> <span class="s1">'nplay_video'</span><span class="p">,</span> <span class="s1">'nchapters'</span><span class="p">,</span> <span class="s1">'nforum_posts'</span><span class="p">]]</span><span class="o">.</span><span class="n">dropna</span><span class="p">(),</span>
+<span class="n">hue</span><span class="o">=</span><span class="s2">&quot;certified&quot;</span><span class="p">)</span>
 </pre></div></p>
-
-<p></div>
 </div>
-</div></p>
-
+</div>
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
-
 <div class="output_text output_subarea output_execute_result">
 <pre><seaborn.axisgrid.PairGrid at 0xcfe3fd0></pre>
 </div>
-
-<p></div></p>
-
+</div>
 <div class="output_area"><div class="prompt"></div>
-
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABdkAAAWVCAYAAAD2S9yEAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Wt0ldW96P/vut9XsnJdSSDhEiDhokaCwI5GUUqhUqgi
@@ -10821,21 +10760,17 @@ TkSuQmCC
 "
 >
 </div>
-
-<p></div></p>
-
-<p></div>
-</div></p>
-
-<p></div>
+</div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>As what we&rsquo;ve seen, some data processing needs to take place</strong></p></p>
-
-<p></div>
+<p><strong>As what we've seen, some data processing needs to take place</strong></p>
+</div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -10843,21 +10778,16 @@ TkSuQmCC
 <div class="prompt input_prompt">In [8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># drop <code>nplay_videio</code> since 60% of rows are missing</span>
-<span class="n">num</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&lsquo;certified&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;YoB&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;nevents&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;ndays_act&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;nchapters&rsquo;</span><span class="p">]]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># drop `nplay_videio` since 60% of rows are missing</span>
+<span class="n">num</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'certified'</span><span class="p">,</span> <span class="s1">'YoB'</span><span class="p">,</span> <span class="s1">'nevents'</span><span class="p">,</span> <span class="s1">'ndays_act'</span><span class="p">,</span> <span class="s1">'nchapters'</span><span class="p">]]</span>
 <span class="n">quick_profile</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-</pre></div></p>
-
-<p></div>
+</pre></div>
 </div>
-</div></p>
-
+</div>
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
-
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlcAAAD3CAYAAAAwuHFDAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xlc1NX++PHXwDCpDAIWmle8kgTdMiSEzETJUgu/WZqK
@@ -11177,13 +11107,10 @@ iBYRF1dEREREi+hPAM5KS6MXjDkAAAAASUVORK5CYII=
 "
 >
 </div>
-
-<p></div></p>
-
-<p></div>
-</div></p>
-
-<p></div>
+</div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [9]:</div>
@@ -11196,63 +11123,50 @@ iBYRF1dEREREi+hPAM5KS6MXjDkAAAAASUVORK5CYII=
     <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">unique</span><span class="p">:</span>
         <span class="n">lookup</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
-        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span></p>
-
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 <pre><code>&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;df&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;lambda&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lookup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lookup&lt;/span&gt;
 </code></pre>
-
 <p><span class="n">lookups</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&lsquo;final_cc_cname_DI&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;LoE_DI&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;gender&rsquo;</span><span class="p">]:</span>
-    <span class="n">v</span><span class="p">,</span> <span class="n">lookups</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">dict_lookup</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-    <span class="n">df</span><span class="p">[</span><span class="s1">&lsquo;</span><span class="si">%s</span><span class="s1">_coded&rsquo;</span><span class="o">%</span><span class="k">x</span>] = v
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'final_cc_cname_DI'</span><span class="p">,</span> <span class="s1">'LoE_DI'</span><span class="p">,</span> <span class="s1">'gender'</span><span class="p">]:</span>
+<span class="n">v</span><span class="p">,</span> <span class="n">lookups</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">dict_lookup</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">'</span><span class="si">%s</span><span class="s1">_coded'</span><span class="o">%</span><span class="k">x</span>] = v
 </pre></div></p>
-
-<p></div>
 </div>
-</div></p>
-
-<p></div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&lsquo;course_id&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;userid_DI&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;certified&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;YoB&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;nevents&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;ndays_act&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;nchapters&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;final_cc_cname_DI_coded&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;LoE_DI_coded&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;gender_coded&rsquo;</span><span class="p">]]</span></p>
-
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'course_id'</span><span class="p">,</span> <span class="s1">'userid_DI'</span><span class="p">,</span> <span class="s1">'certified'</span><span class="p">,</span> <span class="s1">'YoB'</span><span class="p">,</span> <span class="s1">'nevents'</span><span class="p">,</span> <span class="s1">'ndays_act'</span><span class="p">,</span> <span class="s1">'nchapters'</span><span class="p">,</span> <span class="s1">'final_cc_cname_DI_coded'</span><span class="p">,</span> <span class="s1">'LoE_DI_coded'</span><span class="p">,</span> <span class="s1">'gender_coded'</span><span class="p">]]</span>
 <p><span class="c1"># from the profiling, you might notice some poeple are born in the future ???</span>
 <span class="c1"># clean those out</span>
-<span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&lsquo;YoB&rsquo;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2013</span><span class="p">,</span> <span class="s1">&lsquo;YoB&rsquo;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2013</span></p>
-
+<span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">'YoB'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2013</span><span class="p">,</span> <span class="s1">'YoB'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2013</span></p>
 <p><span class="c1"># use most freq value to replace missing value</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&lsquo;YoB&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;nevents&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;ndays_act&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;nchapters&rsquo;</span><span class="p">]:</span>
-    <span class="n">replace_val</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&lsquo;int64&rsquo;</span><span class="p">))</span><span class="o">.</span><span class="n">argmax</span><span class="p">())</span>
-    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span> <span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">replace_val</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'YoB'</span><span class="p">,</span> <span class="s1">'nevents'</span><span class="p">,</span> <span class="s1">'ndays_act'</span><span class="p">,</span> <span class="s1">'nchapters'</span><span class="p">]:</span>
+<span class="n">replace_val</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'int64'</span><span class="p">))</span><span class="o">.</span><span class="n">argmax</span><span class="p">())</span>
+<span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span> <span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">replace_val</span>
 </pre></div></p>
-
-<p></div>
 </div>
-</div></p>
-
+</div>
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>C:\Anaconda3\lib\site-packages\pandas\core\indexing.py:461: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
-  self.obj[item] = s
-</pre>
+<p>See the caveats in the documentation: <a href="http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy">http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy</a>
+self.obj[item] = s
+</pre></p>
 </div>
 </div>
-
-<p></div>
-</div></p>
-
-<p></div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [12]:</div>
@@ -11260,52 +11174,42 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="k">import</span> <span class="n">OneHotEncoder</span>
 <span class="n">enc</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">sparse</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">disc</span> <span class="o">=</span> <span class="n">enc</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[[</span><span class="s1">&lsquo;final_cc_cname_DI_coded&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;LoE_DI_coded&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;gender_coded&rsquo;</span><span class="p">]])</span></p>
-
+<span class="n">disc</span> <span class="o">=</span> <span class="n">enc</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[[</span><span class="s1">'final_cc_cname_DI_coded'</span><span class="p">,</span> <span class="s1">'LoE_DI_coded'</span><span class="p">,</span> <span class="s1">'gender_coded'</span><span class="p">]])</span>
 <p><span class="c1"># stack onehotcoded + numeric values</span>
-<span class="n">num</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&lsquo;final_cc_cname_DI_coded&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;LoE_DI_coded&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;gender_coded&rsquo;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">num</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'final_cc_cname_DI_coded'</span><span class="p">,</span> <span class="s1">'LoE_DI_coded'</span><span class="p">,</span> <span class="s1">'gender_coded'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">d3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">num</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">disc</span><span class="p">])</span>
 </pre></div></p>
-
-<p></div>
 </div>
-</div></p>
-
-<p></div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># generate headers so we don&rsquo;t lost track of the data transformation afterwards</span>
-<span class="n">new</span> <span class="o">=</span> <span class="kc">True</span></p>
-
-<p><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&lsquo;final_cc_cname_DI&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;LoE_DI&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;gender&rsquo;</span><span class="p">]:</span>
-    <span class="n">t</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">lookups</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-        <span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span><span class="n">lookups</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]])</span>
-    <span class="n">t2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">new</span><span class="p">:</span>
-        <span class="n">headers</span> <span class="o">=</span> <span class="n">t2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-        <span class="n">new</span> <span class="o">=</span> <span class="kc">False</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">headers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">headers</span><span class="p">,</span> <span class="n">t2</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span></p>
-
-<p><span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&lsquo;course_id&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;userid_DI&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;certified&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;YoB&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;nevents&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;ndays_act&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;nchapters&rsquo;</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># generate headers so we don't lost track of the data transformation afterwards</span>
+<span class="n">new</span> <span class="o">=</span> <span class="kc">True</span>
+<p><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'final_cc_cname_DI'</span><span class="p">,</span> <span class="s1">'LoE_DI'</span><span class="p">,</span> <span class="s1">'gender'</span><span class="p">]:</span>
+<span class="n">t</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">lookups</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+<span class="n">t</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span><span class="n">lookups</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]])</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">new</span><span class="p">:</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="n">t2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">new</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">else</span><span class="p">:</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">headers</span><span class="p">,</span> <span class="n">t2</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span></p>
+<p><span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'course_id'</span><span class="p">,</span> <span class="s1">'userid_DI'</span><span class="p">,</span> <span class="s1">'certified'</span><span class="p">,</span> <span class="s1">'YoB'</span><span class="p">,</span> <span class="s1">'nevents'</span><span class="p">,</span> <span class="s1">'ndays_act'</span><span class="p">,</span> <span class="s1">'nchapters'</span><span class="p">]</span>
 <span class="n">header</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">headers</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
 <span class="n">header</span>
 </pre></div></p>
-
-<p></div>
 </div>
-</div></p>
-
+</div>
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
-
 <div class="output_text output_subarea output_execute_result">
 <pre>['course_id',
  'userid_DI',
@@ -11359,13 +11263,10 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
  'f',
  'o']</pre>
 </div>
-
-<p></div></p>
-
-<p></div>
-</div></p>
-
-<p></div>
+</div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [14]:</div>
@@ -11373,33 +11274,26 @@ See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stabl
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># best practive: create a hold out set</span>
 <span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="k">import</span> <span class="n">train_test_split</span>
-<span class="n">train</span><span class="p">,</span> <span class="n">hold_out</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span></p>
-
+<span class="n">train</span><span class="p">,</span> <span class="n">hold_out</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <p><span class="c1"># balance the classification class in training set</span>
 <span class="c1"># Repeated sample positive cases 24 times!</span>
 <span class="n">n</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">train</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">y</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">)])</span>
 <span class="n">d4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">y2</span><span class="p">,</span> <span class="n">n</span><span class="p">])</span></p>
-
 <p><span class="c1"># take a look what I did</span>
 <span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">d4</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&lsquo;int&rsquo;</span><span class="p">)),</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&lsquo;train&rsquo;</span><span class="p">);</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">hold_out</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&lsquo;int&rsquo;</span><span class="p">)),</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&lsquo;hold_out&rsquo;</span><span class="p">);</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">d4</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'int'</span><span class="p">)),</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'train'</span><span class="p">);</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bincount</span><span class="p">(</span><span class="n">hold_out</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'int'</span><span class="p">)),</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'hold_out'</span><span class="p">);</span>
 </pre></div></p>
-
-<p></div>
 </div>
-</div></p>
-
+</div>
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
-
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfUAAAEKCAYAAAALjMzdAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3X9UVPed//EnMEwRLigm9tSVrDQE83NoKcSlQTnu98Qt
@@ -11585,21 +11479,17 @@ XURExCIU6iIiIhahUBcREbEIhbqIiIhF/D8Hmc9I3yjoEQAAAABJRU5ErkJggg==
 "
 >
 </div>
-
-<p></div></p>
-
-<p></div>
-</div></p>
-
-<p></div>
+</div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h5 id="Train-the-classification-model">Train the classification model<a class="anchor-link" href="#Train-the-classification-model">¶</a></h5><p>Now that we&rsquo;ve seen enough, let&rsquo;s try to train the model.</p></p>
-
-<p></div>
+<h5 id="Train-the-classification-model">Train the classification model<a class="anchor-link" href="#Train-the-classification-model">¶</a></h5><p>Now that we've seen enough, let's try to train the model.</p>
+</div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -11609,21 +11499,18 @@ XURExCIU6iIiIhahUBcREbEIhbqIiIhF/D8Hmc9I3yjoEQAAAABJRU5ErkJggg==
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create train/test within training set</span>
 <span class="n">train_tr</span><span class="p">,</span> <span class="n">train_x</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=.</span><span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div></p>
-
-<p></div>
+</pre></div>
 </div>
-</div></p>
-
-<p></div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Decision Tree</strong></p></p>
-
-<p></div>
+<p><strong>Decision Tree</strong></p>
+</div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -11631,74 +11518,59 @@ XURExCIU6iIiIhahUBcREbEIhbqIiIhF/D8Hmc9I3yjoEQAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [52]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># first, let&rsquo;s try a decision tree</span>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeClassifier</span></p>
-
-<p><span class="c1"># let&rsquo;s draw a training curve and see if this works</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># first, let's try a decision tree</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeClassifier</span>
+<p><span class="c1"># let's draw a training curve and see if this works</span>
 <span class="n">clss</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 <span class="n">test_err</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">train_err</span> <span class="o">=</span> <span class="p">[]</span></p>
-
 <p><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">5</span><span class="p">)):</span>
-    <span class="n">clss</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">clss</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_tr</span><span class="p">[:,</span><span class="mi">3</span><span class="p">:],</span> <span class="n">train_tr</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&lsquo;int64&rsquo;</span><span class="p">))</span>
-    <span class="n">test_err</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">clss</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">train_x</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:],</span> <span class="n">train_x</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&lsquo;int&rsquo;</span><span class="p">)))</span>
-    <span class="n">train_err</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">clss</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">train_tr</span><span class="p">[:,</span><span class="mi">3</span><span class="p">:],</span> <span class="n">train_tr</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&lsquo;int&rsquo;</span><span class="p">)))</span>
+<span class="n">clss</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
+<span class="n">clss</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_tr</span><span class="p">[:,</span><span class="mi">3</span><span class="p">:],</span> <span class="n">train_tr</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'int64'</span><span class="p">))</span>
+<span class="n">test_err</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">clss</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">train_x</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:],</span> <span class="n">train_x</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'int'</span><span class="p">)))</span>
+<span class="n">train_err</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">clss</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">train_tr</span><span class="p">[:,</span><span class="mi">3</span><span class="p">:],</span> <span class="n">train_tr</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'int'</span><span class="p">)))</span>
 </pre></div></p>
-
-<p></div>
 </div>
-</div></p>
-
+</div>
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>100%|████████████████████████████████████████████| 9/9 [00:04<00:00,  1.97it/s]
 </pre>
 </div>
 </div>
-
-<p></div>
-</div></p>
-
-<p></div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">training_curve</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">train</span><span class="p">,</span> <span class="n">param</span><span class="p">,</span> <span class="n">ax</span><span class="p">):</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">test_err</span><span class="p">,</span> <span class="s1">&rsquo;-o&rsquo;</span><span class="p">);</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">train_err</span><span class="p">,</span> <span class="s1">&rsquo;-o&rsquo;</span><span class="p">);</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&lsquo;test error&rsquo;</span><span class="p">,</span> <span class="s1">&lsquo;train error&rsquo;</span><span class="p">]);</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&lsquo;error curve&rsquo;</span><span class="p">);</span></p>
-
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">test_err</span><span class="p">,</span> <span class="s1">'-o'</span><span class="p">);</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">param</span><span class="p">,</span> <span class="n">train_err</span><span class="p">,</span> <span class="s1">'-o'</span><span class="p">);</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">'test error'</span><span class="p">,</span> <span class="s1">'train error'</span><span class="p">]);</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'error curve'</span><span class="p">);</span>
 <p><span class="k">def</span> <span class="nf">roc</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">true</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">ax</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">roc<em>curve</span>
-    <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n"></em></span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">true</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">data</span><span class="p">));</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="s1">&rsquo;-o&rsquo;</span><span class="p">);</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&lsquo;fpr&rsquo;</span><span class="p">);</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&lsquo;tpr&rsquo;</span><span class="p">);</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&lsquo;hold_out roc curve&rsquo;</span><span class="p">);</span></p>
-
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="k">import</span> <span class="n">roc_curve</span>
+<span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span><span class="n">true</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">data</span><span class="p">));</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="s1">&rsquo;-o'</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'fpr'</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'tpr'</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'hold_out roc curve'</span><span class="p">);</span></p>
 <p><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">training_curve</span><span class="p">(</span><span class="n">test_err</span><span class="p">,</span> <span class="n">train_err</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">roc</span><span class="p">(</span><span class="n">clss</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">hold_out</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">hold_out</span><span class="p">[:,</span><span class="mi">3</span><span class="p">:],</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div></p>
-
-<p></div>
 </div>
-</div></p>
-
+</div>
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
-
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAmMAAAEZCAYAAADbmSJHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3X1cVHXe//HX3DLADLeCKMqNeG+GqaVmuqZSVFaW0mKp
@@ -12095,21 +11967,17 @@ MSIiIiIZsRkjIiIikhGbMSIiIiIZ/T/nyyVoNNR2NgAAAABJRU5ErkJggg==
 "
 >
 </div>
-
-<p></div></p>
-
-<p></div>
-</div></p>
-
-<p></div>
+</div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Random Forest</strong></p></p>
-
-<p></div>
+<p><strong>Random Forest</strong></p>
+</div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -12117,42 +11985,33 @@ MSIiIiIZsRkjIiIikhGbMSIiIiIZ/T/nyyVoNNR2NgAAAABJRU5ErkJggg==
 <div class="prompt input_prompt">In [54]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># it does an okay job on hold_out, so let&rsquo;s see how to improvee this even more!</span>
-<span class="c1"># unfortunately, there&rsquo;s no existing prune module in sklearn</span>
-<span class="c1"># let&rsquo;s try DT&rsquo;s ensemble version -&gt; RF</span></p>
-
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># it does an okay job on hold_out, so let's see how to improvee this even more!</span>
+<span class="c1"># unfortunately, there's no existing prune module in sklearn</span>
+<span class="c1"># let's try DT's ensemble version -> RF</span>
 <p><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">RandomForestClassifier</span></p>
-
 <p><span class="c1"># clss2 = dict()</span>
 <span class="n">test_err</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">train_err</span> <span class="o">=</span> <span class="p">[]</span></p>
-
 <p><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">5</span><span class="p">)):</span>
-    <span class="n">clss2</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">clss2</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_tr</span><span class="p">[:,</span><span class="mi">3</span><span class="p">:],</span> <span class="n">train_tr</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&lsquo;int64&rsquo;</span><span class="p">))</span>
-    <span class="n">test_err</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">clss2</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">train_x</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:],</span> <span class="n">train_x</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&lsquo;int&rsquo;</span><span class="p">)))</span>
-    <span class="n">train_err</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">clss2</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">train_tr</span><span class="p">[:,</span><span class="mi">3</span><span class="p">:],</span> <span class="n">train_tr</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&lsquo;int&rsquo;</span><span class="p">)))</span>
+<span class="n">clss2</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
+<span class="n">clss2</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_tr</span><span class="p">[:,</span><span class="mi">3</span><span class="p">:],</span> <span class="n">train_tr</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'int64'</span><span class="p">))</span>
+<span class="n">test_err</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">clss2</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">train_x</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:],</span> <span class="n">train_x</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'int'</span><span class="p">)))</span>
+<span class="n">train_err</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">clss2</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">train_tr</span><span class="p">[:,</span><span class="mi">3</span><span class="p">:],</span> <span class="n">train_tr</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'int'</span><span class="p">)))</span>
 </pre></div></p>
-
-<p></div>
 </div>
-</div></p>
-
+</div>
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>100%|████████████████████████████████████████████| 9/9 [00:07<00:00,  1.19it/s]
 </pre>
 </div>
 </div>
-
-<p></div>
-</div></p>
-
-<p></div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [55]:</div>
@@ -12161,18 +12020,13 @@ MSIiIiIZsRkjIiIikhGbMSIiIiIZ/T/nyyVoNNR2NgAAAABJRU5ErkJggg==
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">training_curve</span><span class="p">(</span><span class="n">test_err</span><span class="p">,</span> <span class="n">train_err</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">roc</span><span class="p">(</span><span class="n">clss2</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">hold_out</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">hold_out</span><span class="p">[:,</span><span class="mi">3</span><span class="p">:],</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</pre></div></p>
-
-<p></div>
+</pre></div>
 </div>
-</div></p>
-
+</div>
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
-
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAmMAAAEZCAYAAADbmSJHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xl8VPW5+PHPmS3bZF8hZCPsW5BEFhFqwUgUtCrEBgtI
@@ -12582,21 +12436,17 @@ l6YAAAAASUVORK5CYII=
 "
 >
 </div>
-
-<p></div></p>
-
-<p></div>
-</div></p>
-
-<p></div>
+</div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>SVM</strong></p></p>
-
-<p></div>
+<p><strong>SVM</strong></p>
+</div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
@@ -12605,40 +12455,31 @@ l6YAAAAASUVORK5CYII=
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># alright, not really helping</span>
-<span class="c1"># let&rsquo;s try SVM</span></p>
-
+<span class="c1"># let's try SVM</span>
 <p><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="k">import</span> <span class="n">LinearSVC</span></p>
-
 <p><span class="n">clss3</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 <span class="n">test_err</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">train_err</span> <span class="o">=</span> <span class="p">[]</span></p>
-
 <p><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">5</span><span class="p">)):</span>
-    <span class="n">clss3</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">LinearSVC</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="p">(</span><span class="n">c</span><span class="o">*.</span><span class="mi">01</span><span class="p">))</span>
-    <span class="n">clss3</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_tr</span><span class="p">[:,</span><span class="mi">3</span><span class="p">:],</span> <span class="n">train_tr</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&lsquo;int64&rsquo;</span><span class="p">))</span>
-    <span class="n">test_err</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">clss3</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">train_x</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:],</span> <span class="n">train_x</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&lsquo;int&rsquo;</span><span class="p">)))</span>
-    <span class="n">train_err</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">clss3</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">train_tr</span><span class="p">[:,</span><span class="mi">3</span><span class="p">:],</span> <span class="n">train_tr</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&lsquo;int&rsquo;</span><span class="p">)))</span>
+<span class="n">clss3</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">LinearSVC</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="p">(</span><span class="n">c</span><span class="o">*.</span><span class="mi">01</span><span class="p">))</span>
+<span class="n">clss3</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_tr</span><span class="p">[:,</span><span class="mi">3</span><span class="p">:],</span> <span class="n">train_tr</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'int64'</span><span class="p">))</span>
+<span class="n">test_err</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">clss3</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">train_x</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">:],</span> <span class="n">train_x</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'int'</span><span class="p">)))</span>
+<span class="n">train_err</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">clss3</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">train_tr</span><span class="p">[:,</span><span class="mi">3</span><span class="p">:],</span> <span class="n">train_tr</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">'int'</span><span class="p">)))</span>
 </pre></div></p>
-
-<p></div>
 </div>
-</div></p>
-
+</div>
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>100%|████████████████████████████████████████████| 8/8 [06:40<00:00, 49.96s/it]
 </pre>
 </div>
 </div>
-
-<p></div>
-</div></p>
-
-<p></div>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [51]:</div>
@@ -12647,18 +12488,13 @@ l6YAAAAASUVORK5CYII=
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">training_curve</span><span class="p">(</span><span class="n">test_err</span><span class="p">,</span> <span class="n">train_err</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">roc</span><span class="p">(</span><span class="n">clss3</span><span class="p">[</span><span class="mi">115</span><span class="p">],</span> <span class="n">hold_out</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">hold_out</span><span class="p">[:,</span><span class="mi">3</span><span class="p">:],</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</pre></div></p>
-
-<p></div>
+</pre></div>
 </div>
-</div></p>
-
+</div>
+</div>
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area"><div class="prompt"></div>
-
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAEZCAYAAABLiluIAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzs3Xd0XPWd///nnaoyqqNuq7pbFg6YYIxxCgmBTQwJAWdN
@@ -13022,13 +12858,10 @@ YBERERH52f8BMrrhGDtzULcAAAAASUVORK5CYII=
 "
 >
 </div>
-
-<p></div></p>
-
-<p></div>
-</div></p>
-
-<p></div></p>
+</div>
+</div>
+</div>
+</div>
 	
 
 
