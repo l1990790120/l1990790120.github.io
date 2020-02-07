@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>data-vis on LC</title>
@@ -17,7 +17,7 @@
       <pubDate>Wed, 04 May 2016 16:45:00 +0000</pubDate>
       
       <guid>https://l1990790120.github.io/post/2016-05-04-draw-with-us-college-data/</guid>
-      <description>&lt;p&gt;Showcase on what you can do with IPEDS data API. Choropleth with d3. I&#39;ve also tried this on beaker notebook. More details to come!&lt;/p&gt;</description>
+      <description>&lt;p&gt;Showcase on what you can do with IPEDS data API. Choropleth with d3. I&amp;rsquo;ve also tried this on beaker notebook. More details to come!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Tue, 29 Dec 2015 10:07:30 +0000</pubDate>
       
       <guid>https://l1990790120.github.io/post/2015-12-29-airbnb-new-user-booking-trend.mmark/</guid>
-      <description>&lt;p&gt;Using &lt;code&gt;mpld3&lt;/code&gt; to do visualization in ipython with Kaggle&#39;s airbnb data. First experience is great!&lt;/p&gt;</description>
+      <description>&lt;p&gt;Using &lt;code&gt;mpld3&lt;/code&gt; to do visualization in ipython with Kaggle&amp;rsquo;s airbnb data. First experience is great!&lt;/p&gt;</description>
     </item>
     
   </channel>
