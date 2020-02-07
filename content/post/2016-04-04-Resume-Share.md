@@ -27,8 +27,8 @@ New York, NY, 10013
 **Senior Data Engineer**, Deloitte Digital, New York, NY  
 2019-05 to Present
 
-- Working with various data science and analytics teams to research and evaluate tech stack and develop use cases. Integrating open source AI/ML stack ([Kubeflow](https://www.kubeflow.org/), [MLFlow](https://mlflow.org/), [H2O](https://www.h2o.ai/), [XGBoost](https://xgboost.readthedocs.io/), [Jupyter](https://jupyter.org/),[EMR](https://aws.amazon.com/emr/)) into streamlined, yml configurable pipelines with unified CI/CD processes to validate, build, scale model training containers and promote models to production on [Kubernetes](https://kubernetes.io/).
-- Research, evaluate, implement and contribute open source AI/ML toolings. Advocate for adoptions and coordinate migration process across group-wide teams to improve overall quality and efficiency of AI/ML applications.
+- Leading adoptions and migration process across group-wide data science and analytics teams to self-service, open-source AI/ML stack. Improve overall stability, quality and performance of AI/ML applications across organization, streamlined and shorten data science experimentation to production cycle.
+- Research, evaluate, contribute and deploy AI/ML stack. Integrating popular AI/ML frameworks ([Kubeflow](https://www.kubeflow.org/), [MLFlow](https://mlflow.org/), [H2O](https://www.h2o.ai/), [XGBoost](https://xgboost.readthedocs.io/), [Jupyter](https://jupyter.org/),[EMR](https://aws.amazon.com/emr/)) into streamlined, yml configurable pipelines with unified CI/CD processes to validate, build, scale model training containers and automated process to score and promote models to production on [Kubernetes](https://kubernetes.io/).
 
 **Senior Software Engineer**, PeerIQ, New York, NY  
 2018-01 to 2019-04
