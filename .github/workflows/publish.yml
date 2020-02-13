@@ -1,6 +1,6 @@
 name: Publish Content
-
-push:
+on:
+  push:
     branches:
       - develop
 
