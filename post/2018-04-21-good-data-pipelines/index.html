@@ -7,7 +7,7 @@
 	<meta name="author" content="Lulu Cheng">
 	<meta name="description" content="LC">
 	<meta name="keywords" content="Tech, Data Engineering, Machine Learning, Data Science, Economics, Politics, Social Science, Software Engineering">
-	<meta name="generator" content="Hugo 0.63.0-DEV" />
+	<meta name="generator" content="Hugo 0.64.1" />
 
 	
 	<link rel="stylesheet" href="https://l1990790120.github.io/css/theme.css"/>
@@ -216,7 +216,7 @@
 <p>Even if we have the flexibility to scale the infrastructure quickly and easily with minimal interruptions, being able to customize resource requirements and guarantee the demands are met could further enable us to fully utilize the resources cost effectively. In different stages we might want bigger or smaller executors, depends on how the backend of the executor is setup, sometimes it’s difficult to guarantee resource available for a job.</p>
 <p>For example, say we have a 3 nodes cluster running our database, resources available will be different when there’s one query as opposed to ten queries as opposed to a hundred queries. This introduces uncertainties in estimating tasks’ SLA and eventually becomes the bottleneck when things get busy.</p>
 <p>Another classic example is not being able to customize resource specifications for different steps. In a typical spark application, we often mixed map and reduce together as a monolithe application. This is a problem, because most of the time we need small but many executors in map step and less but bigger executors in reduce step. We either give it more memory and wasting resources in the map step or blowing up reduce step in order to fully utilize resources.</p>
-<h2 id="whats-in-good-data-pipelines">What's in Good Data Pipelines?<a href="#whats-in-good-data-pipelines" class="hanchor" ariaLabel="Anchor">   ¶</a> </h2>
+<h2 id="whats-in-good-data-pipelines">What&rsquo;s in Good Data Pipelines?<a href="#whats-in-good-data-pipelines" class="hanchor" ariaLabel="Anchor">   ¶</a> </h2>
 <p>Ok, those are all valid and obvious explanations, the real question is — how do we solve them? Instead of being very specific about how we solve those problems, I wanted to first share some of my personal philosophies about data engineering.</p>
 <h3 id="the-granular-the-better">The Granular the Better<a href="#the-granular-the-better" class="hanchor" ariaLabel="Anchor">   ¶</a> </h3>
 <p>Traditionally, we think of ETL as batch processing. We bring up big boxes and process a bunch of them at a time. But time is changing, so is the pricing model of computing resources. Instead of on-prem boxes, we can get as granular as on demand function runs (AWS Lambda or Azure Function). The more atomic the processing unit is, the easier it is on the infrastructure setup, the lighter the resources requirement is, the more efficient resource allocation could be.</p>
