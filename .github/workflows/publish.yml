@@ -13,6 +13,7 @@ jobs:
         rm -rf public
 
         echo "checkout to master as worktree"
+        git fetch --unshallow
         git worktree prune
         git worktree add -B master public origin/master
         
