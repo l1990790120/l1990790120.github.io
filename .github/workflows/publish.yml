@@ -25,7 +25,7 @@ jobs:
         cd public
         git add --all
         git commit -m "Publishing to master"
-        git push -f
+        git push
       env:
         GITHUB_EMAIL: ${{ secrets.GITHUB_EMAIL }}
         GITHUB_USER: ${{ secrets.GITHUB_USER }}  
