@@ -30,7 +30,7 @@ New York, NY, 10013
 - Leading adoptions and migration process across group-wide data science and analytics teams to self-service, open-source AI/ML stack. Improve overall stability, quality and performance of AI/ML applications across organization. Streamline and shorten data science experimentation to production cycle time.
 - Research, evaluate, contribute and deploy AI/ML stack. Integrate and internalize popular modern AI/ML frameworks ([Kubeflow](https://www.kubeflow.org/), [MLFlow](https://mlflow.org/), [H2O](https://www.h2o.ai/), [XGBoost](https://xgboost.readthedocs.io/), [Bert](https://github.com/google-research/bert), [Spark](https://spark.apache.org/)) into:
   1. YAML configurable pipelines for both ad-hoc experiments and production workflows.
-  2. Reusable components with unified CI/CD processes to validate, build, deploy across experiments easily.
+  2. Reusable components with unified CI/CD processes to validate, build, share across experiments easily.
   3. Optimize kubernetes to scale hyperparameter search. Automate scoring services deployment.
   4. Integration with external enterprise data science platforms.
 
