@@ -4,7 +4,7 @@ date = "2020-02-12T22:12:59-05:00"
 tags = ["blog", "cicd"]
 +++
 
-About two days ago, one of my coworkers was so fed up by Jenkins and decided to try Github Action. I've been thinking about automating [this github site's](http://l1990790120.github.io/) publishing process since ... the day I set it up. At work, if I have to setup a CD pipeline, I'd usually put it on Jenkins. But at home, I just want to sit back and relax, I don't want to spend my Netflix time fixing Jenkins (which unfortunately it breaks all the time at work). So, I decided to find a way to setup automated static content publishing process (or the fancy term -- CD) in Github Action for this site (repo: [https://github.com/l1990790120/l1990790120.github.io](https://github.com/l1990790120/l1990790120.github.io)).
+About two days ago, one of my coworkers was so fed up by Jenkins and decided to try Github Action. I've been thinking about automating publishing [this github site](http://l1990790120.github.io/) since ... the day I set it up. At work, if I have to setup a CD pipeline, I'd usually put it on Jenkins. But at home, I just want to sit back and relax, I don't want to spend my Netflix time fixing Jenkins (which unfortunately it breaks all the time at work). So, I decided to find a way to setup automated static content publishing process (or the fancy term -- CD) in Github Action for this site (repo: [https://github.com/l1990790120/l1990790120.github.io](https://github.com/l1990790120/l1990790120.github.io)).
 
 ## Auto Publish Custom Hugo Docker Image
 
