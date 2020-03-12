@@ -23,8 +23,11 @@ New York, NY, 10013
 
 ### Work Experience
 
+**Master Data Engineer**, Capital One, New York, NY
+2020-03 to Present
+
 **Senior Data Engineer**, Deloitte Digital, New York, NY  
-2019-05 to Present
+2019-05 to 2020-03
 
 - Working with various data science and analytics teams to research and evaluate tech stack and develop use cases. Integrating open source AI/ML stack ([Kubeflow](https://www.kubeflow.org/), [MLFlow](https://mlflow.org/), [H2O](https://www.h2o.ai/), [XGBoost](https://xgboost.readthedocs.io/), [Jupyter](https://jupyter.org/),[EMR](https://aws.amazon.com/emr/)) into streamlined, yml configurable pipelines with unified CI/CD processes to validate, build, scale model training containers and promote models to production on [Kubernetes](https://kubernetes.io/).
 - Research, evaluate, implement and contribute open source AI/ML toolings. Advocate for adoptions and coordinate migration process across group-wide teams to improve overall quality and efficiency of AI/ML applications.
