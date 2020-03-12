@@ -36,9 +36,9 @@ design with technology, always look for ways to make the world a better place.
 <div class="tldr collapse text-secondary" style="margin-top: 2%">
   Graduated with MS in Computer Science specialized in machine learning and AI,
   MA in Economics and BA in Political Science.
-  Currently I am senior data engineer at Deloitte Digital building streamlined 
-  and automated machine learning pipeline to shorten data science's experiment 
-  to production time.
+  Currently I am master data engineer at Capital One. Previously I was senior
+  data engineer at Deloittte building streamlined and automated machine 
+  learning pipeline to shorten data science's experiment to production time.
   <br><br>
   While not building new stuff, I enjoy thinking how to better software and
   infrastructure <b>by design</b> and leverage/re-purpose/combine new
@@ -81,7 +81,9 @@ design with technology, always look for ways to make the world a better place.
 
 #### <i class="fa fa-suitcase"></i> Where I Work
 
-Currently I am Senior Data Engineer at Deloitte Digital (New York, NY), where I ...
+Currently I am Master Data Engineer at Capital One, we will see what happen in a couple months.
+
+Prior to that, I was Senior Data Engineer at Deloitte Digital (New York, NY), where I ...
 
 - Build integrated and automated AI/ML infrastructure and toolings to simplify and shorten data science's experiment to production cycle.
 - Research, evaluate, implement and contribute open source AI/ML toolings. Advocate for adoptions and coordinate migration process across group-wide teams to improve overall quality and efficiency of AI/ML applications.
