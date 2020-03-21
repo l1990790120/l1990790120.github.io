@@ -71,7 +71,4 @@ paginate = 10
   tag = "tags"
 
 [markup]
-  defaultMarkdownHandler = "goldmark"
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+  defaultMarkdownHandler = "blackFriday"
