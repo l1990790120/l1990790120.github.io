@@ -126,6 +126,10 @@ Work with major brands in eCommerce, retail and technology:
 
 [coursera.org](https://www.coursera.org/)
 
+- Convolutional Neural Networks by deeplearning.ai
+- Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization by deeplearning.ai
+- Neural Networks and Deep Learning by deeplearning.ai
+- Structuring Machine Learning Projects by deeplearning.ai
 - An Introduction to Interactive Programming in Python, Rice University
 - Practical Machine Learning, John Hopkins University
 - Machine Learning, Stanford University
