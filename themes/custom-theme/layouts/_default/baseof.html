@@ -2,10 +2,14 @@
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
 	{{ partial "head.html" . }}
 	<body>
-		{{ partial "nav.html" . }}
+		<div class="row">
+			{{ partial "nav.html" . }}
+		</div>
 
 		<div class="container">
-			{{ block "main" . -}}{{- end }}
+			<div class="top-container col mr-auto">
+				{{ block "main" . -}}{{- end }}
+			</div>
 		</div>
 
 		{{ partial "footer.html" . }}
