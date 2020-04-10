@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
-	{{ partial "head.html" . }}
-	<body>
-		<div class="row">
-			{{ partial "nav.html" . }}
+    {{ partial "head.html" . }}
+    <body>
+        <div class="row">
+            {{ partial "nav.html" . }}
 		</div>
 
-		<div class="container">
-			<div class="top-container col mr-auto">
-				{{ block "main" . -}}{{- end }}
+		
+		<div class="top-container col mr-auto">
+			<div class="container text-wrap">
+				{{ block "main" . }}
+				{{ end }}
 			</div>
 		</div>
 
-		{{ partial "footer.html" . }}
-	</body>
+        {{ partial "footer.html" . }}
+    </body>
 </html>

@@ -1,8 +1,10 @@
 {{ define "main" -}}
 
-<div class="top-container">
+
 	{{ if and (isset .Params "featureimage") (not (eq .Params.featureimage "")) -}}
-	<div class="row" style="background-image: url('{{ .Site.BaseURL }}{{ .Params.featureimage }}')">
+	<div
+		class="row"
+		style="background-image: url('{{ .Site.BaseURL }}{{ .Params.featureimage }}')">
 		<h1 class="title">{{ .Title }}</h1>
 	</div>
 	{{- else -}}
@@ -12,7 +14,7 @@
 	{{- end }}
 
 	{{ if not .Params.hideMeta }}
-	 {{ partial "post-meta" . }}
+	{{ partial "post-meta" . }}
 	{{ end }}
 
 	{{ if and (isset .Params "notebook") (.Params.notebook) }}
@@ -23,8 +25,6 @@
 
 
 	{{ if (not (eq .Site.DisqusShortname "")) | and (not .Params.disableComments) }}
-	<hr>
 		{{ template "_internal/disqus.html" . }}
 	{{ end }}
-</div>
 {{- end }}
