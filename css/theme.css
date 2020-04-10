@@ -6917,7 +6917,8 @@ button.bg-dark:focus {
   text-align: justify !important; }
 
 .text-wrap {
-  white-space: normal !important; }
+  white-space: normal !important; 
+  word-wrap: break-word !important; }
 
 .text-nowrap {
   white-space: nowrap !important; }
