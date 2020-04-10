@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>airflow on LC</title>
+    <link>https://l1990790120.github.io/tags/airflow/</link>
+    <description>Recent content in airflow on LC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 Apr 2020 22:12:59 -0500</lastBuildDate>
+    
+	<atom:link href="https://l1990790120.github.io/tags/airflow/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Local Data Analytics Stack (Airflow &#43; Superset)</title>
+      <link>https://l1990790120.github.io/post/2020-04-08-local-airflow-from-scratch/</link>
+      <pubDate>Wed, 08 Apr 2020 22:12:59 -0500</pubDate>
+      
+      <guid>https://l1990790120.github.io/post/2020-04-08-local-airflow-from-scratch/</guid>
+      <description>At work, the BI environment is often setup and ready to go. At home, when I need to do data analysis myself, it really helps if there&amp;rsquo;s data pipeline and visualization tools ready to go. Over time, I&amp;rsquo;ve developed my go-to open source data analytics stack that runs on my local machine. The repo: https://github.com/l1990790120/local-data-stack is self-contained. In this post, I&amp;rsquo;ll share a bit more details on how it works and how to use it.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+	<title>Local Data Analytics Stack (Airflow &#43; Superset) - LC</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Lulu Cheng">
+	<meta name="description" content="LC">
+	<meta name="keywords" content="Tech, Data Engineering, Machine Learning, Data Science, Economics, Politics, Social Science, Software Engineering">
+	<meta name="generator" content="Hugo 0.64.1" />
+
+	
+	<link rel="stylesheet" href="https://l1990790120.github.io/css/theme.css"/>
+	
+	
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://l1990790120.github.io/css/main.css">
+
+	
+
+	<!--Favicon-->
+	<link rel="shortcut icon" href="https://l1990790120.github.io/favicon.ico" type="image/x-icon">
+
+	<!-- RSS -->
+	
+
+	<!-- Font Awesome -->
+	<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+	<body>
+		<div class="row">
+			<script>
+	
+	(function ($) {
+
+	var previousScroll = 20;
+		
+		$(window).scroll(function(e) {
+		
+			
+			var scroll = $(window).scrollTop();
+			if (scroll >= previousScroll) {
+				$('.navbar').addClass("navbar-hide");
+			
+			}else if (scroll < previousScroll) {
+				$('.navbar').removeClass("navbar-hide");
+			}
+			previousScroll = scroll;
+		
+		});
+		
+	})(jQuery);    
+</script>
+
+<style>
+	.navbar {
+		transition: top 0.5s ease;
+	}
+
+	.navbar-hide {
+		top: -100px;
+	}
+</style>
+
+<nav class="navbar fixed-top navbar-expand-md navbar-light bg-white">
+	<a class="navbar-brand" href="https://l1990790120.github.io/">
+		<img
+			class="avatar"
+			src="https://l1990790120.github.io/profile.png"
+			alt=""
+		/>
+	</a>
+	<a class="navbar-brand" href="https://l1990790120.github.io/">LC</a>
+
+	<button
+		class="navbar-toggler"
+		type="button"
+		data-toggle="collapse"
+		data-target="#navbarSupportedContent"
+		aria-controls="navbarSupportedContent"
+		aria-expanded="false"
+		aria-label="Toggle navigation"
+	>
+		<span class="navbar-toggler-icon"></span>
+	</button>
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="/about/"
+					>About
+					<span class="sr-only">(current)</span>
+				</a>
+			</li><li class="nav-item">
+				<a class="nav-link" href="/"
+					>Blog
+					<span class="sr-only">(current)</span>
+				</a>
+			</li><li class="nav-item">
+				<a class="nav-link" href="/generative-art/"
+					>Generative Art
+					<span class="sr-only">(current)</span>
+				</a>
+			</li>
+		</ul>
+		  <a
+	href="mailto:l1990790120@gmail.com"
+	title="Email"
+>
+	<i class="fa fa-fw fa-envelope"></i>
+</a>    <a
+	href="https://www.facebook.com/l1990790120"
+	title="Facebook"
+>
+	<i class="fa fa-fw fa-facebook"></i>
+</a>  <a
+	href="https://github.com/l1990790120"
+	title="GitHub"
+>
+	<i class="fa fa-fw fa-github"></i>
+</a> <a
+	href="http://instagram.com/l1990790120"
+	title="Instagram"
+>
+	<i class="fa fa-fw fa-instagram"></i>
+</a> <a
+	href="https://www.linkedin.com/in/luluchengengineeratheart"
+	title="LinkedIn"
+>
+	<i class="fa fa-fw fa-linkedin"></i>
+</a> <a
+	href="http://www.pinterest.com/l1990790120"
+	title="Pinterest"
+>
+	<i class="fa fa-fw fa-pinterest"></i>
+</a> <a
+	href="https://www.reddit.com/user/l1990790120"
+	title="Reddit"
+>
+	<i class="fa fa-fw fa-reddit"></i>
+</a>     <a
+	href="https://twitter.com/l1990790120"
+	title="Twitter"
+>
+	<i class="fa fa-fw fa-twitter"></i>
+</a>  <a
+	href="https://www.youtube.com/user/l1990790120"
+	title="YouTube"
+>
+	<i class="fa fa-fw fa-youtube"></i>
+</a>   <a
+	href="https://medium.com/@l1990790120"
+	title=""
+>
+	<i class="fa fa-fw fa-medium"></i>
+</a>
+
+	</div>
+</nav>
+
+		</div>
+
+		<div class="container">
+			<div class="top-container col mr-auto">
+				<div class="top-container">
+	<div class="pt-3">
+		<h1 class="title text-center">Local Data Analytics Stack (Airflow &#43; Superset)</h1>
+	</div>
+
+	
+	 <style>
+.post-meta{
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    font-size: 90%;
+}
+</style>
+
+<div>
+    <div class="row text-secondary post-meta py-1">
+        2020/04/08
+        
+        &middot; 
+        
+        3
+        minute read
+    </div>
+
+    <div class="row post-meta pb-3 pt-1">
+        
+        <a href="https://l1990790120.github.io/tags/airflow" class="badge badge-light">airflow</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/analytics" class="badge badge-light">analytics</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/covid19" class="badge badge-light">covid19</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/data" class="badge badge-light">data</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/data-analytics" class="badge badge-light">data-analytics</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/data-engineering" class="badge badge-light">data-engineering</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/docker" class="badge badge-light">docker</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/docker-compose" class="badge badge-light">docker-compose</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/python" class="badge badge-light">python</a>
+             &nbsp; <a href="https://l1990790120.github.io/tags/superset" class="badge badge-light">superset</a>
+            
+    </div>
+</div>
+	
+
+	
+	<div>
+  
+
+<p>At work, the BI environment is often setup and ready to go. At home, when I need to do data analysis myself, it really helps if there&rsquo;s data pipeline and visualization tools ready to go. Over time, I&rsquo;ve developed my go-to open source data analytics stack that runs on my local machine. The repo: <a href="https://github.com/l1990790120/local-data-stack">https://github.com/l1990790120/local-data-stack</a> is self-contained. In this post, I&rsquo;ll share a bit more details on how it works and how to use it.</p>
+
+<h1 id="background">Background<a href="#background" class="hanchor" ariaLabel="Anchor">   ¶</a> </h1>
+
+<p>A typical data analytics workflow for me is usually consisted of:</p>
+
+<ol>
+<li><a href="https://airflow.apache.org/">Airflow</a>: orchestrate the steps to download, process data, and then load it into Postgres.</li>
+<li><a href="https://superset.apache.org/">Superset</a>: data exploration and visualizations.</li>
+<li><a href="https://www.postgresql.org/">Postgres</a>: it&rsquo;s used as backend of airflow and superset, as well as database to load our data to for analysis.</li>
+</ol>
+
+<p>Sometimes, I&rsquo;ll throw a jupyter notebook and h2o to do some further data exploration or building simple models.</p>
+
+<p><strong>Quick reminders</strong></p>
+
+<ol>
+<li>you&rsquo;ll need docker and docker-compose.</li>
+<li>everything I am doing here is based on osx so some command may be different if you are on linux.</li>
+</ol>
+
+<h1 id="run-airflow-superset-postgres-with-docker-compose">Run Airflow, Superset, Postgres with Docker-Compose<a href="#run-airflow-superset-postgres-with-docker-compose" class="hanchor" ariaLabel="Anchor">   ¶</a> </h1>
+
+<p>Thanks to the community of Airflow, Superset, Docker and Postgres, the <code>docker-compose.yaml</code> in the repo is mostly modified from:</p>
+
+<ul>
+<li>Airflow: <a href="https://github.com/puckel/docker-airflow">https://github.com/puckel/docker-airflow</a></li>
+<li>Superset: <a href="https://github.com/amancevice/docker-superset/">https://github.com/amancevice/docker-superset/</a></li>
+<li>Postgres: <a href="https://hub.docker.com/_/postgres">https://hub.docker.com/_/postgres</a></li>
+</ul>
+
+<p>To start:</p>
+
+<ol>
+<li>Clone the repository <a href="https://github.com/l1990790120/local-data-stack">https://github.com/l1990790120/local-data-stack</a></li>
+<li>Go to repository directory</li>
+<li>run <code>docker-compose up -d</code>.</li>
+</ol>
+
+<p>Or, in your terminal, just run the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone git@github.com:l1990790120/local-data-stack.git
+cd local-data-stack
+docker-compose up -d</code></pre></div>
+<p>Suppose things are working as expected, you should see</p>
+
+<ul>
+<li>Airflow: <a href="http://localhost:8080/">http://localhost:8080/</a></li>
+<li>Superset: <a href="http://localhost:8088/">http://localhost:8088/</a></li>
+</ul>
+
+<p><strong>Note:</strong> You&rsquo;ll need to initialize Superset for the first time.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker exec -it local-data-stack_superset_1 superset-init</code></pre></div>
+<h1 id="jhu-covid-dataset-example">JHU Covid Dataset Example<a href="#jhu-covid-dataset-example" class="hanchor" ariaLabel="Anchor">   ¶</a> </h1>
+
+<p>Let&rsquo;s go through an example on how you can use these. There&rsquo;s a lot of articles and models built for Covid-19. I am not a public health expert so I&rsquo;ll reframe from publishing any conclusion. However, I am still interested to just look at the data.</p>
+
+<p>JHU has published repository with all the data that backs up their <a href="https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6">trend visualization</a> here:<br />
+<a href="https://github.com/CSSEGISandData/COVID-19">https://github.com/CSSEGISandData/COVID-19</a>.</p>
+
+<p>Everyday, they publish a csv back to 2020-01-22:<br />
+<a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports">https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports</a></p>
+
+<p>Now, I want to download the data and load it to my local postgres to do some simple visualization. Thankfully, Airflow already has functionality that allows you to set a start date and run workflow iteratively back from current date to start date.</p>
+
+<p>I already implemented the DAG in <a href="https://github.com/l1990790120/local-data-stack/blob/master/dags/covid_example.py">https://github.com/l1990790120/local-data-stack/blob/master/dags/covid_example.py</a>, however, if you are interested in the details.</p>
+
+<p>In <code>CovidLoadDataDag</code>, simply tweak the start date and schedule interval, Airflow will catchup to download and load each historical daily file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    start_date <span style="color:#f92672">=</span> datetime(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">22</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)
+    end_date <span style="color:#f92672">=</span> datetime(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">29</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>)
+    schedule_interval <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">@daily</span><span style="color:#e6db74">&#34;</span>
+    catchup <span style="color:#f92672">=</span> True</code></pre></div>
+<p>Once everything&rsquo;s loaded (all green on Airflow), go to your Superset, we can do some quick visualization with just a few clicks.</p>
+
+<style>
+img{
+    max-width: 100%;
+    height: auto;
+}
+</style>
+
+<p><img src="/img/superset-convig19.png" alt="" /></p>
+
+<p>Nice isn&rsquo;t it? You can drill down on different state, maybe chart out dod trend as well.</p>
+
+<h1 id="conclusion">Conclusion<a href="#conclusion" class="hanchor" ariaLabel="Anchor">   ¶</a> </h1>
+
+<p>That&rsquo;s all! I hope you found this useful. Make this yours. Next time if you have a data project, I hope you can explore data a lot faster with this setup. Happy coding!</p>
+
+</div>
+
+<style>
+  .hanchor {
+    font-size: 100%;
+    visibility: hidden;
+    color:silver;
+  }
+  h1:hover a, h2:hover a, h3:hover a, h4:hover a {
+    visibility: visible;
+    text-decoration: none;
+  }
+</style>
+	
+
+
+	
+	<hr>
+		<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "l1990790120" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	
+</div>
+			</div>
+		</div>
+
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-71133003-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+	</body>
+</html>
