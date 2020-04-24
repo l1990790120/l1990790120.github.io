@@ -81,7 +81,7 @@ design with technology, always look for ways to make the world a better place.
 
 #### <i class="fa fa-suitcase"></i> Where I Work
 
-Currently I am Master Data Engineer at Capital One, we will see what happen in a couple months.
+Currently I am Master Data Engineer at Capital One.
 
 Prior to that, I was Senior Data Engineer at Deloitte Digital (New York, NY), where I ...
 

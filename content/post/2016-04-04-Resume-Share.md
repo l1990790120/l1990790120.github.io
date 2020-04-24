@@ -24,7 +24,7 @@ New York, NY, 10013
 
 ### Work Experience
 
-**Master Data Engineer**, Capital One, New York, NY
+**Master Data Engineer**, Capital One, New York, NY  
 2020-03 to Present
 
 **Senior Data Engineer**, Deloitte Digital, New York, NY  
