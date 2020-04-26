@@ -4,7 +4,7 @@ date = 2020-04-23T14:53:45-04:00
 tags = ["blog", "career", "work", "software-engineering", "product", "tech"]
 +++
 
-Companies who could afford in-house engineering teams often have tendencies to build custom in-house solutions no matter how prevalent that solution already is. To highlight the absurdity, let me give an example: [Jupyter Notebook](https://jupyter.org/). Despite the space being extremely competitive, [Google has Colab](https://colab.research.google.com/notebooks/welcome.ipynb), [Amazon has Sagemaker](https://aws.amazon.com/sagemaker/), [Azure](https://notebooks.azure.com/), [Databricks](https://docs.databricks.com/notebooks/index.html), [Domino](https://www.dominodatalab.com/), [Binder](https://mybinder.org/) all offer similar services and the list goes on, Product or Technology still cannot resist the urge to build one (if not multiple) in-house. Not to mention some notable companies spent $$$$ on building fully integrated notebooks on their platforms.
+Companies who could afford in-house engineering teams often have tendencies to build custom in-house solutions no matter how prevalent that solution already is. To highlight the absurdity, let me give an example: [Jupyter Notebook](https://jupyter.org/). Despite the space being extremely competitive, [Google has Colab](https://colab.research.google.com/notebooks/welcome.ipynb), [Amazon has Sagemaker](https://aws.amazon.com/sagemaker/), [Azure](https://notebooks.azure.com/), [Databricks](https://docs.databricks.com/notebooks/index.html), [Domino](https://www.dominodatalab.com/), [Binder](https://mybinder.org/) all offer similar services and the list goes on, Product or Technology still cannot resist the urge to build one (if not multiple) in-house. Not to mention some notable companies spent fortunes on building fully integrated notebooks on their platforms.
 
 ## Shoulders of Giants
 
@@ -38,7 +38,7 @@ Let's see how engineering will build when stories are rolled out as above withou
 
 1. A Jupyter notebook docker image with AWS, API credentials configured and some pre-installed packages.
 2. Deploy that image on ec2 instances. Configure custom networking, permissioning and monitoring.
-3. Add a cli tool to so one can automatically deploy to custom ec2 instances.
+3. Add a cli tool so one can automatically deploy to custom ec2 instances.
 
 Very logical progression, other than not asking the right question in the first place, engineering can hardly be blamed for wasting their time solving problems that's been solved over and over by the internet. Some of them might eventually raise questions after they found out just how many people have approached product's **unique problem** on google. I highly recommend to keep in touch with those engineers who dare to ask these questions, they will at some point prevent teams from wasting $$$$ on useless projects down the road.
 
