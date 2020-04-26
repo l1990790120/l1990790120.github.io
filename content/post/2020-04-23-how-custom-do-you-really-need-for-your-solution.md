@@ -18,7 +18,7 @@ Engineering's tendency to build something new is sometimes understandable:
 I challenge with everyone who wants to build something new to answer these:
 
 - If a team of capable people already attempted at solving a similar problem you are solving, why would you do it better? You are either narcissistic or disrespectful of other people's ability to execute. Otherwise, it's not a people problem.
-- Would faster and better technologies always solve the a similar problem better? Do you feel conversations with your mom are better with a smartphone than a landline phone? Smartphones did create ranges of new problems, but not for the ones where there were existing solutions, one couldn't possibly argue texts in bubbles read better than boxes.
+- Would faster and better technologies always solve the a similar problem better? Do you feel conversations with your mom are better with a smartphone than a landline phone? Smartphones did create ranges of new problems, but for the ones where there were existing solutions, one couldn't possibly argue texts in bubbles read better than boxes.
 
 **Do not misunderstand this as opposing changes and new technology.** As a matter of fact, I am often the one that brings new technologies into an organization and encourage people to try it out (almost to an annoying level). Let me elaborate more.
 
@@ -32,7 +32,7 @@ Let's take the notebook example (90% based on mixes of true stories):
 
 1. It usually started with no more than setting up credentials, networking to access data and api and some pre-installed private packages.
 2. Afterwards, the team wants it to be hosted so they can use it to run recurring reports or other long running jobs.
-3. If the project is still alive. Quite likely it has accumulated some users. Now, they need to run certain notebook on GPU, some on micro instance and some others on a spark cluster.
+3. If the project is still alive, quite likely it has accumulated some users. Now they need to run some on GPU, some on micro instances and some others on spark clusters.
 
 Let's see how engineering will build when stories are rolled out as above without product's help to frame the issues into better problem.
 
