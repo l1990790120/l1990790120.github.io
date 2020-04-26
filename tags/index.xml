@@ -6,10 +6,64 @@
     <description>Recent content in Tags on LC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Apr 2020 22:12:59 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 23 Apr 2020 14:53:45 -0400</lastBuildDate>
     
 	<atom:link href="https://l1990790120.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>blog</title>
+      <link>https://l1990790120.github.io/tags/blog/</link>
+      <pubDate>Thu, 23 Apr 2020 14:53:45 -0400</pubDate>
+      
+      <guid>https://l1990790120.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>career</title>
+      <link>https://l1990790120.github.io/tags/career/</link>
+      <pubDate>Thu, 23 Apr 2020 14:53:45 -0400</pubDate>
+      
+      <guid>https://l1990790120.github.io/tags/career/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>product</title>
+      <link>https://l1990790120.github.io/tags/product/</link>
+      <pubDate>Thu, 23 Apr 2020 14:53:45 -0400</pubDate>
+      
+      <guid>https://l1990790120.github.io/tags/product/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software-engineering</title>
+      <link>https://l1990790120.github.io/tags/software-engineering/</link>
+      <pubDate>Thu, 23 Apr 2020 14:53:45 -0400</pubDate>
+      
+      <guid>https://l1990790120.github.io/tags/software-engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tech</title>
+      <link>https://l1990790120.github.io/tags/tech/</link>
+      <pubDate>Thu, 23 Apr 2020 14:53:45 -0400</pubDate>
+      
+      <guid>https://l1990790120.github.io/tags/tech/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>work</title>
+      <link>https://l1990790120.github.io/tags/work/</link>
+      <pubDate>Thu, 23 Apr 2020 14:53:45 -0400</pubDate>
+      
+      <guid>https://l1990790120.github.io/tags/work/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>airflow</title>
@@ -98,15 +152,6 @@
       <pubDate>Wed, 08 Apr 2020 22:12:59 -0500</pubDate>
       
       <guid>https://l1990790120.github.io/tags/superset/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>blog</title>
-      <link>https://l1990790120.github.io/tags/blog/</link>
-      <pubDate>Wed, 12 Feb 2020 22:12:59 -0500</pubDate>
-      
-      <guid>https://l1990790120.github.io/tags/blog/</guid>
       <description></description>
     </item>
     

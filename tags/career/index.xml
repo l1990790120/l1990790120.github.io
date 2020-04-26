@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>career on LC</title>
+    <link>https://l1990790120.github.io/tags/career/</link>
+    <description>Recent content in career on LC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Apr 2020 14:53:45 -0400</lastBuildDate>
+    
+	<atom:link href="https://l1990790120.github.io/tags/career/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How Custom Do You Really Need for Your Solution?</title>
+      <link>https://l1990790120.github.io/post/2020-04-23-how-custom-do-you-really-need-for-your-solution/</link>
+      <pubDate>Thu, 23 Apr 2020 14:53:45 -0400</pubDate>
+      
+      <guid>https://l1990790120.github.io/post/2020-04-23-how-custom-do-you-really-need-for-your-solution/</guid>
+      <description>Companies who could afford in-house engineering teams often have tendencies to build custom in-house solutions no matter how prevalent that solution already is. To highlight the absurdity, let me give an example: Jupyter Notebook. Despite the space being extremely competitive, Google has Colab, Amazon has Sagemaker, Azure, Databricks, Domino, Binder all offer similar services and the list goes on, Product or Technology still cannot resist the urge to build one (if not multiple) in-house.</description>
+    </item>
+    
+  </channel>
+</rss>
