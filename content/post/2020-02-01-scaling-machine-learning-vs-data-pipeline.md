@@ -60,6 +60,7 @@ Now, this is not to say Kubeflow and Kubernetes are antidote to all problems. As
 4. No open-source "repository" to share or fork re-usable resources. On google cloud, one can access [AI Hub](https://cloud.google.com/ai-hub/). For rest of the world, other than writing custom module to share component over github, I have found no easier way to copy versioned re-usable components.
 
 One last note. Those who are on the market to look at machine learning platforms or frameworks, there are many more options. The space is still under rapid development and is far from convergence. Other tools to look out for:
+
 * [cortex](https://github.com/cortexlabs/cortex)
 * [mlflow](https://mlflow.org/) -- tried, not easy to extend and reproduce.
 * [comet](https://www.comet.ml/)

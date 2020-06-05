@@ -19,7 +19,7 @@ Sometimes, I'll throw a jupyter notebook and h2o to do some further data explora
 
 **Quick reminders**
 
-1. you'll need docker and docker-compose. 
+1. you'll need docker and docker-compose.
 2. everything I am doing here is based on osx so some command may be different if you are on linux.
 
 # Run Airflow, Superset, Postgres with Docker-Compose
