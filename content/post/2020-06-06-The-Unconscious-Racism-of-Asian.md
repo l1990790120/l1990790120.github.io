@@ -19,7 +19,7 @@ hide: true
 1. George Floyd 是執法過當不是種族歧視
 2. 公共衛生比 Racial Justice 重要
 
-### George Floyd 是執法過當不是種族歧視
+> George Floyd 是執法過當不是種族歧視
 
 只丟一句個人觀點很難證明什麼，更何況亞洲人就是怕事，在自己的生活圈中很少有跟警察對峙的情況。我邀請無法理解 Social Injustice 的台灣人們一起思考幾件事:
 
@@ -27,7 +27,7 @@ hide: true
 2. 畢竟不是來自那個族群，只能看資料理解所謂 structural-systematic injustice 對於 Black and Latino community 的影響。邀請大家看幾份數據:
    1. https://openpolicing.stanford.edu/findings/  
    這是一份來自 stanford 的報告，內容可以詳閱，資料上可以看出 black 跟 hispanic 都比白人有更高的機率警察攔車或是搜尋大麻
-   2. https://www.nyclu.org/en/stop-and-frisk-data  
+   1. https://www.nyclu.org/en/stop-and-frisk-data  
    這是一份紐約人都切身相關的數據。Bloomberg 在任期間 (de Blasio 上任後即大幅減少) 推動的 stop and frisk (註: https://en.wikipedia.org/wiki/Stop-and-frisk_in_New_York_City)  
    雖然在 de Blasio 上任後已大幅減少，沒有改變的是 Black and Latino 的比例仍居高。
 
@@ -44,7 +44,7 @@ hide: true
    <img src="https://media.giphy.com/media/lkdH8FmImcGoylv3t3/giphy.gif">
 </p>
 
-### 公共衛生安全比 Racial Justice 重要
+> 公共衛生比 Racial Justice 重要
 
 身為一個政治系憲法修了三次的且不是憲法專業的人，不好討論憲法和是否有哪一項權利在什麼情況凌駕於哪一項之上。公共衛生是否凌駕於種族正義只能交給最高法院或是其他律師們了，以下只是一個切身的經驗。
 
