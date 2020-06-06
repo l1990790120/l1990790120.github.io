@@ -2,6 +2,7 @@
 title: "The Unconscious Racism of Taiwanese American"
 date: 2020-05-31T23:37:25-04:00
 tags: ["taiwanese", "politics", "racism", "justice", "public-health", "personal-opinion"]
+image: https://i.imgur.com/SL20yyA.jpeg
 hide: true
 ---
 

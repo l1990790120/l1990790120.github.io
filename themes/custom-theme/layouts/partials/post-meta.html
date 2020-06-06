@@ -7,6 +7,13 @@
 </style>
 
 <div>
+    <div>
+        {{ if isset .Params "image" }}
+            <meta property="og:image" content="{{ $.Params.image }}">
+        {{ end }}
+        <meta property="og:title" content="{{ $.Params.title }}">
+        <meta property="og:description" content="{{ .Summary }} ...">
+    </div>
     <div class="row text-secondary post-meta py-1">
         {{ .Date.Format "2006/01/02" }}
         
