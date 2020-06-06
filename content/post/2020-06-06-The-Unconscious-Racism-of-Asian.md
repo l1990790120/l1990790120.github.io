@@ -29,8 +29,7 @@ hide: true
    這是一份來自 stanford 的報告，內容可以詳閱，資料上可以看出 black 跟 hispanic 都比白人有更高的機率警察攔車或是搜尋大麻
    1. https://www.nyclu.org/en/stop-and-frisk-data  
    這是一份紐約人都切身相關的數據。Bloomberg 在任期間 (de Blasio 上任後即大幅減少) 推動的 stop and frisk (註: https://en.wikipedia.org/wiki/Stop-and-frisk_in_New_York_City)  
-   雖然在 de Blasio 上任後已大幅減少，沒有改變的是 Black and Latino 的比例仍居高。
-
+   雖然在 de Blasio 上任後已大幅減少，沒有改變的是 Black and Latino 的比例仍居高。 
    以上是一些我熟知的數據，有興趣詳閱 Obama Foundation 發表的 [New Era of Public Safety](https://www.obama.org/wp-content/uploads/Toolkit.pdf) 的 citation 還有更多讓人心驚膽戰的數據。想像今天數據上的 Black 替換成 Asian，我們的生活會變成什麼樣子。
 3. 仔細一一閱讀過去警察過失殺人的案例，尤其是針對黑人。就算退一萬步說，是因為他們有前科，被懷疑，警察就可以在 "a fraction of second" 成為法官直接判他們死刑嗎? 這是我們嚮往的法治 (rule of law) 國家的精神嗎?  
    (附: https://www.npr.org/2020/05/29/865261916/a-decade-of-watching-black-people-die)
