@@ -9,12 +9,17 @@ disableComments = true
   <i class="fa fa-file-text-o"></i>
   <a href="/post/2016-04-04-resume-share/">&nbsp;Full Resume</a>
 </h4>
-<blockquote class="blockquote">
-  <p class="mb-0 text-center">
-    In God we trust, all others bring data.
-  </p>
-  <footer class="blockquote-footer text-center"><cite>The Elements of Statistical Learning</cite></footer>
-</blockquote>
+
+<div class="row">
+  <div class="col-sm col-centered" align="center">
+    <blockquote>
+      In God we trust, all others bring data.
+      <footer class="blockquote-footer">
+        <cite>The Elements of Statistical Learning</cite>
+      </footer>
+    </blockquote>
+  </div>
+</div>
 
 <div class="container">
   <div class="row">
