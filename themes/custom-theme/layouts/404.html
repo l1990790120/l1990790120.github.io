@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+
 	{{ partial "head.html" . }}
+
 	<body>
-		{{ partial "nav.html" . }}
-		<div class="content">
-			<article>
+		<div class="row">
+			{{ partial "nav.html" . }}
+		</div>
+
+		<div class="top-container col mr-auto">
+			<div class="container text-wrap" align="center">
 				<header>
 					<h1 class="title">{{ .Site.Data.l10n.pageNotFoundTitle }}</h1>
 				</header>
 			<section class="post-content">
 			<span style="display: flex; justify-content: center; align-items: center;">{{ .Site.Data.l10n.pageNotFoundSubtitle }}</span>
 			</section>
-		</article>
+			</div>
 
 		{{ partial "footer.html" . }}
 		</div>

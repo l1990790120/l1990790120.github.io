@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
-    {{ partial "head.html" . }}
-    <body>
+
+	{{ partial "head.html" . }}
+	{{ partial "meta.html" . }}
+
+	<body>
         <div class="row">
             {{ partial "nav.html" . }}
 		</div>
