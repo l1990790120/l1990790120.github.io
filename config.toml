@@ -25,7 +25,7 @@ paginate = 10
 
 [params]
 	author = "Lulu Cheng"
-	description = "LC"
+	description = ""
 	# The keywords will be added as a meta tag. Delimit them with a comma.
 	keywords = "Tech, Data Engineering, Machine Learning, Data Science, Economics, Politics, Social Science, Software Engineering"
 	# Either show custom avatar on the top
