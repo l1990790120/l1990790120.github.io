@@ -40,7 +40,7 @@ hide: true
 * 為什麼有錄影裝置警察就不會殺人呢
 
 <p align="center"> 
-   <img src="https://media.giphy.com/media/lkdH8FmImcGoylv3t3/giphy.gif">
+   <img src="https://media.giphy.com/media/lkdH8FmImcGoylv3t3/giphy.gif" style="max-width: 100%">
 </p>
 
 > 公共衛生比 Racial Justice 重要
@@ -55,5 +55,5 @@ Anyways,
 
 <div align="center">
   <h4>Be humble, be vulnerable. Listen and understand.</h4>
-  <img src="https://i.imgur.com/SL20yyA.jpeg">
+  <img src="https://i.imgur.com/SL20yyA.jpeg" style="max-width: 100%">
 </div>
