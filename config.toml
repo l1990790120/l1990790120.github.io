@@ -72,3 +72,8 @@ paginate = 10
 
 [markup]
   defaultMarkdownHandler = "blackFriday"
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
