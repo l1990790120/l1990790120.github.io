@@ -25,9 +25,10 @@ paginate = 10
 
 [params]
 	author = "Lulu Cheng"
-	description = ""
-	# The keywords will be added as a meta tag. Delimit them with a comma.
+	description = "Lulu is a software engineer. She writes about random things in she wants to write about."
 	keywords = "Tech, Data Engineering, Machine Learning, Data Science, Economics, Politics, Social Science, Software Engineering"
+	meta_og_type = "website"
+
 	# Either show custom avatar on the top
 	# left by adding the filename in below
 	avatar = "profile.png"

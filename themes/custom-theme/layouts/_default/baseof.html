@@ -1,22 +1,14 @@
 <!DOCTYPE html>
-<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
-
-	{{ partial "meta.html" . }}
-	{{ partial "head.html" . }}
-
+<html>
+	<head>
+		{{ partial "meta.html" . }} {{- partial "head.html" . -}}
+	</head>
 	<body>
-        <div class="row">
-            {{ partial "nav.html" . }}
-		</div>
-
-		
-		<div class="top-container col mr-auto">
-			<div class="container text-wrap">
-				{{ block "main" . }}
-				{{ end }}
-			</div>
-		</div>
-
-        {{ partial "footer.html" . }}
-    </body>
+    {{partial "nav.html" .}}
+    <div class="top-container col mr-auto">
+      <div class="row">
+      {{block "main" . }}{{end}}
+      </div>
+    </div>
+	</body>
 </html>

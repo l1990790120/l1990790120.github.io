@@ -1,3 +1,5 @@
+{{if eq .Section "post"}}
+<title>{{ .Title}}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
 <meta property="og:type" content="article">
 {{ if isset .Params "image" }}
 <meta property="og:image" content="{{ $.Params.image }}">
@@ -6,3 +8,13 @@
 {{ end }}
 <meta property="og:title" content="{{ $.Params.title }}">
 <meta property="og:description" content="{{ .Summary }}">
+<meta property="description" content="{{ .Summary }}">
+
+{{else}}
+<meta property="og:image" content="{{ .Site.BaseURL }}{{ .Site.Params.headerImage }}">
+<meta property="og:title" content="{{ .Site.Title }}" />
+<meta name="description" content="{{ .Site.Params.description }}" />
+<meta property="og:description" content="{{ .Site.Params.description }}" />
+<meta property="og:type" content="{{ .Site.Params.meta_og_type }}" />
+
+{{end}}

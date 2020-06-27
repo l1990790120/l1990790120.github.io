@@ -1,17 +1,20 @@
-{{ define "main" -}}
-	{{ if and (isset .Params "featureimage") (not (eq .Params.featureimage "")) -}}
-	<div
-		class="row"
-		style="background-image: url('{{ .Site.BaseURL }}{{ .Params.featureimage }}')">
-		<h1 class="title">{{ .Title }}</h1>
-	</div>
-	{{- else -}}
-	<div class="pt-3">
-		<h1 class="title text-center">{{ .Title }}</h1>
-	</div>
-	{{- end }}
+{{ define "main" }}
 
-	{{ if not .Params.hideMeta }}
+  <div class="container text-wrap">
+
+  {{ if and (isset .Params "featureimage") (not (eq .Params.featureimage "")) -}}
+  <div class="row" style="background-image: url('{{ .Site.BaseURL }}{{ .Params.featureimage }}')">
+    <h1 class="title">{{ .Title }}</h1>
+  </div>
+  {{ else }}
+  
+  <div class="row">
+    <h1 class="title text-center">{{ .Title }}</h1>
+  </div>
+  
+  {{- end }}
+
+  {{ if not .Params.hideMeta }}
 	{{ partial "post-meta" . }}
 	{{ end }}
 
@@ -21,8 +24,9 @@
 	{{ partial "headline-hash.html" .Content }}
 	{{ end }}
 
-
 	{{ if (not (eq .Site.DisqusShortname "")) | and (not .Params.disableComments) }}
 		{{ template "_internal/disqus.html" . }}
-	{{ end }}
+  {{ end }}
+  </div>
+
 {{- end }}
