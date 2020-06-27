@@ -25,7 +25,7 @@ paginate = 10
 
 [params]
 	author = "Lulu Cheng"
-	description = "Lulu is a software engineer."
+	description = "Lulu is a software engineer. She writes about random things in she wants to write about."
 	keywords = "Tech, Data Engineering, Machine Learning, Data Science, Economics, Politics, Social Science, Software Engineering"
 	meta_og_type = "website"
 

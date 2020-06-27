@@ -31,48 +31,50 @@
 	}
 </style>
 
-<nav class="navbar fixed-top navbar-expand-md navbar-light bg-white">
-	<a class="navbar-brand" href="{{ .Site.BaseURL }}">
-		{{ with .Site.Params.gravatar -}}
-		<img
-			class="avatar"
-			src="https://www.gravatar.com/avatar/{{ . | md5 }}?s=100&d=identicon"
-			alt=""
-		/>
-		{{- else -}}
-		<img
-			class="avatar"
-			src="{{ .Site.BaseURL }}{{ .Site.Params.avatar }}"
-			alt=""
-		/>
-		{{- end }}
-	</a>
-	<a class="navbar-brand" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+<div class="row">
+  <nav class="navbar fixed-top navbar-expand-md navbar-light bg-white">
+    <a class="navbar-brand" href="{{ .Site.BaseURL }}">
+      {{ with .Site.Params.gravatar -}}
+      <img
+        class="avatar"
+        src="https://www.gravatar.com/avatar/{{ . | md5 }}?s=100&d=identicon"
+        alt=""
+      />
+      {{- else -}}
+      <img
+        class="avatar"
+        src="{{ .Site.BaseURL }}{{ .Site.Params.avatar }}"
+        alt=""
+      />
+      {{- end }}
+    </a>
+    <a class="navbar-brand" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
 
-	<button
-		class="navbar-toggler"
-		type="button"
-		data-toggle="collapse"
-		data-target="#navbarSupportedContent"
-		aria-controls="navbarSupportedContent"
-		aria-expanded="false"
-		aria-label="Toggle navigation"
-	>
-		<span class="navbar-toggler-icon"></span>
-	</button>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav mr-auto">
-			{{ range .Site.Menus.main -}}
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        {{ range .Site.Menus.main -}}
 
-			<li class="nav-item">
-				<a class="nav-link" href="{{ .URL }}"
-					>{{ .Name }}
-					<span class="sr-only">(current)</span>
-				</a>
-			</li>
-			{{- end }}
-		</ul>
-		{{ partial "icons.html" . }}
-	</div>
-</nav>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ .URL }}"
+            >{{ .Name }}
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        {{- end }}
+      </ul>
+      {{ partial "icons.html" . }}
+    </div>
+  </nav>
+</div>
