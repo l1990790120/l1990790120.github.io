@@ -10,6 +10,13 @@
 <meta property="og:description" content="{{ .Summary }}">
 <meta property="description" content="{{ .Summary }}">
 
+<meta name="twitter:title" content="{{ $.Params.title }}" />
+<meta
+  name="twitter:twitter:description"
+  content="{{ .Summary }}"
+/>
+
+
 {{else}}
 <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Site.Params.headerImage }}">
 <meta property="og:title" content="{{ .Site.Title }}" />
@@ -17,4 +24,12 @@
 <meta property="og:description" content="{{ .Site.Params.description }}" />
 <meta property="og:type" content="{{ .Site.Params.meta_og_type }}" />
 
+<meta name="twitter:title" content="{{ .Site.Title }}" />
+<meta
+  name="twitter:twitter:description"
+  content="{{ .Site.Params.description }}"
+/>
 {{end}}
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@l1990790120" />
