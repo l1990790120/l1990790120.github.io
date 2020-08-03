@@ -1,6 +1,6 @@
 ---
 title: "Thoughts on AI Biases"
-date: 2020-08-03T23:37:25-04:00
+date: 2020-08-02T23:37:25-04:00
 tags: ["machine-learning", "data-science", "AI", "algorithm", "biases", "software", "engineering", "justice", "politics"]
 ---
 
