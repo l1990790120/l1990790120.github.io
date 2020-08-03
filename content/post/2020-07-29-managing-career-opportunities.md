@@ -1,6 +1,6 @@
 ---
 title: "Managing Career Opportunities"
-date: 2020-05-31T23:37:25-04:00
+date: 2020-07-29T23:37:25-04:00
 tags: ["work", "career", "software-engineer", "opportunity", "network"]
 ---
 
