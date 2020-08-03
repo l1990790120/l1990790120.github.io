@@ -6,33 +6,105 @@
     <description>Recent content in Tags on LC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 May 2020 23:37:25 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 02 Aug 2020 23:37:25 -0400</lastBuildDate>
     
 	<atom:link href="https://l1990790120.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>career</title>
-      <link>https://l1990790120.github.io/tags/career/</link>
-      <pubDate>Sun, 31 May 2020 23:37:25 -0400</pubDate>
+      <title>AI</title>
+      <link>https://l1990790120.github.io/tags/ai/</link>
+      <pubDate>Sun, 02 Aug 2020 23:37:25 -0400</pubDate>
       
-      <guid>https://l1990790120.github.io/tags/career/</guid>
+      <guid>https://l1990790120.github.io/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>algorithm</title>
+      <link>https://l1990790120.github.io/tags/algorithm/</link>
+      <pubDate>Sun, 02 Aug 2020 23:37:25 -0400</pubDate>
+      
+      <guid>https://l1990790120.github.io/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>biases</title>
+      <link>https://l1990790120.github.io/tags/biases/</link>
+      <pubDate>Sun, 02 Aug 2020 23:37:25 -0400</pubDate>
+      
+      <guid>https://l1990790120.github.io/tags/biases/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data-science</title>
+      <link>https://l1990790120.github.io/tags/data-science/</link>
+      <pubDate>Sun, 02 Aug 2020 23:37:25 -0400</pubDate>
+      
+      <guid>https://l1990790120.github.io/tags/data-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>engineering</title>
+      <link>https://l1990790120.github.io/tags/engineering/</link>
+      <pubDate>Sun, 02 Aug 2020 23:37:25 -0400</pubDate>
+      
+      <guid>https://l1990790120.github.io/tags/engineering/</guid>
       <description></description>
     </item>
     
     <item>
       <title>justice</title>
       <link>https://l1990790120.github.io/tags/justice/</link>
-      <pubDate>Sun, 31 May 2020 23:37:25 -0400</pubDate>
+      <pubDate>Sun, 02 Aug 2020 23:37:25 -0400</pubDate>
       
       <guid>https://l1990790120.github.io/tags/justice/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>machine-learning</title>
+      <link>https://l1990790120.github.io/tags/machine-learning/</link>
+      <pubDate>Sun, 02 Aug 2020 23:37:25 -0400</pubDate>
+      
+      <guid>https://l1990790120.github.io/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>politics</title>
+      <link>https://l1990790120.github.io/tags/politics/</link>
+      <pubDate>Sun, 02 Aug 2020 23:37:25 -0400</pubDate>
+      
+      <guid>https://l1990790120.github.io/tags/politics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software</title>
+      <link>https://l1990790120.github.io/tags/software/</link>
+      <pubDate>Sun, 02 Aug 2020 23:37:25 -0400</pubDate>
+      
+      <guid>https://l1990790120.github.io/tags/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>career</title>
+      <link>https://l1990790120.github.io/tags/career/</link>
+      <pubDate>Wed, 29 Jul 2020 23:37:25 -0400</pubDate>
+      
+      <guid>https://l1990790120.github.io/tags/career/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>network</title>
       <link>https://l1990790120.github.io/tags/network/</link>
-      <pubDate>Sun, 31 May 2020 23:37:25 -0400</pubDate>
+      <pubDate>Wed, 29 Jul 2020 23:37:25 -0400</pubDate>
       
       <guid>https://l1990790120.github.io/tags/network/</guid>
       <description></description>
@@ -41,9 +113,27 @@
     <item>
       <title>opportunity</title>
       <link>https://l1990790120.github.io/tags/opportunity/</link>
-      <pubDate>Sun, 31 May 2020 23:37:25 -0400</pubDate>
+      <pubDate>Wed, 29 Jul 2020 23:37:25 -0400</pubDate>
       
       <guid>https://l1990790120.github.io/tags/opportunity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software-engineer</title>
+      <link>https://l1990790120.github.io/tags/software-engineer/</link>
+      <pubDate>Wed, 29 Jul 2020 23:37:25 -0400</pubDate>
+      
+      <guid>https://l1990790120.github.io/tags/software-engineer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>work</title>
+      <link>https://l1990790120.github.io/tags/work/</link>
+      <pubDate>Wed, 29 Jul 2020 23:37:25 -0400</pubDate>
+      
+      <guid>https://l1990790120.github.io/tags/work/</guid>
       <description></description>
     </item>
     
@@ -53,15 +143,6 @@
       <pubDate>Sun, 31 May 2020 23:37:25 -0400</pubDate>
       
       <guid>https://l1990790120.github.io/tags/personal-opinion/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>politics</title>
-      <link>https://l1990790120.github.io/tags/politics/</link>
-      <pubDate>Sun, 31 May 2020 23:37:25 -0400</pubDate>
-      
-      <guid>https://l1990790120.github.io/tags/politics/</guid>
       <description></description>
     </item>
     
@@ -84,29 +165,11 @@
     </item>
     
     <item>
-      <title>software-engineer</title>
-      <link>https://l1990790120.github.io/tags/software-engineer/</link>
-      <pubDate>Sun, 31 May 2020 23:37:25 -0400</pubDate>
-      
-      <guid>https://l1990790120.github.io/tags/software-engineer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>taiwanese</title>
       <link>https://l1990790120.github.io/tags/taiwanese/</link>
       <pubDate>Sun, 31 May 2020 23:37:25 -0400</pubDate>
       
       <guid>https://l1990790120.github.io/tags/taiwanese/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>work</title>
-      <link>https://l1990790120.github.io/tags/work/</link>
-      <pubDate>Sun, 31 May 2020 23:37:25 -0400</pubDate>
-      
-      <guid>https://l1990790120.github.io/tags/work/</guid>
       <description></description>
     </item>
     
@@ -246,29 +309,11 @@
     </item>
     
     <item>
-      <title>data-science</title>
-      <link>https://l1990790120.github.io/tags/data-science/</link>
-      <pubDate>Sat, 01 Feb 2020 15:20:10 +0000</pubDate>
-      
-      <guid>https://l1990790120.github.io/tags/data-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>infrastructure</title>
       <link>https://l1990790120.github.io/tags/infrastructure/</link>
       <pubDate>Sat, 01 Feb 2020 15:20:10 +0000</pubDate>
       
       <guid>https://l1990790120.github.io/tags/infrastructure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>machine-learning</title>
-      <link>https://l1990790120.github.io/tags/machine-learning/</link>
-      <pubDate>Sat, 01 Feb 2020 15:20:10 +0000</pubDate>
-      
-      <guid>https://l1990790120.github.io/tags/machine-learning/</guid>
       <description></description>
     </item>
     

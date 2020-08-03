@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>data-science on LC</title>
-    <link>https://l1990790120.github.io/tags/data-science/</link>
-    <description>Recent content in data-science on LC</description>
+    <title>software on LC</title>
+    <link>https://l1990790120.github.io/tags/software/</link>
+    <description>Recent content in software on LC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 02 Aug 2020 23:37:25 -0400</lastBuildDate>
     
-	<atom:link href="https://l1990790120.github.io/tags/data-science/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://l1990790120.github.io/tags/software/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       <guid>https://l1990790120.github.io/post/2020-08-03-thoughts-on-ai-biases/</guid>
       <description>Almost in every AI or Machine Learning conferences I&amp;rsquo;ve been to lately, there&amp;rsquo;s always a track dedicating to biases or &amp;ldquo;injustices&amp;rdquo; in algorithmic decisions. Books have been published (Automating Inequality: How High-Tech Tools Profile, Police, and Punish the Poor, Algorithms of Oppression: How Search Engines Reinforce Racism etc.) and fear has been spread (Elon Musk says AI development should be better regulated, even at Tesla ).
 The fear of unknown is, perhaps, more persuasive than a realistic survey of the state of AGI (Artificial General Intelligence) development.</description>
-    </item>
-    
-    <item>
-      <title>The Differences in Scaling Machine Learning and ETL Pipelines</title>
-      <link>https://l1990790120.github.io/post/2020-02-01-scaling-machine-learning-vs-data-pipeline/</link>
-      <pubDate>Sat, 01 Feb 2020 15:20:10 +0000</pubDate>
-      
-      <guid>https://l1990790120.github.io/post/2020-02-01-scaling-machine-learning-vs-data-pipeline/</guid>
-      <description>Data engineers rarely have a say in what&amp;rsquo;s coming in the systems we&amp;rsquo;ve built. This presents great challenges where data systems often need to be tolerant about unseen events and at the same time have extra monitoring or QA processes to allow human to determine if the exception actually signals a broader system failure. Machine learning systems have brought this challenge to a new level - in data pipelines, system failures are mostly deterministic or at least reproducible when certain conditions are met.</description>
     </item>
     
   </channel>
