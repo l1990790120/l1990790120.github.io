@@ -4,7 +4,7 @@ date: 2020-08-02T23:37:25-04:00
 tags: ["machine-learning", "data-science", "AI", "algorithm", "biases", "software", "engineering", "justice", "politics"]
 ---
 
-Almost in every AI or Machine Learning conferences I've been to lately, there's always a track dedicating to biases or "injustices" in algorithmic decisions. Books have been published ([Automating Inequality: How High-Tech Tools Profile, Police, and Punish the Poor](https://amzn.to/3k1U4Vs), [Algorithms of Oppression: How Search Engines Reinforce Racism](https://amzn.to/2XjUeh8) etc.) and fear has been spread ([Elon Musk says AI development should be better regulated, even at Tesla
+Almost in every AI or Machine Learning conferences I've been to lately, there's a track dedicating to biases or "injustices" in algorithmic decisions. Books have been published ([Automating Inequality: How High-Tech Tools Profile, Police, and Punish the Poor](https://amzn.to/3k1U4Vs), [Algorithms of Oppression: How Search Engines Reinforce Racism](https://amzn.to/2XjUeh8) etc.) and fear has been spread ([Elon Musk says AI development should be better regulated, even at Tesla
 ](https://www.theverge.com/2020/2/18/21142489/elon-musk-ai-regulation-tweets-open-ai-tesla-spacex-twitter)).
 
 The fear of unknown is, perhaps, more persuasive than [a realistic survey of the state of AGI (Artificial General Intelligence) development](https://www.nature.com/articles/s41599-020-0494-4). Admittedly, from the very beginning of my career, I despised those who lacks the imagination of how data and algorithms can improve the quality of human decisions - I have always believed that human intelligence could be drastically improved when augmented with the right information at the right time.
