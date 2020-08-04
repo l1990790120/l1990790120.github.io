@@ -17,7 +17,7 @@ If we look at the more difficult decisions we have to make in our lives, what ar
 
 Different from how human brain solves a problem, programs are very good at solving repetitive and tedious steps. Therefore, though we were required to practice arithmetic in middle school, no one practically calculates anything without a calculator in real life. Alphago algorithm, as advanced as it is to search the potential outcomes on the game board and make moves that averages the highest likelihood for it to win the game in relative short time, it's not able to predict 2020 US presidential election for us. There's simply too many variables and too little constraints.
 
-Another great example I was once given in grad school: what was the mechanism in human brain that triggered Wright brothers to figure out how airplane could work by observing how birds fly? How human "learns" is still very much a mystery that human can yet replicate on machines.
+Another great example I was once given in grad school: what was the mechanism in human brain that triggered Wright brothers to figure out how airplane could work by observing how birds fly? How human "learns" is still very much a mystery that engineers can yet replicate on machines.
 
 ## Algorithms are byproducts of data
 
