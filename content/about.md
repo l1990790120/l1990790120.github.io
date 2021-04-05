@@ -10,9 +10,9 @@ disableComments = true
   <a href="/post/2016-04-04-resume-share/">&nbsp;Full Resume</a>
 </h4>
 
-<div class="row">
-  <div class="col-sm col-centered" align="center">
-    <blockquote>
+<div class="row px-0 justify-content-center">
+  <div class="col col-12 col-lg-6 px-0">
+    <blockquote class="w-100">
       In God we trust, all others bring data.
       <footer class="blockquote-footer">
         <cite>The Elements of Statistical Learning</cite>
@@ -21,18 +21,17 @@ disableComments = true
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col col-sm-3">
-      <img class="text-center" width="100pt" src="/profile.png" style="border-radius: 50%;" />
-    </div>
-    <div class="col col-sm-9 align-self-center">
-      <h4 class="align-middle"> Hello, I am Lulu, I work on data and technology. </h4>
-    </div>
+<div class="row px-0 justify-content-center">
+  <div class="col col-12 col-sm-4 text-lg-right text-center px-3 align-self-center">
+    <img width="100pt" src="/profile.png" style="border-radius: 50%;" />
+  </div>
+  <div class="col col-12 col-sm-8 text-left px-0 pt-3 align-self-center">
+    <h4> Hello, I am Lulu, I work on data and technology. </h4>
   </div>
 </div>
 
-<br>
+<br />
+
 I am an abstract thinker, both mathematically and philosophically. I build and
 architect distributed systems for data and AI/ML applications. I enjoy good
 design with technology, always look for ways to make the world a better place.
