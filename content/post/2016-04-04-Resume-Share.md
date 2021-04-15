@@ -27,9 +27,9 @@ New York, NY, 10013
 **Master Data Engineer**, Capital One, New York, NY  
 2020-03 to Present
 
-- Working closely with product, data science and business partners to "modernize" Capital One's Identity and Fraud tech and data stack in Account Opening. Champion more automated ML/DS approach to replace hardcoded business rules.
-- Leading and contributing to major re-architecture of identity and fraud tech stack to enable data streaming for data analytics and downstream fraud DS/ML development. Develop more automated and self-service policy experimentation framework to help identify areas of improvements to reduce customer frictions and minimize fraud losses.
-- Driving conversations between engineering and DS teams. Contribute to various DS work including model evaluation, assess and validate both internal and vendor identity and fraud risk data sources.
+- Working closely with product, data science and business partners to "modernize" Capital One's Identity and Fraud tech and data stack in Account Opening. Champion ML/DS development over manual business rules.
+- Leading and contributing to major re-architecture of identity and fraud tech stack to enable data streaming for data analytics and downstream fraud DS/ML development. Develop automated and self-service policy experimentation framework to help identify areas of improvements to reduce customer frictions and minimize fraud losses.
+- Driving conversations between engineering and DS teams. Lead and contribute to DS work automation for model evaluation, assess and validate internal and external identity/fraud risk data sources or vendors.
 - Contribute to Capital One Retail Bank's overall ML stack and strategy. Research and evaluate external and internal DS/ML toolings.
 
 **Senior Data Engineer**, Deloitte Digital, New York, NY  
@@ -42,7 +42,7 @@ New York, NY, 10013
   3. Optimize kubernetes to scale hyperparameter search. Automate scoring services deployment.
   4. Integration with external enterprise data science platforms.
 
-**Senior Software Engineer**, PeerIQ, New York, NY  
+**Senior Software Engineer (Tech Lead)**, PeerIQ, New York, NY  
 2018-01 to 2019-04
 
 - Leading the efforts to transform existing data systems to highly distributable, scalable while maintaining flexibility. [Transitioning legacy monolithe ETL application to microservice-architecture leveraging serverless container-based infrastructure, microservice, messaging bus and on-demand function calls (Lambda) with minimum business interruptions and code changes.](https://medium.com/@l1990790120/the-battles-of-etl-bottlenecks-and-how-to-fight-them-bd242dfc6733)
