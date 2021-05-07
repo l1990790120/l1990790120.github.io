@@ -3,6 +3,76 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://l1990790120.github.io/tags/apiobuild/</loc>
+    <lastmod>2021-05-06T20:00:38-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://l1990790120.github.io/post/2021-05-06-building-saas-platform-for-everyone/</loc>
+    <lastmod>2021-05-06T20:00:38-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://l1990790120.github.io/tags/engineering/</loc>
+    <lastmod>2021-05-06T20:00:38-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://l1990790120.github.io/</loc>
+    <lastmod>2021-05-06T20:00:38-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://l1990790120.github.io/post/</loc>
+    <lastmod>2021-05-06T20:00:38-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://l1990790120.github.io/tags/saas/</loc>
+    <lastmod>2021-05-06T20:00:38-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://l1990790120.github.io/tags/software/</loc>
+    <lastmod>2021-05-06T20:00:38-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://l1990790120.github.io/tags/startup/</loc>
+    <lastmod>2021-05-06T20:00:38-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://l1990790120.github.io/tags/</loc>
+    <lastmod>2021-05-06T20:00:38-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://l1990790120.github.io/tags/tech/</loc>
+    <lastmod>2021-05-06T20:00:38-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://l1990790120.github.io/tags/ai/</loc>
     <lastmod>2020-08-02T23:37:25-04:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -31,21 +101,7 @@
   </url>
   
   <url>
-    <loc>https://l1990790120.github.io/tags/engineering/</loc>
-    <lastmod>2020-08-02T23:37:25-04:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://l1990790120.github.io/tags/justice/</loc>
-    <lastmod>2020-08-02T23:37:25-04:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://l1990790120.github.io/</loc>
     <lastmod>2020-08-02T23:37:25-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -60,27 +116,6 @@
   
   <url>
     <loc>https://l1990790120.github.io/tags/politics/</loc>
-    <lastmod>2020-08-02T23:37:25-04:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://l1990790120.github.io/post/</loc>
-    <lastmod>2020-08-02T23:37:25-04:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://l1990790120.github.io/tags/software/</loc>
-    <lastmod>2020-08-02T23:37:25-04:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://l1990790120.github.io/tags/</loc>
     <lastmod>2020-08-02T23:37:25-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -193,13 +228,6 @@
   
   <url>
     <loc>https://l1990790120.github.io/tags/software-engineering/</loc>
-    <lastmod>2020-04-23T14:53:45-04:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://l1990790120.github.io/tags/tech/</loc>
     <lastmod>2020-04-23T14:53:45-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

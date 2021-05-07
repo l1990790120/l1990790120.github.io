@@ -6,10 +6,19 @@
     <description>Recent content on LC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Aug 2020 23:37:25 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 06 May 2021 20:00:38 -0400</lastBuildDate>
     
 	<atom:link href="https://l1990790120.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Building SaaS Platform for Everyone</title>
+      <link>https://l1990790120.github.io/post/2021-05-06-building-saas-platform-for-everyone/</link>
+      <pubDate>Thu, 06 May 2021 20:00:38 -0400</pubDate>
+      
+      <guid>https://l1990790120.github.io/post/2021-05-06-building-saas-platform-for-everyone/</guid>
+      <description>As some of you may know, with the help of many very talented and kind people, I alone with others have been building out a teeny tiny SaaS platform apiobuild.com in the past several months - A low code platform enabling everyone to create automation software at ease. We started the project as pandemic hit, people were getting creative with their career (out of necessity or exploration), we saw a healthy demand where people really needs some form of very niche software yet have no clue how to get started.</description>
+    </item>
     
     <item>
       <title>Thoughts on AI Biases</title>

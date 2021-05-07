@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+<title>Building SaaS Platform for Everyone - LC</title>
+<meta property="og:type" content="article">
+
+<meta property="og:image" content="https://l1990790120.github.io/profile.png">
+
+<meta property="og:title" content="Building SaaS Platform for Everyone">
+<meta property="og:description" content="As some of you may know, with the help of many very talented and kind people, I alone with others have been building out a teeny tiny SaaS platform apiobuild.com in the past several months - A low code platform enabling everyone to create automation software at ease. We started the project as pandemic hit, people were getting creative with their career (out of necessity or exploration), we saw a healthy demand where people really needs some form of very niche software yet have no clue how to get started.">
+<meta property="description" content="As some of you may know, with the help of many very talented and kind people, I alone with others have been building out a teeny tiny SaaS platform apiobuild.com in the past several months - A low code platform enabling everyone to create automation software at ease. We started the project as pandemic hit, people were getting creative with their career (out of necessity or exploration), we saw a healthy demand where people really needs some form of very niche software yet have no clue how to get started.">
+
+<meta name="twitter:title" content="Building SaaS Platform for Everyone" />
+<meta
+  name="twitter:twitter:description"
+  content="As some of you may know, with the help of many very talented and kind people, I alone with others have been building out a teeny tiny SaaS platform apiobuild.com in the past several months - A low code platform enabling everyone to create automation software at ease. We started the project as pandemic hit, people were getting creative with their career (out of necessity or exploration), we saw a healthy demand where people really needs some form of very niche software yet have no clue how to get started."
+/>
+
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@l1990790120" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="skpq6MfyR9LSOkH7HPCuM6rDOPLD6KQd0zuPOmdfd8U" />
+<meta name="author" content="Lulu Cheng">
+<meta name="keywords" content="Tech, Data Engineering, Machine Learning, Data Science, Economics, Politics, Social Science, Software Engineering">
+<meta property="og:site_name" content="https://l1990790120.github.io/" />
+<meta property="og:url" content="https://l1990790120.github.io/post/2021-05-06-building-saas-platform-for-everyone/" />
+
+<meta name="generator" content="Hugo 0.65.0-DEV" />
+
+
+<link rel="stylesheet" href="https://l1990790120.github.io/css/theme.css"/>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://l1990790120.github.io/css/main.css">
+
+
+
+<!--Favicon-->
+<link rel="shortcut icon" href="https://l1990790120.github.io/favicon.ico" type="image/x-icon">
+
+<!-- RSS -->
+
+
+<!-- Font Awesome -->
+<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Google Fonts -->
+<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+	<body>
+    <script>
+	
+	(function ($) {
+
+	var previousScroll = 20;
+		
+		$(window).scroll(function(e) {
+		
+			
+			var scroll = $(window).scrollTop();
+			if (scroll >= previousScroll) {
+				$('.navbar').addClass("navbar-hide");
+			
+			}else if (scroll < previousScroll) {
+				$('.navbar').removeClass("navbar-hide");
+			}
+			previousScroll = scroll;
+		
+		});
+		
+	})(jQuery);    
+</script>
+
+<style>
+	.navbar {
+		transition: top 0.5s ease;
+	}
+
+	.navbar-hide {
+		top: -100px;
+	}
+</style>
+
+<div class="row">
+  <nav class="navbar fixed-top navbar-expand-md navbar-light bg-white">
+    <a class="navbar-brand" href="https://l1990790120.github.io/">
+      <img
+        class="avatar"
+        src="https://l1990790120.github.io/profile.png"
+        alt=""
+      />
+    </a>
+    <a class="navbar-brand" href="https://l1990790120.github.io/">LC</a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/about/"
+            >About
+            <span class="sr-only">(current)</span>
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/"
+            >Blog
+            <span class="sr-only">(current)</span>
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/generative-art/"
+            >Generative Art
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+      </ul>
+        <a
+	href="mailto:l1990790120@gmail.com"
+	title="Email"
+>
+	<i class="fa fa-fw fa-envelope"></i>
+</a>    <a
+	href="https://www.facebook.com/l1990790120"
+	title="Facebook"
+>
+	<i class="fa fa-fw fa-facebook"></i>
+</a>  <a
+	href="https://github.com/l1990790120"
+	title="GitHub"
+>
+	<i class="fa fa-fw fa-github"></i>
+</a> <a
+	href="http://instagram.com/l1990790120"
+	title="Instagram"
+>
+	<i class="fa fa-fw fa-instagram"></i>
+</a> <a
+	href="https://www.linkedin.com/in/luluchengengineeratheart"
+	title="LinkedIn"
+>
+	<i class="fa fa-fw fa-linkedin"></i>
+</a> <a
+	href="http://www.pinterest.com/l1990790120"
+	title="Pinterest"
+>
+	<i class="fa fa-fw fa-pinterest"></i>
+</a> <a
+	href="https://www.reddit.com/user/l1990790120"
+	title="Reddit"
+>
+	<i class="fa fa-fw fa-reddit"></i>
+</a>     <a
+	href="https://twitter.com/l1990790120"
+	title="Twitter"
+>
+	<i class="fa fa-fw fa-twitter"></i>
+</a>  <a
+	href="https://www.youtube.com/user/l1990790120"
+	title="YouTube"
+>
+	<i class="fa fa-fw fa-youtube"></i>
+</a>   <a
+	href="https://medium.com/@l1990790120"
+	title=""
+>
+	<i class="fa fa-fw fa-medium"></i>
+</a>
+
+    </div>
+  </nav>
+</div>
+    <div class="top-container col mr-auto">
+      <div class="container">
+      
+
+  <div class="container text-wrap">
+
+  
+  
+  <div class="row">
+    <h1 class="title text-center">Building SaaS Platform for Everyone</h1>
+  </div>
+
+  
+	<style>
+.post-meta{
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  font-size: 90%;
+}
+</style>
+
+<div>
+  <div class="row text-secondary post-meta py-1">
+    2021/05/06
+    
+    &middot; 
+    
+    6
+    minute read
+  </div>
+
+  <div class="row post-meta pb-3 pt-1">
+    
+    <a href="https://l1990790120.github.io/tags/apiobuild" class="badge badge-light">apiobuild</a>
+         &nbsp; <a href="https://l1990790120.github.io/tags/engineering" class="badge badge-light">engineering</a>
+         &nbsp; <a href="https://l1990790120.github.io/tags/saas" class="badge badge-light">SaaS</a>
+         &nbsp; <a href="https://l1990790120.github.io/tags/software" class="badge badge-light">software</a>
+         &nbsp; <a href="https://l1990790120.github.io/tags/startup" class="badge badge-light">startup</a>
+         &nbsp; <a href="https://l1990790120.github.io/tags/tech" class="badge badge-light">tech</a>
+        
+  </div>
+</div>
+	
+
+	
+	<div>
+  
+
+<p>As some of you may know, with the help of many very talented and kind people, I alone with others have been building out a teeny tiny SaaS platform <a href="https://apiobuild.com/">apiobuild.com</a> in the past several months - A low code platform enabling everyone to create automation software at ease. We started the project as pandemic hit, people were getting creative with their career (out of necessity or exploration), we saw a healthy demand where people really needs some form of very niche software yet have no clue how to get started.</p>
+
+<p>As someone who works for large company building software at scale. It&rsquo;s a torture to see individual business owners have to lose sleep over verifying a domain, consolidating spreadsheets, generating and sending invoices. I can&rsquo;t help but think, even when there&rsquo;s a SaaS for almost anything one could possibly need to run businesses, why are people still suffering?</p>
+
+<h2 id="monstrous-saas">Monstrous SaaS<a href="#monstrous-saas" class="hanchor" ariaLabel="Anchor">   ¶</a> </h2>
+
+<p>To help small businesses who&rsquo;s struggling on the technical front, I try to first setup solutions for them myself on various SaaS platforms such as <a href="https://squareup.com/us/en">square</a>, <a href="https://www.wix.com/">wix</a>, <a href="https://mailchimp.com/">mailchimp</a>, <a href="https://www.omnisend.com/">omnisend</a> and many many more. I started to realize, just because there is a SaaS for every need, doesn&rsquo;t mean you could really onboard yourself to ten different platforms and actually solve your problem.</p>
+
+<p>In order to achieve economies of scale, SaaS platforms have to generalize and expand upon their original business domain to attract customers with broader use cases. That&rsquo;s in general a very good thing for the consumers. Before, it&rsquo;s only possible to build e-commerce websites with Wordpress or Shopify. Nowadays, every website builder platform has an e-commerce component (<a href="https://www.wix.com/">wix</a>, <a href="https://www.squarespace.com/">squarespace</a>, <a href="https://www.godaddy.com/">godaddy</a>), even payments (<a href="https://squareup.com/us/en">square</a>) and email automation (<a href="https://mailchimp.com/">mailchimp</a>) platforms have built out their own e-commerce functionality. Ultimately, the more choices there are, the more likely customers would be able to find a product that suits their needs.</p>
+
+<p>The bigger a SaaS platform is, the more complicated it is to onboard or offboard. Common SaaS growth model is building out more functionality to suit more use cases in order to gain user base. Monstrous SaaS platform inevitably sacrifices usability and simplicity for users with simple needs. Worse, in order to create platform lock-in, that is, making leaving a platform as difficult as possible so users are stuck with the platform even if they outgrow or are no longer satisfied with the product, platforms often make data and processes migration very difficult.</p>
+
+<p>While it&rsquo;s justifiable most SaaS platforms opting for more functionality to sustain growth, users stand no chance to keep their nice and simple solution nice and simple.</p>
+
+<p>This makes me think, is there an alternative for SaaS to grow? An alternative that doesn&rsquo;t lock customers in or add functionalities that most people don&rsquo;t need. The alternative is usually call &lsquo;Custom Software&rsquo;. The type of software that companies pay good amount of money for developers to build. Software that serves very specific purpose and the company has the full freedom to take it whichever direction suits the business needs.</p>
+
+<p>It&rsquo;s even difficult for developers to build great custom software, let alone average people. There are  reason for this:</p>
+
+<ol>
+<li>Engineering is complicated. Building technology often requires substantial expertise and resources.</li>
+<li>Building software is not the hardest part, maintaining is even more expensive.</li>
+<li>It&rsquo;s hard to predict long term business use case. Pivoting could be detrimental to a business if the technology isn&rsquo;t built for it.</li>
+</ol>
+
+<p>I&rsquo;ve heard countless horror stories where businesses hire consultants or agencies to build something custom and left with useless code either</p>
+
+<ol>
+<li>the businesses have already spent way over budget and have no choice but to live with a suboptimal solution</li>
+<li>the businesses have no choice but to build from scratch even though if done carefully, it&rsquo;s completely avoidable.</li>
+</ol>
+
+<h2 id="scalable-custom-software">Scalable Custom Software<a href="#scalable-custom-software" class="hanchor" ariaLabel="Anchor">   ¶</a> </h2>
+
+<p>Is it possible to build a SaaS platform which users can &hellip;</p>
+
+<ul>
+<li>onboard and pay only what they need</li>
+<li>have the complete freedom to integrate or extend based on their needs, whether th ey are technical or not</li>
+<li>have a community of users to continue to support and maintain the software they are using</li>
+</ul>
+
+<p>And the platform could still grow and maintain profitability.</p>
+
+<p>I think it&rsquo;s possible. Developers have long enjoyed the benefits of open source software with the exact same benefits. Companies like <a href="https://www.elastic.co/">elastic search</a>, <a href="https://redislabs.com/">redis labs</a>, <a href="https://databricks.com/">databricks (spark)</a>, <a href="https://preset.io/">preset (airflow/superset)</a> have all started from open source. Earlier in the days, it&rsquo;s common for developers, instead of building our own, fork these open source code, tailor towards our needs and contribute back.</p>
+
+<p>Note the word: <strong>Developer</strong>. To take advantage of these great open source software (which I argue most of the close source software is built upon the open source ones), users have to be technical. They have to know enough to host and implement customization.</p>
+
+<h2 id="closing-the-gap-for-everyone">Closing the Gap for Everyone<a href="#closing-the-gap-for-everyone" class="hanchor" ariaLabel="Anchor">   ¶</a> </h2>
+
+<p>What is it that&rsquo;s stopping non-technical, or rather, <strong>most</strong> people from taking advantage of open source software directly? Meanwhile, companies like AWS makes great profits from the community contributed software.</p>
+
+<p>In my opinion, software on its own is worth nothing. They are only worth the value if they could solve substantial real world problems. To <strong>most</strong> (that is, non-technical) people, it&rsquo;s hard to see the direct benefits of technology. Tech companies spends a great amount of resources to develop product use cases, in other words, to map tech solution back to the actual problem or study and survey the actual problem to create the tech solution.</p>
+
+<p>For example, a computer vision algorithm that could track your face isn&rsquo;t really that exciting to most. However, put the algorithm in snapchat and give everyone furry ears in the camera is a 50b business.</p>
+
+<p>If we could help people identify product use cases for various open source software that&rsquo;s currently only accessible on proprietary SaaS platform, I am confident creative and innovative entrepreneurs like myself will be more than happy to DIY out their own tech solution.</p>
+
+<p>Not just for non-technical users. We solve for developers too. Hosting and maintaining software is hard. Even developers are willing to pay AWS just to use the <strong>hosted</strong> free software. Security, stability, scalability is at the heart of every devops engineer.</p>
+
+<p>By having a common and robust layer of CI/CD processes, platform can take care of the laborious devops work, developers can contribute directly to the code base and release features at any moment. We could potentially create a true <strong>D2C</strong> software platform.</p>
+
+<h2 id="yet-another-saas">Yet Another SaaS<a href="#yet-another-saas" class="hanchor" ariaLabel="Anchor">   ¶</a> </h2>
+
+<p>Going back to the platform we&rsquo;ve created: <a href="https://apiobuild.com/">apiobuild.com</a>. Although it&rsquo;s still a teeny tiny platform with much more catch up to actually deliver what&rsquo;s promised, we were able to meet a good number (way beyond our expectation) of builders and entrepreneurs who&rsquo;s willing to build with us.</p>
+
+<p>Working with our users, not only we&rsquo;ve become friends, we&rsquo;ve also learned a great deal on how they run their business. Through solving problems together, we&rsquo;ve come to the realization that great software product should not only be offering a solution, the more powerful thing is to also teach users about the problem space. By building together, we were able to show our customers how design, marketing, payments, supply chain etc. is done at scale, and how they could adapt conventional approaches to their own needs.</p>
+
+<p>In the long run, we hope to create a platform where technology is no longer a barrier but an enabler for anyone who&rsquo;s creating a business. Ambitious innovators could solve problems <strong>for the community</strong> with technology <strong>by the community</strong>.</p>
+
+</div>
+
+<style>
+  .hanchor {
+    font-size: 100%;
+    visibility: hidden;
+    color:silver;
+  }
+  h1:hover a, h2:hover a, h3:hover a, h4:hover a {
+    visibility: visible;
+    text-decoration: none;
+  }
+</style>
+	
+
+	
+		<div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "l1990790120" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+  </div>
+      </div>
+    </div>
+	</body>
+</html>
