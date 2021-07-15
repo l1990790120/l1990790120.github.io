@@ -30,7 +30,7 @@ New York, NY, 10013
 - Working closely with product, data science and business partners to "modernize" Capital One's Identity and Fraud tech and data stack in Account Opening. Champion ML/DS development over manual business rules.
 - Leading and contributing to major re-architecture of identity and fraud tech stack to enable data streaming for data analytics and downstream fraud DS/ML development. Develop automated and self-service policy experimentation framework to help identify areas of improvements to reduce customer frictions and minimize fraud losses.
 - Driving conversations between engineering, business/product teams. Coordinating end to end data and analytics planning to execution efforts between teams from backend application updates, identify valuable data elements to metrics and dashboards development.
-- Contributing to Capital One Retail Bank's overall ML stack. Research and evaluate external and internal DS/ML toolings.
+- Participate in Capital One Retail Bank's overall ML stack discussion. Research and evaluate external and internal DS/ML toolings.
 
 **Senior Data Engineer**, Deloitte Digital, New York, NY  
 2019-05 to 2020-03
