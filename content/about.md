@@ -41,7 +41,7 @@ design with technology, always look for ways to make the world a better place.
   Graduated with MS in Computer Science specialized in machine learning and AI,
   MA in Economics and BA in Political Science.
   Currently I am master data engineer at Capital One. Previously I was senior
-  data engineer at Deloittte building streamlined and automated machine 
+  data engineer at Deloitte building streamlined and automated machine
   learning pipeline to shorten data science's experiment to production time.
   <br><br>
   While not building new stuff, I enjoy thinking how to better software and
