@@ -1,6 +1,6 @@
 ---
 title: "What to do if you hate your job?"
-date: 2021-05-06T20:00:38-04:00
+date: 2022-04-21T20:00:38-04:00
 tags: ["blog", "career", "workplace"]
 ---
 
