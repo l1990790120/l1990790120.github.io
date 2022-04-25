@@ -1,373 +1,174 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		
+<!doctype html><html>
+<head>
 <title>How Custom Do You Really Need for Your Solution? - LC</title>
 <meta property="og:type" content="article">
-
 <meta property="og:image" content="https://l1990790120.github.io/profile.png">
-
 <meta property="og:title" content="How Custom Do You Really Need for Your Solution?">
 <meta property="og:description" content="Companies who could afford in-house engineering teams often have tendencies to build custom in-house solutions no matter how prevalent that solution already is. To highlight the absurdity, let me give an example: Jupyter Notebook. Despite the space being extremely competitive, Google has Colab, Amazon has Sagemaker, Azure, Databricks, Domino, Binder all offer similar services and the list goes on, Product or Technology still cannot resist the urge to build one (if not multiple) in-house.">
 <meta property="description" content="Companies who could afford in-house engineering teams often have tendencies to build custom in-house solutions no matter how prevalent that solution already is. To highlight the absurdity, let me give an example: Jupyter Notebook. Despite the space being extremely competitive, Google has Colab, Amazon has Sagemaker, Azure, Databricks, Domino, Binder all offer similar services and the list goes on, Product or Technology still cannot resist the urge to build one (if not multiple) in-house.">
-
-<meta name="twitter:title" content="How Custom Do You Really Need for Your Solution?" />
-<meta
-  name="twitter:twitter:description"
-  content="Companies who could afford in-house engineering teams often have tendencies to build custom in-house solutions no matter how prevalent that solution already is. To highlight the absurdity, let me give an example: Jupyter Notebook. Despite the space being extremely competitive, Google has Colab, Amazon has Sagemaker, Azure, Databricks, Domino, Binder all offer similar services and the list goes on, Product or Technology still cannot resist the urge to build one (if not multiple) in-house."
-/>
-
-
-
-
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@l1990790120" />
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="google-site-verification" content="skpq6MfyR9LSOkH7HPCuM6rDOPLD6KQd0zuPOmdfd8U" />
-<meta name="author" content="Lulu Cheng">
-<meta name="keywords" content="Tech, Data Engineering, Machine Learning, Data Science, Economics, Politics, Social Science, Software Engineering">
-<meta property="og:site_name" content="https://l1990790120.github.io/" />
-<meta property="og:url" content="https://l1990790120.github.io/post/2020-04-23-how-custom-do-you-really-need-for-your-solution/" />
-
-<meta name="generator" content="Hugo 0.65.0-DEV" />
-
-
-<link rel="stylesheet" href="https://l1990790120.github.io/css/theme.css"/>
-
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-<!-- CSS -->
-<link rel="stylesheet" href="https://l1990790120.github.io/css/main.css">
-
-
-
-<!--Favicon-->
-<link rel="shortcut icon" href="https://l1990790120.github.io/favicon.ico" type="image/x-icon">
-
-<!-- RSS -->
-
-
-<!-- Font Awesome -->
-<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-<!-- Google Fonts -->
-<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<meta name=twitter:title content="How Custom Do You Really Need for Your Solution?">
+<meta name=twitter:twitter:description content="Companies who could afford in-house engineering teams often have tendencies to build custom in-house solutions no matter how prevalent that solution already is. To highlight the absurdity, let me give an example: Jupyter Notebook. Despite the space being extremely competitive, Google has Colab, Amazon has Sagemaker, Azure, Databricks, Domino, Binder all offer similar services and the list goes on, Product or Technology still cannot resist the urge to build one (if not multiple) in-house.">
+<meta name=twitter:card content="summary">
+<meta name=twitter:site content="@l1990790120">
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=google-site-verification content="skpq6MfyR9LSOkH7HPCuM6rDOPLD6KQd0zuPOmdfd8U">
+<meta name=author content="Lulu Cheng">
+<meta name=keywords content="Tech,Data Engineering,Machine Learning,Data Science,Economics,Politics,Social Science,Software Engineering">
+<meta property="og:site_name" content="https://l1990790120.github.io/">
+<meta property="og:url" content="https://l1990790120.github.io/post/2020-04-23-how-custom-do-you-really-need-for-your-solution/">
+<meta name=generator content="Hugo 0.89.3">
+<link rel=stylesheet href=https://l1990790120.github.io/css/theme.css>
+<script src=https://code.jquery.com/jquery-3.4.1.slim.min.js integrity=sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js integrity=sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo crossorigin=anonymous></script>
+<script src=https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js integrity=sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 crossorigin=anonymous></script>
+<link rel=stylesheet href=https://l1990790120.github.io/css/main.css>
+<link rel="shortcut icon" href=https://l1990790120.github.io/favicon.ico type=image/x-icon>
+<link href=//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css rel=stylesheet>
+<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel=stylesheet type=text/css>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css>
+<script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
 </head>
-	<body>
-    <script>
-	
-	(function ($) {
-
-	var previousScroll = 20;
-		
-		$(window).scroll(function(e) {
-		
-			
-			var scroll = $(window).scrollTop();
-			if (scroll >= previousScroll) {
-				$('.navbar').addClass("navbar-hide");
-			
-			}else if (scroll < previousScroll) {
-				$('.navbar').removeClass("navbar-hide");
-			}
-			previousScroll = scroll;
-		
-		});
-		
-	})(jQuery);    
-</script>
-
-<style>
-	.navbar {
-		transition: top 0.5s ease;
-	}
-
-	.navbar-hide {
-		top: -100px;
-	}
-</style>
-
-<div class="row">
-  <nav class="navbar fixed-top navbar-expand-md navbar-light bg-white">
-    <a class="navbar-brand" href="https://l1990790120.github.io/">
-      <img
-        class="avatar"
-        src="https://l1990790120.github.io/profile.png"
-        alt=""
-      />
-    </a>
-    <a class="navbar-brand" href="https://l1990790120.github.io/">LC</a>
-
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/about/"
-            >About
-            <span class="sr-only">(current)</span>
-          </a>
-        </li><li class="nav-item">
-          <a class="nav-link" href="/"
-            >Blog
-            <span class="sr-only">(current)</span>
-          </a>
-        </li><li class="nav-item">
-          <a class="nav-link" href="/generative-art/"
-            >Generative Art
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-      </ul>
-        <a
-	href="mailto:l1990790120@gmail.com"
-	title="Email"
->
-	<i class="fa fa-fw fa-envelope"></i>
-</a>    <a
-	href="https://www.facebook.com/l1990790120"
-	title="Facebook"
->
-	<i class="fa fa-fw fa-facebook"></i>
-</a>  <a
-	href="https://github.com/l1990790120"
-	title="GitHub"
->
-	<i class="fa fa-fw fa-github"></i>
-</a> <a
-	href="http://instagram.com/l1990790120"
-	title="Instagram"
->
-	<i class="fa fa-fw fa-instagram"></i>
-</a> <a
-	href="https://www.linkedin.com/in/luluchengengineeratheart"
-	title="LinkedIn"
->
-	<i class="fa fa-fw fa-linkedin"></i>
-</a> <a
-	href="http://www.pinterest.com/l1990790120"
-	title="Pinterest"
->
-	<i class="fa fa-fw fa-pinterest"></i>
-</a> <a
-	href="https://www.reddit.com/user/l1990790120"
-	title="Reddit"
->
-	<i class="fa fa-fw fa-reddit"></i>
-</a>     <a
-	href="https://twitter.com/l1990790120"
-	title="Twitter"
->
-	<i class="fa fa-fw fa-twitter"></i>
-</a>  <a
-	href="https://www.youtube.com/user/l1990790120"
-	title="YouTube"
->
-	<i class="fa fa-fw fa-youtube"></i>
-</a>   <a
-	href="https://medium.com/@l1990790120"
-	title=""
->
-	<i class="fa fa-fw fa-medium"></i>
+<body>
+<script>(function(a){var b=20;a(window).scroll(function(d){var c=a(window).scrollTop();c>=b?a('.navbar').addClass("navbar-hide"):c<b&&a('.navbar').removeClass("navbar-hide"),b=c})})(jQuery)</script>
+<style>.navbar{transition:top .5s ease}.navbar-hide{top:-100px}</style>
+<div class=row>
+<nav class="navbar fixed-top navbar-expand-md navbar-light bg-white">
+<a class=navbar-brand href=https://l1990790120.github.io/>
+<img class=avatar src=https://l1990790120.github.io/profile.png alt>
 </a>
-
-    </div>
-  </nav>
+<a class=navbar-brand href=https://l1990790120.github.io/>LC</a>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span>
+</button>
+<div class="collapse navbar-collapse" id=navbarSupportedContent>
+<ul class="navbar-nav mr-auto">
+<li class=nav-item>
+<a class=nav-link href=/about/>About
+<span class=sr-only>(current)</span>
+</a>
+</li><li class=nav-item>
+<a class=nav-link href=/>Blog
+<span class=sr-only>(current)</span>
+</a>
+</li><li class=nav-item>
+<a class=nav-link href=/generative-art/>Generative Art
+<span class=sr-only>(current)</span>
+</a>
+</li>
+</ul>
+<a href=mailto:l1990790120@gmail.com title=Email>
+<i class="fa fa-fw fa-envelope"></i>
+</a> <a href=https://www.facebook.com/l1990790120 title=Facebook>
+<i class="fa fa-fw fa-facebook"></i>
+</a> <a href=https://github.com/l1990790120 title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+</a> <a href=http://instagram.com/l1990790120 title=Instagram>
+<i class="fa fa-fw fa-instagram"></i>
+</a> <a href=https://www.linkedin.com/in/luluchengengineeratheart title=LinkedIn>
+<i class="fa fa-fw fa-linkedin"></i>
+</a> <a href=http://www.pinterest.com/l1990790120 title=Pinterest>
+<i class="fa fa-fw fa-pinterest"></i>
+</a> <a href=https://www.reddit.com/user/l1990790120 title=Reddit>
+<i class="fa fa-fw fa-reddit"></i>
+</a> <a href=https://twitter.com/l1990790120 title=Twitter>
+<i class="fa fa-fw fa-twitter"></i>
+</a> <a href=https://www.youtube.com/user/l1990790120 title=YouTube>
+<i class="fa fa-fw fa-youtube"></i>
+</a> <a href=https://medium.com/@l1990790120 title>
+<i class="fa fa-fw fa-medium"></i>
+</a>
 </div>
-    <div class="top-container col mr-auto">
-      <div class="container">
-      
-
-  <div class="container text-wrap">
-
-  
-  
-  <div class="row">
-    <h1 class="title text-center">How Custom Do You Really Need for Your Solution?</h1>
-  </div>
-
-  
-	<style>
-.post-meta{
-  text-transform:uppercase;
-  letter-spacing:0.1em;
-  font-size: 90%;
-}
-</style>
-
+</nav>
+</div>
+<div class="top-container col mr-auto">
+<div class=container>
+<div class="container text-wrap">
+<div class=row>
+<h1 class="title text-center">How Custom Do You Really Need for Your Solution?</h1>
+</div>
+<style>.post-meta{text-transform:uppercase;letter-spacing:.1em;font-size:90%}</style>
 <div>
-  <div class="row text-secondary post-meta py-1">
-    2020/04/23
-    
-    &middot; 
-    
-    6
-    minute read
-  </div>
-
-  <div class="row post-meta pb-3 pt-1">
-    
-    <a href="https://l1990790120.github.io/tags/blog" class="badge badge-light">blog</a>
-         &nbsp; <a href="https://l1990790120.github.io/tags/career" class="badge badge-light">career</a>
-         &nbsp; <a href="https://l1990790120.github.io/tags/product" class="badge badge-light">product</a>
-         &nbsp; <a href="https://l1990790120.github.io/tags/software-engineering" class="badge badge-light">software-engineering</a>
-         &nbsp; <a href="https://l1990790120.github.io/tags/tech" class="badge badge-light">tech</a>
-         &nbsp; <a href="https://l1990790120.github.io/tags/work" class="badge badge-light">work</a>
-        
-  </div>
+<div class="row text-secondary post-meta py-1">
+2020/04/23
+&#183;
+6
+minute read
 </div>
-	
-
-	
-	<div>
-  
-
-<p>Companies who could afford in-house engineering teams often have tendencies to build custom in-house solutions no matter how prevalent that solution already is. To highlight the absurdity, let me give an example: <a href="https://jupyter.org/">Jupyter Notebook</a>. Despite the space being extremely competitive, <a href="https://colab.research.google.com/notebooks/welcome.ipynb">Google has Colab</a>, <a href="https://aws.amazon.com/sagemaker/">Amazon has Sagemaker</a>, <a href="https://notebooks.azure.com/">Azure</a>, <a href="https://docs.databricks.com/notebooks/index.html">Databricks</a>, <a href="https://www.dominodatalab.com/">Domino</a>, <a href="https://mybinder.org/">Binder</a> all offer similar services and the list goes on, Product or Technology still cannot resist the urge to build one (if not multiple) in-house. Not to mention some notable companies spent fortunes on building fully integrated notebooks on their platforms.</p>
-
-<h2 id="shoulders-of-giants">Shoulders of Giants<a href="#shoulders-of-giants" class="hanchor" ariaLabel="Anchor">   ¶</a> </h2>
-
+<div class="row post-meta pb-3 pt-1">
+<a href=https://l1990790120.github.io/tags/blog class="badge badge-light">blog</a>
+&nbsp; <a href=https://l1990790120.github.io/tags/career class="badge badge-light">career</a>
+&nbsp; <a href=https://l1990790120.github.io/tags/product class="badge badge-light">product</a>
+&nbsp; <a href=https://l1990790120.github.io/tags/software-engineering class="badge badge-light">software-engineering</a>
+&nbsp; <a href=https://l1990790120.github.io/tags/tech class="badge badge-light">tech</a>
+&nbsp; <a href=https://l1990790120.github.io/tags/work class="badge badge-light">work</a>
+</div>
+</div>
+<div>
+<p>Companies who could afford in-house engineering teams often have tendencies to build custom in-house solutions no matter how prevalent that solution already is. To highlight the absurdity, let me give an example: <a href=https://jupyter.org/>Jupyter Notebook</a>. Despite the space being extremely competitive, <a href=https://colab.research.google.com/notebooks/welcome.ipynb>Google has Colab</a>, <a href=https://aws.amazon.com/sagemaker/>Amazon has Sagemaker</a>, <a href=https://notebooks.azure.com/>Azure</a>, <a href=https://docs.databricks.com/notebooks/index.html>Databricks</a>, <a href=https://www.dominodatalab.com/>Domino</a>, <a href=https://mybinder.org/>Binder</a> all offer similar services and the list goes on, Product or Technology still cannot resist the urge to build one (if not multiple) in-house. Not to mention some notable companies spent fortunes on building fully integrated notebooks on their platforms.</p>
+<h2 id=shoulders-of-giants>Shoulders of Giants<a href=#shoulders-of-giants class=hanchor arialabel=Anchor> ¶</a> </h2>
 <p>Everyone who works with me knows my strong stance on building something new - if there are existing solutions to a similar problem, one should not attempt to build without fully exploiting the existing ones first.</p>
-
 <p>Engineering&rsquo;s tendency to build something new is sometimes understandable:</p>
-
 <ul>
 <li>existing ones may not be well-maintained, it takes more time to use it than build a new one from scratch.</li>
 <li>even though existing ones can meet the needs, but not without workarounds and hacks.</li>
 </ul>
-
 <p>I challenge with everyone who wants to build something new to answer these:</p>
-
 <ul>
 <li>If a team of capable people already attempted at solving a similar problem you are solving, why would you do it better? You are either narcissistic or disrespectful of other people&rsquo;s ability to execute. Otherwise, it&rsquo;s not a people problem.</li>
 <li>Would faster and newer technologies always solve the a similar problem better? Do you feel conversations with your mom are better with a smartphone than a landline phone? Smartphones created ranges of new problems, but for the solved ones, one couldn&rsquo;t possibly argue texts in bubbles read better than boxes.</li>
 </ul>
-
 <p><strong>Do not misunderstand this as opposing changes and new technology.</strong> As a matter of fact, I am often the one that brings new technologies into an organization and encourage people to try it out (almost to an annoying level). Let me elaborate more.</p>
-
-<h2 id="fix-problem-not-solution">Fix Problem not Solution<a href="#fix-problem-not-solution" class="hanchor" ariaLabel="Anchor">   ¶</a> </h2>
-
+<h2 id=fix-problem-not-solution>Fix Problem not Solution<a href=#fix-problem-not-solution class=hanchor arialabel=Anchor> ¶</a> </h2>
 <p>One should not &ldquo;re-fix&rdquo; a problem, instead, one should constantly try to identify better problems to solve and &ldquo;re-fit&rdquo; solutions (existing or new) through the lenses of problems.</p>
-
 <p>The questions are often not asked: what is it that your problem so special from others? Sure, when things are not working, people are frustrated, instead of framing the right problems to solve, perhaps it&rsquo;s easier to solve them first.</p>
-
 <p>Let&rsquo;s take the notebook example (90% based on mixes of true stories):</p>
-
 <ol>
 <li>It usually started with no more than setting up credentials, networking to access data and api and some pre-installed private packages.</li>
 <li>Afterwards, the team wants it to be hosted so they can use it to run recurring reports or other long running jobs.</li>
 <li>If the project is still alive, quite likely it has accumulated some users. Now they need to run some on GPU, some on micro instances and some others on spark clusters.</li>
 </ol>
-
 <p>Let&rsquo;s see how engineering will build when stories are rolled out as above without product&rsquo;s help to frame the issues into a better problem.</p>
-
 <ol>
 <li>A Jupyter notebook docker image with AWS, API credentials configured and some pre-installed packages.</li>
 <li>Deploy that image on ec2 instances. Configure custom networking, permissioning and monitoring.</li>
 <li>Add a cli tool so one can automatically deploy to custom ec2 instances.</li>
 </ol>
-
 <p>Very logical progression, other than not asking the right question in the first place, engineering can hardly be blamed for wasting their time solving problems that&rsquo;s been solved over and over by the internet. Some of them might eventually raise questions after they found out just how many people have approached product&rsquo;s <strong>unique problem</strong> on google. I highly recommend to keep in touch with those engineers who dare to ask these questions, they will at some point prevent teams from wasting $$$$ on useless projects down the road.</p>
-
-<h2 id="notorious-custom-solutions">Notorious Custom Solutions<a href="#notorious-custom-solutions" class="hanchor" ariaLabel="Anchor">   ¶</a> </h2>
-
+<h2 id=notorious-custom-solutions>Notorious Custom Solutions<a href=#notorious-custom-solutions class=hanchor arialabel=Anchor> ¶</a> </h2>
 <p>Custom solutions can rarely compete with existing vendor offerings. From the ones built by consultants to the home grown enterprise tools, people rarely have good things to say about them.</p>
-
 <p>Home grown solutions rarely respond to broader market needs but are sourced from problems shared across teams within the company. They rarely have the luxury to step beyond <strong>requirements</strong> and respond to <strong>visions</strong> or <strong>market trends</strong>.</p>
-
 <p>If IPhone was developed by listing out a complete list of problems they want to solve instead of visioning how the future of communication on handheld devices, we will never have IPhone.</p>
-
 <p>If a truly great product can never come from custom solutions, why is it so prevalent?</p>
-
-<h3 id="no-existing-solutions">No Existing Solutions<a href="#no-existing-solutions" class="hanchor" ariaLabel="Anchor">   ¶</a> </h3>
-
+<h3 id=no-existing-solutions>No Existing Solutions<a href=#no-existing-solutions class=hanchor arialabel=Anchor> ¶</a> </h3>
 <p>When existing solutions don&rsquo;t exist or don&rsquo;t meet the needs, it&rsquo;s easier to opt for building a custom one. When I was looking for ML frameworks, only a handful of them were relatively mature, and we still need to add a number of features for it really be useful. That being said, it&rsquo;s too often product &ldquo;misunderstands&rdquo; what they need doesn&rsquo;t exist or what exists doesn&rsquo;t meet their needs. Politics often pushes them to build something anyways instead of calling for surveying on existing solutions.</p>
-
-<h3 id="outdated-systems-or-cost-constraint">Outdated Systems or Cost Constraint<a href="#outdated-systems-or-cost-constraint" class="hanchor" ariaLabel="Anchor">   ¶</a> </h3>
-
+<h3 id=outdated-systems-or-cost-constraint>Outdated Systems or Cost Constraint<a href=#outdated-systems-or-cost-constraint class=hanchor arialabel=Anchor> ¶</a> </h3>
 <p>Perhaps a more justified cause is that outdated systems make it difficult to integrate existing solutions. There&rsquo;s only enough budget to build custom features to meet the needs but not enough to rebuild the whole system so that engineering can easily extend upgraded systems with existing solutions. Due to both cost and resource constraints, it&rsquo;s quite common to update only one part of the system while keep the remaining functioning as is so one could keep the customers happy and the cost reasonable. In this case, engineering will often build custom solutions until it&rsquo;s possible to integrate with more permanent solutions.</p>
-
-<h3 id="unforeseen-expenses">Unforeseen Expenses<a href="#unforeseen-expenses" class="hanchor" ariaLabel="Anchor">   ¶</a> </h3>
-
+<h3 id=unforeseen-expenses>Unforeseen Expenses<a href=#unforeseen-expenses class=hanchor arialabel=Anchor> ¶</a> </h3>
 <p>Real issues that could come with custom solution in a relative near term:</p>
-
 <ol>
 <li>It&rsquo;s less likely to stay relevant to the problem its solving. Obviously, once IPhone&rsquo;s out, not long after no one uses Nokia or Motorola.</li>
 <li>Either the on-going budget for maintenance is no longer there (hint: re-org) or the people and resources to keep it up and running is growing much quicker than the company expected. Afterwards, it&rsquo;s either deprecated forcibly or no one knows how to use it anymore.</li>
 <li>If it&rsquo;s in an unfortunate state that a custom solution is no longer maintained, migrating off from a solution often comes with a deadline which is never executed with high standards but desperation.</li>
 </ol>
-
-<h2 id="summary">Summary<a href="#summary" class="hanchor" ariaLabel="Anchor">   ¶</a> </h2>
-
+<h2 id=summary>Summary<a href=#summary class=hanchor arialabel=Anchor> ¶</a> </h2>
 <p>On one hand, every company is complaining there&rsquo;s not enough tech talent; on the other, most people or company I talked to want to build similar but slightly different solutions - it got me thinking, what could be the reasons that most companies wants to build something that&rsquo;s already there?</p>
-
 <p>I reflected on different organizations and teams I worked for, and I realized, there&rsquo;s indeed biases towards custom solutions without evaluating whether it&rsquo;s really worth it?</p>
-
 <p>If anything I&rsquo;ve learned from this wasteful approach to building custom solutions:</p>
-
 <ol>
 <li>If you really have to build one, make it open source, invite others to contribute to it. If the community sees it useful enough, there will be people or resources to keep it going.</li>
 <li>Otherwise, carefully research your problem space. Do not come to the conclusion that &ldquo;we can do it&rdquo; without careful evaluation. The first check may seem trivial, but the on-going maintenance and communication can cost a lot more.</li>
 </ol>
-
 <p>Anyways, happy coding. Focus on what the company does the best, not building one off custom solutions no one likes.</p>
-
 </div>
-
-<style>
-  .hanchor {
-    font-size: 100%;
-    visibility: hidden;
-    color:silver;
-  }
-  h1:hover a, h2:hover a, h3:hover a, h4:hover a {
-    visibility: visible;
-    text-decoration: none;
-  }
-</style>
-	
-
-	
-		<div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "l1990790120" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-  
-  </div>
-      </div>
-    </div>
-	</body>
+<style>.hanchor{font-size:100%;visibility:hidden;color:silver}h1:hover a,h2:hover a,h3:hover a,h4:hover a{visibility:visible;text-decoration:none}</style>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//l1990790120.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+</div>
+</div>
+</div>
+</body>
 </html>

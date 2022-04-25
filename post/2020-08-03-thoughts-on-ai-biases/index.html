@@ -1,341 +1,151 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		
+<!doctype html><html>
+<head>
 <title>Thoughts on AI Biases - LC</title>
 <meta property="og:type" content="article">
-
 <meta property="og:image" content="https://l1990790120.github.io/profile.png">
-
 <meta property="og:title" content="Thoughts on AI Biases">
 <meta property="og:description" content="Almost in every AI or Machine Learning conferences I&rsquo;ve been to lately, there&rsquo;s a track dedicating to biases or &ldquo;injustices&rdquo; in algorithmic decisions. Books have been published (Automating Inequality: How High-Tech Tools Profile, Police, and Punish the Poor, Algorithms of Oppression: How Search Engines Reinforce Racism etc.) and fear has been spread (Elon Musk says AI development should be better regulated, even at Tesla ).
 The fear of unknown is, perhaps, more persuasive than a realistic survey of the state of AGI (Artificial General Intelligence) development.">
 <meta property="description" content="Almost in every AI or Machine Learning conferences I&rsquo;ve been to lately, there&rsquo;s a track dedicating to biases or &ldquo;injustices&rdquo; in algorithmic decisions. Books have been published (Automating Inequality: How High-Tech Tools Profile, Police, and Punish the Poor, Algorithms of Oppression: How Search Engines Reinforce Racism etc.) and fear has been spread (Elon Musk says AI development should be better regulated, even at Tesla ).
 The fear of unknown is, perhaps, more persuasive than a realistic survey of the state of AGI (Artificial General Intelligence) development.">
-
-<meta name="twitter:title" content="Thoughts on AI Biases" />
-<meta
-  name="twitter:twitter:description"
-  content="Almost in every AI or Machine Learning conferences I&rsquo;ve been to lately, there&rsquo;s a track dedicating to biases or &ldquo;injustices&rdquo; in algorithmic decisions. Books have been published (Automating Inequality: How High-Tech Tools Profile, Police, and Punish the Poor, Algorithms of Oppression: How Search Engines Reinforce Racism etc.) and fear has been spread (Elon Musk says AI development should be better regulated, even at Tesla ).
-The fear of unknown is, perhaps, more persuasive than a realistic survey of the state of AGI (Artificial General Intelligence) development."
-/>
-
-
-
-
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@l1990790120" />
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="google-site-verification" content="skpq6MfyR9LSOkH7HPCuM6rDOPLD6KQd0zuPOmdfd8U" />
-<meta name="author" content="Lulu Cheng">
-<meta name="keywords" content="Tech, Data Engineering, Machine Learning, Data Science, Economics, Politics, Social Science, Software Engineering">
-<meta property="og:site_name" content="https://l1990790120.github.io/" />
-<meta property="og:url" content="https://l1990790120.github.io/post/2020-08-03-thoughts-on-ai-biases/" />
-
-<meta name="generator" content="Hugo 0.65.0-DEV" />
-
-
-<link rel="stylesheet" href="https://l1990790120.github.io/css/theme.css"/>
-
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-<!-- CSS -->
-<link rel="stylesheet" href="https://l1990790120.github.io/css/main.css">
-
-
-
-<!--Favicon-->
-<link rel="shortcut icon" href="https://l1990790120.github.io/favicon.ico" type="image/x-icon">
-
-<!-- RSS -->
-
-
-<!-- Font Awesome -->
-<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-<!-- Google Fonts -->
-<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel="stylesheet" type="text/css">
-
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<meta name=twitter:title content="Thoughts on AI Biases">
+<meta name=twitter:twitter:description content="Almost in every AI or Machine Learning conferences I&rsquo;ve been to lately, there&rsquo;s a track dedicating to biases or &ldquo;injustices&rdquo; in algorithmic decisions. Books have been published (Automating Inequality: How High-Tech Tools Profile, Police, and Punish the Poor, Algorithms of Oppression: How Search Engines Reinforce Racism etc.) and fear has been spread (Elon Musk says AI development should be better regulated, even at Tesla ).
+The fear of unknown is, perhaps, more persuasive than a realistic survey of the state of AGI (Artificial General Intelligence) development.">
+<meta name=twitter:card content="summary">
+<meta name=twitter:site content="@l1990790120">
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=google-site-verification content="skpq6MfyR9LSOkH7HPCuM6rDOPLD6KQd0zuPOmdfd8U">
+<meta name=author content="Lulu Cheng">
+<meta name=keywords content="Tech,Data Engineering,Machine Learning,Data Science,Economics,Politics,Social Science,Software Engineering">
+<meta property="og:site_name" content="https://l1990790120.github.io/">
+<meta property="og:url" content="https://l1990790120.github.io/post/2020-08-03-thoughts-on-ai-biases/">
+<meta name=generator content="Hugo 0.89.3">
+<link rel=stylesheet href=https://l1990790120.github.io/css/theme.css>
+<script src=https://code.jquery.com/jquery-3.4.1.slim.min.js integrity=sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n crossorigin=anonymous></script>
+<script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js integrity=sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo crossorigin=anonymous></script>
+<script src=https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js integrity=sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 crossorigin=anonymous></script>
+<link rel=stylesheet href=https://l1990790120.github.io/css/main.css>
+<link rel="shortcut icon" href=https://l1990790120.github.io/favicon.ico type=image/x-icon>
+<link href=//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css rel=stylesheet>
+<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic" rel=stylesheet type=text/css>
+<link rel=stylesheet href=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css>
+<script src=//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js></script>
+<script>hljs.initHighlightingOnLoad()</script>
 </head>
-	<body>
-    <script>
-	
-	(function ($) {
-
-	var previousScroll = 20;
-		
-		$(window).scroll(function(e) {
-		
-			
-			var scroll = $(window).scrollTop();
-			if (scroll >= previousScroll) {
-				$('.navbar').addClass("navbar-hide");
-			
-			}else if (scroll < previousScroll) {
-				$('.navbar').removeClass("navbar-hide");
-			}
-			previousScroll = scroll;
-		
-		});
-		
-	})(jQuery);    
-</script>
-
-<style>
-	.navbar {
-		transition: top 0.5s ease;
-	}
-
-	.navbar-hide {
-		top: -100px;
-	}
-</style>
-
-<div class="row">
-  <nav class="navbar fixed-top navbar-expand-md navbar-light bg-white">
-    <a class="navbar-brand" href="https://l1990790120.github.io/">
-      <img
-        class="avatar"
-        src="https://l1990790120.github.io/profile.png"
-        alt=""
-      />
-    </a>
-    <a class="navbar-brand" href="https://l1990790120.github.io/">LC</a>
-
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/about/"
-            >About
-            <span class="sr-only">(current)</span>
-          </a>
-        </li><li class="nav-item">
-          <a class="nav-link" href="/"
-            >Blog
-            <span class="sr-only">(current)</span>
-          </a>
-        </li><li class="nav-item">
-          <a class="nav-link" href="/generative-art/"
-            >Generative Art
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-      </ul>
-        <a
-	href="mailto:l1990790120@gmail.com"
-	title="Email"
->
-	<i class="fa fa-fw fa-envelope"></i>
-</a>    <a
-	href="https://www.facebook.com/l1990790120"
-	title="Facebook"
->
-	<i class="fa fa-fw fa-facebook"></i>
-</a>  <a
-	href="https://github.com/l1990790120"
-	title="GitHub"
->
-	<i class="fa fa-fw fa-github"></i>
-</a> <a
-	href="http://instagram.com/l1990790120"
-	title="Instagram"
->
-	<i class="fa fa-fw fa-instagram"></i>
-</a> <a
-	href="https://www.linkedin.com/in/luluchengengineeratheart"
-	title="LinkedIn"
->
-	<i class="fa fa-fw fa-linkedin"></i>
-</a> <a
-	href="http://www.pinterest.com/l1990790120"
-	title="Pinterest"
->
-	<i class="fa fa-fw fa-pinterest"></i>
-</a> <a
-	href="https://www.reddit.com/user/l1990790120"
-	title="Reddit"
->
-	<i class="fa fa-fw fa-reddit"></i>
-</a>     <a
-	href="https://twitter.com/l1990790120"
-	title="Twitter"
->
-	<i class="fa fa-fw fa-twitter"></i>
-</a>  <a
-	href="https://www.youtube.com/user/l1990790120"
-	title="YouTube"
->
-	<i class="fa fa-fw fa-youtube"></i>
-</a>   <a
-	href="https://medium.com/@l1990790120"
-	title=""
->
-	<i class="fa fa-fw fa-medium"></i>
+<body>
+<script>(function(a){var b=20;a(window).scroll(function(d){var c=a(window).scrollTop();c>=b?a('.navbar').addClass("navbar-hide"):c<b&&a('.navbar').removeClass("navbar-hide"),b=c})})(jQuery)</script>
+<style>.navbar{transition:top .5s ease}.navbar-hide{top:-100px}</style>
+<div class=row>
+<nav class="navbar fixed-top navbar-expand-md navbar-light bg-white">
+<a class=navbar-brand href=https://l1990790120.github.io/>
+<img class=avatar src=https://l1990790120.github.io/profile.png alt>
 </a>
-
-    </div>
-  </nav>
+<a class=navbar-brand href=https://l1990790120.github.io/>LC</a>
+<button class=navbar-toggler type=button data-toggle=collapse data-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span>
+</button>
+<div class="collapse navbar-collapse" id=navbarSupportedContent>
+<ul class="navbar-nav mr-auto">
+<li class=nav-item>
+<a class=nav-link href=/about/>About
+<span class=sr-only>(current)</span>
+</a>
+</li><li class=nav-item>
+<a class=nav-link href=/>Blog
+<span class=sr-only>(current)</span>
+</a>
+</li><li class=nav-item>
+<a class=nav-link href=/generative-art/>Generative Art
+<span class=sr-only>(current)</span>
+</a>
+</li>
+</ul>
+<a href=mailto:l1990790120@gmail.com title=Email>
+<i class="fa fa-fw fa-envelope"></i>
+</a> <a href=https://www.facebook.com/l1990790120 title=Facebook>
+<i class="fa fa-fw fa-facebook"></i>
+</a> <a href=https://github.com/l1990790120 title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+</a> <a href=http://instagram.com/l1990790120 title=Instagram>
+<i class="fa fa-fw fa-instagram"></i>
+</a> <a href=https://www.linkedin.com/in/luluchengengineeratheart title=LinkedIn>
+<i class="fa fa-fw fa-linkedin"></i>
+</a> <a href=http://www.pinterest.com/l1990790120 title=Pinterest>
+<i class="fa fa-fw fa-pinterest"></i>
+</a> <a href=https://www.reddit.com/user/l1990790120 title=Reddit>
+<i class="fa fa-fw fa-reddit"></i>
+</a> <a href=https://twitter.com/l1990790120 title=Twitter>
+<i class="fa fa-fw fa-twitter"></i>
+</a> <a href=https://www.youtube.com/user/l1990790120 title=YouTube>
+<i class="fa fa-fw fa-youtube"></i>
+</a> <a href=https://medium.com/@l1990790120 title>
+<i class="fa fa-fw fa-medium"></i>
+</a>
 </div>
-    <div class="top-container col mr-auto">
-      <div class="container">
-      
-
-  <div class="container text-wrap">
-
-  
-  
-  <div class="row">
-    <h1 class="title text-center">Thoughts on AI Biases</h1>
-  </div>
-
-  
-	<style>
-.post-meta{
-  text-transform:uppercase;
-  letter-spacing:0.1em;
-  font-size: 90%;
-}
-</style>
-
+</nav>
+</div>
+<div class="top-container col mr-auto">
+<div class=container>
+<div class="container text-wrap">
+<div class=row>
+<h1 class="title text-center">Thoughts on AI Biases</h1>
+</div>
+<style>.post-meta{text-transform:uppercase;letter-spacing:.1em;font-size:90%}</style>
 <div>
-  <div class="row text-secondary post-meta py-1">
-    2020/08/02
-    
-    &middot; 
-    
-    7
-    minute read
-  </div>
-
-  <div class="row post-meta pb-3 pt-1">
-    
-    <a href="https://l1990790120.github.io/tags/ai" class="badge badge-light">AI</a>
-         &nbsp; <a href="https://l1990790120.github.io/tags/algorithm" class="badge badge-light">algorithm</a>
-         &nbsp; <a href="https://l1990790120.github.io/tags/biases" class="badge badge-light">biases</a>
-         &nbsp; <a href="https://l1990790120.github.io/tags/data-science" class="badge badge-light">data-science</a>
-         &nbsp; <a href="https://l1990790120.github.io/tags/engineering" class="badge badge-light">engineering</a>
-         &nbsp; <a href="https://l1990790120.github.io/tags/justice" class="badge badge-light">justice</a>
-         &nbsp; <a href="https://l1990790120.github.io/tags/machine-learning" class="badge badge-light">machine-learning</a>
-         &nbsp; <a href="https://l1990790120.github.io/tags/politics" class="badge badge-light">politics</a>
-         &nbsp; <a href="https://l1990790120.github.io/tags/software" class="badge badge-light">software</a>
-        
-  </div>
+<div class="row text-secondary post-meta py-1">
+2020/08/02
+&#183;
+7
+minute read
 </div>
-	
-
-	
-	<div>
-  
-
-<p>Almost in every AI or Machine Learning conferences I&rsquo;ve been to lately, there&rsquo;s a track dedicating to biases or &ldquo;injustices&rdquo; in algorithmic decisions. Books have been published (<a href="https://amzn.to/3k1U4Vs">Automating Inequality: How High-Tech Tools Profile, Police, and Punish the Poor</a>, <a href="https://amzn.to/2XjUeh8">Algorithms of Oppression: How Search Engines Reinforce Racism</a> etc.) and fear has been spread (<a href="https://www.theverge.com/2020/2/18/21142489/elon-musk-ai-regulation-tweets-open-ai-tesla-spacex-twitter">Elon Musk says AI development should be better regulated, even at Tesla
+<div class="row post-meta pb-3 pt-1">
+<a href=https://l1990790120.github.io/tags/ai class="badge badge-light">AI</a>
+&nbsp; <a href=https://l1990790120.github.io/tags/algorithm class="badge badge-light">algorithm</a>
+&nbsp; <a href=https://l1990790120.github.io/tags/biases class="badge badge-light">biases</a>
+&nbsp; <a href=https://l1990790120.github.io/tags/data-science class="badge badge-light">data-science</a>
+&nbsp; <a href=https://l1990790120.github.io/tags/engineering class="badge badge-light">engineering</a>
+&nbsp; <a href=https://l1990790120.github.io/tags/justice class="badge badge-light">justice</a>
+&nbsp; <a href=https://l1990790120.github.io/tags/machine-learning class="badge badge-light">machine-learning</a>
+&nbsp; <a href=https://l1990790120.github.io/tags/politics class="badge badge-light">politics</a>
+&nbsp; <a href=https://l1990790120.github.io/tags/software class="badge badge-light">software</a>
+</div>
+</div>
+<div>
+<p>Almost in every AI or Machine Learning conferences I&rsquo;ve been to lately, there&rsquo;s a track dedicating to biases or &ldquo;injustices&rdquo; in algorithmic decisions. Books have been published (<a href=https://amzn.to/3k1U4Vs>Automating Inequality: How High-Tech Tools Profile, Police, and Punish the Poor</a>, <a href=https://amzn.to/2XjUeh8>Algorithms of Oppression: How Search Engines Reinforce Racism</a> etc.) and fear has been spread (<a href=https://www.theverge.com/2020/2/18/21142489/elon-musk-ai-regulation-tweets-open-ai-tesla-spacex-twitter>Elon Musk says AI development should be better regulated, even at Tesla
 </a>).</p>
-
-<p>The fear of unknown is, perhaps, more persuasive than <a href="https://www.nature.com/articles/s41599-020-0494-4">a realistic survey of the state of AGI (Artificial General Intelligence) development</a>. Admittedly, from the very beginning of my career, I despised those who lacks the imagination of how data and algorithms can improve the quality of human decisions - I have always believed that human intelligence could be drastically improved when augmented with the right information at the right time.</p>
-
-<h2 id="machine-learning-is-only-good-with-specialized-problems-in-2020">Machine Learning is only good with specialized problems (in 2020)<a href="#machine-learning-is-only-good-with-specialized-problems-in-2020" class="hanchor" ariaLabel="Anchor">   ¶</a> </h2>
-
-<p>However, a master degree in machine learning and working in the field has made me realized its limitations. Machine learning algorithm is good at solving a specialized problem - a problem that could be theorized and hypothesize with clear constraints and optimization. It could be as complicated as <a href="https://deepmind.com/research/case-studies/alphago-the-story-so-far">go game</a>, or recognizing <a href="https://www.wired.com/2012/06/google-x-neural-network/">cat in the video</a>.</p>
-
+<p>The fear of unknown is, perhaps, more persuasive than <a href=https://www.nature.com/articles/s41599-020-0494-4>a realistic survey of the state of AGI (Artificial General Intelligence) development</a>. Admittedly, from the very beginning of my career, I despised those who lacks the imagination of how data and algorithms can improve the quality of human decisions - I have always believed that human intelligence could be drastically improved when augmented with the right information at the right time.</p>
+<h2 id=machine-learning-is-only-good-with-specialized-problems-in-2020>Machine Learning is only good with specialized problems (in 2020)<a href=#machine-learning-is-only-good-with-specialized-problems-in-2020 class=hanchor arialabel=Anchor> ¶</a> </h2>
+<p>However, a master degree in machine learning and working in the field has made me realized its limitations. Machine learning algorithm is good at solving a specialized problem - a problem that could be theorized and hypothesize with clear constraints and optimization. It could be as complicated as <a href=https://deepmind.com/research/case-studies/alphago-the-story-so-far>go game</a>, or recognizing <a href=https://www.wired.com/2012/06/google-x-neural-network/>cat in the video</a>.</p>
 <p>If we look at the more difficult decisions we have to make in our lives, what are some common traits they share? It&rsquo;s relative easy to decide whether to bring an umbrella with you or not but it&rsquo;s much more difficult to choose a major in college. Why is the latter so much more complicated than the former? Mathematically speaking, when there are too many parameters and no rules fed into an optimization problem, the problem becomes infinitely difficult to solve.</p>
-
 <p>Different from how human brain solves a problem, programs are very good at solving repetitive and tedious steps. Therefore, though we were required to practice arithmetic in middle school, no one practically calculates anything without a calculator in real life. Alphago algorithm, as advanced as it is to search the potential outcomes on the game board and make moves that averages the highest likelihood for it to win the game in relative short time, it&rsquo;s not able to predict 2020 US presidential election for us. There&rsquo;s simply too many variables and too little constraints.</p>
-
 <p>Another great example I was once given in grad school: what was the mechanism in human brain that triggered Wright brothers to figure out how airplane could work by observing how birds fly? How human &ldquo;learns&rdquo; is still very much a mystery that engineers can yet replicate on machines.</p>
-
-<h2 id="algorithms-are-byproducts-of-data">Algorithms are byproducts of data<a href="#algorithms-are-byproducts-of-data" class="hanchor" ariaLabel="Anchor">   ¶</a> </h2>
-
-<p>Humans and machines are not so different in this aspect, we both need data to make decisions. <a href="https://amzn.to/3k4Dp3B">Human brains have the superpower to &ldquo;jump to conclusions&rdquo; (Thinking Fast and Slow).</a> Since machines don&rsquo;t have this super power, machines are always much more greedy on data to make inferences in order to make human quality decisions.</p>
-
-<p>One can also think about this as machines will make the most honest decisions based on data it&rsquo;s given. At the same time, because algorithms are so greedy about data, we often have to feed algorithms with the volume of data that&rsquo;s beyond our ability to grasp. The fact that human can neither understand the underlying data nor the <a href="https://en.wikipedia.org/wiki/Deep_learning">complicated non-linear decision inferences</a> exhaustively is where <strong>the misunderstanding of how machine learning algorithms or AI are BIASED begin to develop.</strong></p>
-
-<h2 id="data-is-biased">Data is biased<a href="#data-is-biased" class="hanchor" ariaLabel="Anchor">   ¶</a> </h2>
-
-<p>If algorithm is only giving an honest view based on the data provided and we think algorithm is biased, it&rsquo;s likely that the data is biased. <a href="https://www.brookings.edu/research/understanding-risk-assessment-instruments-in-criminal-justice/">This relationship is clearly established in the field where fairness is a concern.</a></p>
-
-<p>One of the more popular question often mentioned in AI ethics is <a href="https://en.wikipedia.org/wiki/Trolley_problem">the trolley dilemma</a>. While it&rsquo;s certainly worth governing the behavior of algorithms in tricky situations, this is a dilemma more for humans not machines. If the user rewards the algorithm to save it&rsquo;s own life (with data), the algorithm will save the driver&rsquo;s life and vice versa. There&rsquo;s very little room for ethical discussion algorithm-wise, if anything, the discussion should focus on what if most of the users (which generates the data) rewards self-interest behavior but it&rsquo;s in fact considered less moral?</p>
-
+<h2 id=algorithms-are-byproducts-of-data>Algorithms are byproducts of data<a href=#algorithms-are-byproducts-of-data class=hanchor arialabel=Anchor> ¶</a> </h2>
+<p>Humans and machines are not so different in this aspect, we both need data to make decisions. <a href=https://amzn.to/3k4Dp3B>Human brains have the superpower to &ldquo;jump to conclusions&rdquo; (Thinking Fast and Slow).</a> Since machines don&rsquo;t have this super power, machines are always much more greedy on data to make inferences in order to make human quality decisions.</p>
+<p>One can also think about this as machines will make the most honest decisions based on data it&rsquo;s given. At the same time, because algorithms are so greedy about data, we often have to feed algorithms with the volume of data that&rsquo;s beyond our ability to grasp. The fact that human can neither understand the underlying data nor the <a href=https://en.wikipedia.org/wiki/Deep_learning>complicated non-linear decision inferences</a> exhaustively is where <strong>the misunderstanding of how machine learning algorithms or AI are BIASED begin to develop.</strong></p>
+<h2 id=data-is-biased>Data is biased<a href=#data-is-biased class=hanchor arialabel=Anchor> ¶</a> </h2>
+<p>If algorithm is only giving an honest view based on the data provided and we think algorithm is biased, it&rsquo;s likely that the data is biased. <a href=https://www.brookings.edu/research/understanding-risk-assessment-instruments-in-criminal-justice/>This relationship is clearly established in the field where fairness is a concern.</a></p>
+<p>One of the more popular question often mentioned in AI ethics is <a href=https://en.wikipedia.org/wiki/Trolley_problem>the trolley dilemma</a>. While it&rsquo;s certainly worth governing the behavior of algorithms in tricky situations, this is a dilemma more for humans not machines. If the user rewards the algorithm to save it&rsquo;s own life (with data), the algorithm will save the driver&rsquo;s life and vice versa. There&rsquo;s very little room for ethical discussion algorithm-wise, if anything, the discussion should focus on what if most of the users (which generates the data) rewards self-interest behavior but it&rsquo;s in fact considered less moral?</p>
 <p>This leads to the next area of interest, what if users are generating data that&rsquo;s considered less moral and biased but it&rsquo;s getting feed into the algorithms?</p>
-
-<h2 id="data-is-byproduct-of-human-and-human-is-biased">Data is byproduct of human and human is biased<a href="#data-is-byproduct-of-human-and-human-is-biased" class="hanchor" ariaLabel="Anchor">   ¶</a> </h2>
-
-<p>Most AI/ML biases discussions are trying to fix the algorithms or developing evaluation mechanisms comparing predictions by gender, races, ages and other demographic based attribute. A concrete example: <a href="https://fairlearn.github.io/user_guide/fairness_in_machine_learning.html#parity-constraints">microsoft published an open-source package to score the fairness of a model as by evaluating the parity of various demographic attributes</a>.</p>
-
+<h2 id=data-is-byproduct-of-human-and-human-is-biased>Data is byproduct of human and human is biased<a href=#data-is-byproduct-of-human-and-human-is-biased class=hanchor arialabel=Anchor> ¶</a> </h2>
+<p>Most AI/ML biases discussions are trying to fix the algorithms or developing evaluation mechanisms comparing predictions by gender, races, ages and other demographic based attribute. A concrete example: <a href=https://fairlearn.github.io/user_guide/fairness_in_machine_learning.html#parity-constraints>microsoft published an open-source package to score the fairness of a model as by evaluating the parity of various demographic attributes</a>.</p>
 <p>While controls and governance are always beneficial to help researchers and practitioners understand and mitigate risks, I argue we are not dealing with the actual problem. If the source of a biased model is data and human generates data, a more critical question would be - are platforms publishing decisioning algorithms responsible for fixing their users and further fix the data?</p>
-
-<h2 id="regulating-human-biases">Regulating human biases<a href="#regulating-human-biases" class="hanchor" ariaLabel="Anchor">   ¶</a> </h2>
-
-<p><a href="https://about.fb.com/news/2020/05/welcoming-the-oversight-board/">Facebook responds to their problematic usage of data and algorithms with an oversight board.</a> <a href="https://techcrunch.com/2020/02/03/twitter-suspends-large-network-of-fake-accounts-used-to-match-phone-numbers-to-users/">Twitter suspends &ldquo;fake accounts&rdquo;</a> It&rsquo;s not hard to see an interesting tension between the &ldquo;fairness&rdquo; of decisioning and business growth. Limiting access to different groups of users in order to improve data and algorithms could potentially lead to revenue loss.</p>
-
-<p>Algorithmic decisioning, perhaps newer to social media platforms and more difficult to regulate, is not new to the businesses. In heavily regulated industry such as banks, fairness is required by law. Correctness of credit reporting is bounded by <a href="https://www.ftc.gov/enforcement/statutes/fair-credit-reporting-act">FCRA (Fair Credit Reporting Act)</a>, unbiased decision to credit is guaranteed by <a href="https://www.justice.gov/crt/equal-credit-opportunity-act-3">ECOA (Equal Credit Opportunity Act)</a>. Even written in law, one could still argue it&rsquo;s unfair to those who do not have credit history with established institutions. Whether the intention is self-interest or altruistic, bureau monopolizing credit data (transunion, equifax, fico) has motivated the industry to improve on serving the underserved. A new line of financial products such as <a href="https://www.chime.com/">Chime</a> or <a href="https://www.petalcard.com/">Petal</a> requires no credit score claims to provide banking services and credit access the &ldquo;untapped&rdquo; population by traditional banking.</p>
-
-<h2 id="a-political-and-philosophical-debate-since-human-history">A political and philosophical debate since human history<a href="#a-political-and-philosophical-debate-since-human-history" class="hanchor" ariaLabel="Anchor">   ¶</a> </h2>
-
-<p>As I&rsquo;ve laid out, AI biases could not be seen solely as a technological but a political problem (or at least, involves human to be part of the solution). As a technologist myself, it saddens me to learn that a solution will not present itself as technology progresses (as opposed to a cure for COVID-19). It&rsquo;s encouraging at the same time that equal right and fairness is an old subject since human history(<a href="https://en.wikipedia.org/wiki/Equal_Educational_Opportunities_Act_of_1974">Equal Employment Opportunity Act</a>, <a href="https://www.healthcare.gov/where-can-i-read-the-affordable-care-act/">the struggling Affordable Care Act</a>) - in fact, <a href="https://en.wikipedia.org/wiki/Equal_Protection_Clause">equal right is in our constitution</a>. A democratic society and government would always strive for these values, it&rsquo;s just a matter of understanding &ldquo;how&rdquo;?</p>
-
-<h2 id="summary">Summary<a href="#summary" class="hanchor" ariaLabel="Anchor">   ¶</a> </h2>
-
+<h2 id=regulating-human-biases>Regulating human biases<a href=#regulating-human-biases class=hanchor arialabel=Anchor> ¶</a> </h2>
+<p><a href=https://about.fb.com/news/2020/05/welcoming-the-oversight-board/>Facebook responds to their problematic usage of data and algorithms with an oversight board.</a> <a href=https://techcrunch.com/2020/02/03/twitter-suspends-large-network-of-fake-accounts-used-to-match-phone-numbers-to-users/>Twitter suspends &ldquo;fake accounts&rdquo;</a> It&rsquo;s not hard to see an interesting tension between the &ldquo;fairness&rdquo; of decisioning and business growth. Limiting access to different groups of users in order to improve data and algorithms could potentially lead to revenue loss.</p>
+<p>Algorithmic decisioning, perhaps newer to social media platforms and more difficult to regulate, is not new to the businesses. In heavily regulated industry such as banks, fairness is required by law. Correctness of credit reporting is bounded by <a href=https://www.ftc.gov/enforcement/statutes/fair-credit-reporting-act>FCRA (Fair Credit Reporting Act)</a>, unbiased decision to credit is guaranteed by <a href=https://www.justice.gov/crt/equal-credit-opportunity-act-3>ECOA (Equal Credit Opportunity Act)</a>. Even written in law, one could still argue it&rsquo;s unfair to those who do not have credit history with established institutions. Whether the intention is self-interest or altruistic, bureau monopolizing credit data (transunion, equifax, fico) has motivated the industry to improve on serving the underserved. A new line of financial products such as <a href=https://www.chime.com/>Chime</a> or <a href=https://www.petalcard.com/>Petal</a> requires no credit score claims to provide banking services and credit access the &ldquo;untapped&rdquo; population by traditional banking.</p>
+<h2 id=a-political-and-philosophical-debate-since-human-history>A political and philosophical debate since human history<a href=#a-political-and-philosophical-debate-since-human-history class=hanchor arialabel=Anchor> ¶</a> </h2>
+<p>As I&rsquo;ve laid out, AI biases could not be seen solely as a technological but a political problem (or at least, involves human to be part of the solution). As a technologist myself, it saddens me to learn that a solution will not present itself as technology progresses (as opposed to a cure for COVID-19). It&rsquo;s encouraging at the same time that equal right and fairness is an old subject since human history(<a href=https://en.wikipedia.org/wiki/Equal_Educational_Opportunities_Act_of_1974>Equal Employment Opportunity Act</a>, <a href=https://www.healthcare.gov/where-can-i-read-the-affordable-care-act/>the struggling Affordable Care Act</a>) - in fact, <a href=https://en.wikipedia.org/wiki/Equal_Protection_Clause>equal right is in our constitution</a>. A democratic society and government would always strive for these values, it&rsquo;s just a matter of understanding &ldquo;how&rdquo;?</p>
+<h2 id=summary>Summary<a href=#summary class=hanchor arialabel=Anchor> ¶</a> </h2>
 <p>The post is meant to explain the seemingly abstract relationships between algorithms, data, human and society in the most realistic way possible. By reframing the emerging technology challenges into existing ones, I hope it helps to ground the fluffy AI biases conversations into something more directional and productive ones. From the books I have read or discussions I&rsquo;ve participated, very rarely such an obvious yet deep connections was ever established or explored. We often get lost in the possibilities of technology just because it&rsquo;s unseen. Complicated as it may be, technology or science is always bounded to &ldquo;truth&rdquo;, how it&rsquo;s used will always be a human decision. Nuclear could alleviate energy shortage in France and strengthen its independence among its neighbors or used in World War 2. The differences between AI and nuclear technology, thanks to sci-fi books and movies - anyone could suddenly stretch the possibilities beyond reality without justifying their imagination. To the technologists and policy makers who really wants to build a better future with technology, we should always focus on the fundamental biases present in human society and instrument measures to prevent algorithms magnifying the biases or better yet, reduce the biases.</p>
-
 <p>Happy machine learning!</p>
-
 </div>
-
-<style>
-  .hanchor {
-    font-size: 100%;
-    visibility: hidden;
-    color:silver;
-  }
-  h1:hover a, h2:hover a, h3:hover a, h4:hover a {
-    visibility: visible;
-    text-decoration: none;
-  }
-</style>
-	
-
-	
-		<div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "l1990790120" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-  
-  </div>
-      </div>
-    </div>
-	</body>
+<style>.hanchor{font-size:100%;visibility:hidden;color:silver}h1:hover a,h2:hover a,h3:hover a,h4:hover a{visibility:visible;text-decoration:none}</style>
+<div id=disqus_thread></div>
+<script type=application/javascript>var disqus_config=function(){};(function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById('disqus_thread').innerHTML='Disqus comments not available by default when the website is previewed locally.';return}var b=document,a=b.createElement('script');a.async=!0,a.src='//l1990790120.disqus.com/embed.js',a.setAttribute('data-timestamp',+new Date),(b.head||b.body).appendChild(a)})()</script>
+<noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript>
+<a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a>
+</div>
+</div>
+</div>
+</body>
 </html>
