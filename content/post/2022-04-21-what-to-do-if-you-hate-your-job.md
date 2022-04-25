@@ -4,7 +4,7 @@ date: 2021-05-06T20:00:38-04:00
 tags: ["blog", "career", "workplace"]
 ---
 
-I have been working professionally for close to 10 years in  seven companies (not counting part-time job or internships). Disclaimer: I am no workplace expert. I am an average cog in the wheel who reads and thinks a lot on the subject (and perhaps have been through a few of the not so great workplaces myself) who would like to share some learnings and reflections over time. This also might or might not be a writing therapy in response to my worklife.
+I have been working professionally for close to 10 years in  seven companies (not counting part-time job or internships). Disclaimer: I am no workplace expert. I am an average cog in the wheel who reads and thinks a lot on the subject (and perhaps have been through a few of the not so great workplaces myself). This might or might not be a writing therapy reflecting on my worklife over the years and most recently.
 
 My Asian upbringing has instilled great strength and integrity in me, that is, not to boast about personal success and overcome adversity with resilience. Over the years, I've learned and adapted how to practice these values while giving myself the permission to celebrate successes and embrace failures as learning opportunity. Even to this date, I truly believe that celebrating successes is not to talk about wins nonstop but to take pride in the positive impact in people's life because of the work I do.
 
