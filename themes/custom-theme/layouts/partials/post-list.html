@@ -10,8 +10,11 @@
 					</a>
 				</h1>
 			</div>
-
+			
 			<div>
+				<div class="row text-secondary post-meta py-1">
+    				{{ .Date.Format "2006/01/02" }}
+				</div>
 				{{ if isset .Params "description" | and (ne .Params.description "") -}}
 					{{ .Description | markdownify }}
 				{{- else -}}
