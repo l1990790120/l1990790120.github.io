@@ -60,7 +60,7 @@ This truly something I live by. I used to be that person who'd reply to internet
 
 It's easy to think you should rebuttal against other's arguments and get everyone to agree with you. It took me years to understand that in a trusting team, a decision is simply the byproduct of a great discussion. The team could literally go with any decision as long as the team already did their best efforts in assessing the situation and researching the options. Anyone on the team will make equally good or bad decision at this point, when the context is crystal clear, there's very little personal aspect in the decision.
 
-Even if you are you a less than ideal workplace, it's important to continue to practice the great values you believe in and do not drag yourself down.
+Even if you are in a less than ideal workplace, it's important to continue to practice the great values you believe in and do not drag yourself down.
 
 ## Closing thoughts
 
