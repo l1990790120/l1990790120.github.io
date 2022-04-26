@@ -24,8 +24,11 @@ New York, NY, 10013
 
 ### Work Experience
 
+**Software Engineer**, Block, New York, NY
+2021-11 to Present
+
 **Master Data Engineer/Manager, Data Engineering**, Capital One, New York, NY  
-2020-03 to Present
+2020-03 to 2021-11
 
 - Machine Learning Platform
   - Contributing to platform's model building and training module. Create abstraction layer for hyperparameter tuning packages ([Optuna](https://optuna.org/), [SparkML](https://spark.apache.org/docs/latest/ml-guide.html)) to allow easy integration on a variety workflow and experimentation tools ([Airflow](https://airflow.apache.org/), [MLFlow](https://mlflow.org/), [Dask](https://dask.org/), [Argo](https://argoproj.github.io/)).
