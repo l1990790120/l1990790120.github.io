@@ -85,7 +85,9 @@ design with technology, always look for ways to make the world a better place.
 
 #### <i class="fa fa-suitcase"></i> Where I Work
 
-Currently I am Master Data Engineer at Capital One.
+Currently I am Software Engineer at Square.
+
+Prior to that, I was Master Data Engineer at Capital One (New York, NY) working on Identity Verification, Fraud and ML Platform.
 
 Prior to that, I was Senior Data Engineer at Deloitte Digital (New York, NY), where I ...
 
