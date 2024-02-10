@@ -24,14 +24,19 @@ New York, NY, 10013
 
 ### Work Experience
 
-**Software Engineer**, Block, New York, NY
+**Software Engineer/Engineering Manager**, Block, New York, NY
 2021-11 to Present
+
+- Lead modernization and consolidation initiative for Block's data streaming infrastructure, serving both as an IC and EM. Successfully streamlined and unified 7+ disparate data streaming platforms across BUs. Reduce vendor and maintainance cost, operational complexities, security risks from inconsistent implementations. Over the span of 1.5 years, our Data Streaming Infrastructure team has consolidated 4+ separate platforms, enhance development efficiency and accelerate the lifecycle from event streaming to downstream data applications. Implemented company-wide generic data governance and security abstractions and frameworks to strengthen Block's overall data ecosystem.
+- Streamline Block's governance, privacy and security processes. Develop shared layer of abstractions and frameworks spanning from event streams to downstream applications (datalake, feature stores, AI/ML applications, etc.). Led the Data Streaming Infrastructure team to develop toolings, monitoring solutions, and processes. Empowering internal teams to effectively manage their own data products. Significantly improve Block's overall engineering efficiency, governance protocols, and security posture.
+- Contribute to Block's overall data infrastructure, governance, and security strategy. Introduce software development strategy across BUs and product teams to seek balance between flexibility and speed by implementing layers of governance, privacy and security abstractions aligned with our organizational structure. Empowered product teams to build with security, privacy, and safety by default, align with Block's commitment to robust and responsible software development standards.
 
 **Master Data Engineer/Manager, Data Engineering**, Capital One, New York, NY  
 2020-03 to 2021-11
 
 - Machine Learning Platform
-  - Contributing to platform's model building and training module. Create abstraction layer for hyperparameter tuning packages ([Optuna](https://optuna.org/), [SparkML](https://spark.apache.org/docs/latest/ml-guide.html)) to allow easy integration on a variety workflow and experimentation tools ([Airflow](https://airflow.apache.org/), [MLFlow](https://mlflow.org/), [Dask](https://dask.org/), [Argo](https://argoproj.github.io/)).
+
+  - Contribute to platform's model building and training module. Create abstraction layer for hyperparameter tuning packages ([Optuna](https://optuna.org/), [SparkML](https://spark.apache.org/docs/latest/ml-guide.html)) to allow easy integration on a variety workflow and experimentation tools ([Airflow](https://airflow.apache.org/), [MLFlow](https://mlflow.org/), [Dask](https://dask.org/), [Argo](https://argoproj.github.io/)).
   - Productionize document vulnerability scan model pipeline. Experiment with [Hugging Face](https://huggingface.co/), [Tensorflow](https://www.tensorflow.org/), [Spark XGBoost](https://databricks.com/blog/2020/11/16/how-to-train-xgboost-with-spark.html) against the full dataset (entire Capital One Retail Bank's S3 documents) to reduce training time.
   - Mentor in internal and external Data and AI/ML projects. Working with team(s) of interns and software engineers to research and prototype new AI/ML packages on enterprise platform.
 
