@@ -9,4 +9,4 @@ I've run a couple classification ML algorithm on the dataset. What makes this pr
 
 <!--more-->
 
-{{% jupyter_notebook "static/nb/edx_mooc.html" %}}
+{{< jupyter_notebook "static/nb/edx_mooc.html" >}}

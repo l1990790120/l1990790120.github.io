@@ -9,4 +9,4 @@ Using `mpld3` to do visualization in ipython with Kaggle's airbnb data. First ex
 
 <!--more-->
 
-{{% jupyter_notebook "/static/nb/AIRBNB_NEW_USER_BOOKING.html" %}}
+{{< jupyter_notebook "/static/nb/AIRBNB_NEW_USER_BOOKING.html" >}}

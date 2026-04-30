@@ -10,6 +10,6 @@ Using ARIMA to forecast college enrollment for 2015 and 2016 at institution leve
 
 <!--more-->
 
-{{% jupyter_notebook "/static/nb/COLLEGE_ENROLLMENT_FORECAST_INST_LEVEL.html" %}}
+{{< jupyter_notebook "/static/nb/COLLEGE_ENROLLMENT_FORECAST_INST_LEVEL.html" >}}
 
 Python module: [https://github.com/l1990790120/l1990790120.github.io/blob/master/_includes/nb/COLLEGE_ENROLLMENT_FORECAST_INST_LEVEL_vaildation_mod.py](https://github.com/l1990790120/l1990790120.github.io/blob/master/_includes/nb/COLLEGE_ENROLLMENT_FORECAST_INST_LEVEL_vaildation_mod.py)
