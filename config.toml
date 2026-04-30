@@ -7,7 +7,8 @@ disqusShortname = "l1990790120"
 # Add your tracking code to enable Google Analytics
 googleAnalytics = "UA-71133003-1"
 # Posts per page
-paginate = 10
+[pagination]
+	pagerSize = 10
 # Comment the themesDir option if you use this theme in production
 # themesDir = "../.."
 
