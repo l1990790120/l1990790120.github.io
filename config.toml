@@ -1,5 +1,5 @@
 baseurl = "https://l1990790120.github.io/"
-languageCode = "en-us"
+locale = "en-us"
 title = "LC"
 theme = "custom-theme"
 # Enable comments by entering your Disqus shortname
@@ -71,8 +71,8 @@ paginate = 10
 [taxonomies]
   tag = "tags"
 
-[markup]
-  defaultMarkdownHandler = "blackFriday"
+[markup.goldmark.renderer]
+  unsafe = true
 
 [sitemap]
   changefreq = "weekly"
