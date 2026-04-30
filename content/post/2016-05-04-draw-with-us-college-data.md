@@ -9,6 +9,6 @@ Showcase on what you can do with IPEDS data API. Choropleth with d3. I've also t
 
 <!--more-->
 
-{{% jupyter_notebook "static/nb/Draw_with_US_College_Data.html" %}}
+{{< jupyter_notebook "static/nb/Draw_with_US_College_Data.html" >}}
 
 Python module: [https://github.com/l1990790120/l1990790120.github.io/blob/master/_includes/nb/Draw_with_US_College_Data_dep.py](https://github.com/l1990790120/l1990790120.github.io/blob/master/_includes/nb/Draw_with_US_College_Data_dep.py)
