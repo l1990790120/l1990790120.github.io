@@ -24,8 +24,15 @@ New York, NY, 10013
 
 ### Work Experience
 
+**Machine Learning Engineer**, Reddit, New York, NY
+2025-04 to Present
+
+- Founding member of Reddit's indexing platform team. Scaled from 0 to 100+ production pipelines within the first year, supporting safety, ads, and content understanding teams across the organization. Led many cross-functional customer team onboarding and improve platform usability, accelerating adoption across product teams. Indexes support core ranking and relevance signals across Reddit's feeds, ads, and safety systems to drive user engagement and content quality at scale.
+- Built online and offline LLM inference system serving 200k+ predictions/sec across pipelines. Scaled corresponding offline batch infrastructure to process 100m+ text, image, and video assets for full-history content understanding.
+- Designed core platform abstractions and config-driven indexing framework enable product teams to define a single pipeline specification that deploys both online and offline inference workloads, each with independent scaling characteristics. Improved developer velocity and enabled product teams to deploy production-grade pipelines without infrastructure overhead such as permissions, security, and scalability.
+****
 **Software Engineer/Engineering Manager**, Block, New York, NY
-2021-11 to Present
+2021-11 to 2025-04
 
 - Lead modernization and consolidation initiative for Block's data streaming infrastructure, serving both as an IC and EM. Streamlined and unified 7+ disparate data streaming platforms across BUs. Reduce vendor and maintainance cost, operational complexities, security risks from inconsistent implementations. Over the span of 1.5 years, our Data Streaming Infrastructure team has consolidated 4+ separate platforms, enhance development efficiency and accelerate the lifecycle from event streaming to downstream data applications. Implemented company-wide generic data governance and security abstractions and frameworks to strengthen Block's overall data ecosystem.
 - Streamline Block's governance, privacy and security processes. Develop shared layer of abstractions and frameworks spanning from event streams to downstream applications (datalake, feature stores, AI/ML applications, etc.). Led the Data Streaming Infrastructure team to develop toolings, monitoring solutions, and processes. Empowering internal teams to effectively manage their own data products. Significantly improve Block's overall engineering efficiency, governance protocols, and security posture.
