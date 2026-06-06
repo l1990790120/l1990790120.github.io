@@ -1,0 +1,1328 @@
+<style>
+  .ss-wrap {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    max-width: 640px;
+    margin: 2rem auto;
+    background: #fff;
+    color: #1a1a1a;
+  }
+  .ss-topbar {
+    background: #fafafa;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ss-brand {
+    font-weight: 700;
+    font-size: 13px;
+    color: #1a1a1a;
+  }
+  .ss-brand span {
+    color: #aaa;
+    font-weight: 400;
+  }
+  .ss-counter {
+    font-size: 12px;
+    color: #aaa;
+    font-family: monospace;
+  }
+  .ss-nav-btn {
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 13px;
+    color: #555;
+  }
+  .ss-nav-btn:hover {
+    background: #f5f5f5;
+  }
+  .ss-nav-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+  .ss-dots {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+  .ss-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition:
+      background 0.2s,
+      transform 0.2s;
+  }
+  .ss-dot.on {
+    background: #1a1a1a;
+    transform: scale(1.4);
+  }
+
+  .ss-slide {
+    display: none;
+    padding: 32px 28px;
+  }
+  .ss-slide.on {
+    display: block;
+  }
+
+  .ss-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #aaa;
+    margin-bottom: 8px;
+  }
+  .ss-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+  .ss-sub {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 24px;
+  }
+
+  .ss-block {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+  }
+  .ss-block-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #aaa;
+    margin-bottom: 8px;
+  }
+  .ss-block p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .ss-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .ss-tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 10px;
+  }
+  .ss-tag-blue {
+    background: #eff6ff;
+    color: #1d4ed8;
+  }
+  .ss-tag-green {
+    background: #f0fdf4;
+    color: #15803d;
+  }
+  .ss-tag-amber {
+    background: #fffbeb;
+    color: #b45309;
+  }
+  .ss-tag-gray {
+    background: #f3f4f6;
+    color: #6b7280;
+  }
+
+  pre.ss-code {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-family: "SF Mono", "Fira Code", monospace;
+    font-size: 12px;
+    line-height: 1.8;
+    margin: 0 0 14px;
+    white-space: pre;
+    overflow-x: auto;
+    color: #374151;
+  }
+  .ss-code-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #aaa;
+    font-family: monospace;
+    margin-bottom: 6px;
+  }
+
+  .ss-pipe-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .ss-pipe-step:last-child {
+    border-bottom: none;
+  }
+  .ss-num {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .ss-pipe-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+  .ss-pipe-desc {
+    font-size: 12px;
+    color: #888;
+    margin-top: 2px;
+  }
+  .ss-chip {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 8px;
+    margin-left: 6px;
+    background: #f3f4f6;
+    color: #6b7280;
+    vertical-align: middle;
+  }
+
+  .ss-prompt {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  .ss-prompt-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #aaa;
+    margin-bottom: 10px;
+  }
+  .ss-prompt p {
+    font-size: 14px;
+    color: #374151;
+    line-height: 1.8;
+    margin: 0;
+  }
+</style>
+
+<div class="ss-wrap">
+  <div class="ss-topbar">
+    <div class="ss-brand">10caldev <span>/ demo</span></div>
+    <div class="ss-dots" id="ssDots"></div>
+    <div style="display: flex; align-items: center; gap: 8px">
+      <span class="ss-counter" id="ssCtr">1 / 5</span>
+      <button class="ss-nav-btn" id="ssPrev">←</button>
+      <button class="ss-nav-btn" id="ssNext">→</button>
+    </div>
+  </div>
+
+  <!-- 1 — Prompt -->
+  <div class="ss-slide on">
+    <div class="ss-eyebrow">Step 1 — User Input</div>
+    <div class="ss-title">Describe Your Business</div>
+    <div class="ss-sub">
+      No wireframes. No spec doc. Just a description of the business.
+    </div>
+    <div class="ss-prompt">
+      <div class="ss-prompt-label">User prompt</div>
+      <p>
+        A marketplace connecting tennis, pickleball, and padel club owners with
+        players looking for discounted court time. Club owners list slots with
+        dynamic pricing — discount tiers that grow as the booking window shrinks
+        (10% off 48h before, 30% off 24h, 50% same-day). Players set price and
+        notification preferences. Payment is immediate on booking; no
+        cancellations within 24h. Platform takes 5%. MVP: one market, web only.
+      </p>
+    </div>
+  </div>
+
+  <!-- 2 — Problem Statement -->
+  <div class="ss-slide">
+    <div class="ss-eyebrow">Step 2 — Product Agent</div>
+    <div class="ss-title">Problem Statement</div>
+    <div class="ss-sub">Features and personas are generated automatically.</div>
+    <div class="ss-block">
+      <div class="ss-block-label">Core Problem</div>
+      <p>
+        Clubs have unsold court slots — pure revenue loss. Players want
+        affordable access but can't find discounted availability. No marketplace
+        connects them with automatic time-decay pricing.
+      </p>
+    </div>
+    <div class="ss-block">
+      <div class="ss-block-label">Personas</div>
+      <div class="ss-tags">
+        <span class="ss-tag ss-tag-amber">Club Owner</span>
+        <span class="ss-tag ss-tag-blue">Player</span>
+        <span class="ss-tag ss-tag-gray">Platform Manager</span>
+      </div>
+    </div>
+    <div class="ss-block">
+      <div class="ss-block-label">Success Criteria</div>
+      <div class="ss-tags">
+        <span class="ss-tag ss-tag-green">Club live &lt;10 min</span>
+        <span class="ss-tag ss-tag-green">Book in &lt;3 taps</span>
+        <span class="ss-tag ss-tag-green">Zero overbooking</span>
+        <span class="ss-tag ss-tag-green">Discount tiers auto-apply</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 — API Spec -->
+  <div class="ss-slide">
+    <div class="ss-eyebrow">Step 3 — Engineering Agent</div>
+    <div class="ss-title">Contract First Development</div>
+    <div class="ss-sub">
+      Backend interface derived from features and personas.
+    </div>
+
+    <!-- feature card, engineering.html style -->
+    <div
+      style="
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 14px;
+      "
+    >
+      <div
+        style="
+          padding: 16px 20px;
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          gap: 12px;
+        "
+      >
+        <div>
+          <div style="font-weight: 700; font-size: 15px">Court Booking</div>
+          <div style="font-size: 13px; color: #555; margin-top: 4px">
+            Player discovers a discounted slot, pays immediately, and gets a
+            confirmed booking — no overbooking possible.
+          </div>
+        </div>
+        <span
+          style="
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 2px 7px;
+            border-radius: 4px;
+            background: #fce4ec;
+            color: #c62828;
+            white-space: nowrap;
+            flex-shrink: 0;
+          "
+          >Must Have</span
+        >
+      </div>
+      <div
+        style="
+          border-top: 1px solid #f0f0f0;
+          background: #fafafa;
+          padding: 12px 20px;
+        "
+      >
+        <div
+          style="
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #aaa;
+            margin-bottom: 10px;
+          "
+        >
+          3 API Endpoints
+        </div>
+
+        <div
+          style="
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+          "
+        >
+          <span
+            style="
+              font-size: 11px;
+              font-weight: 700;
+              padding: 2px 7px;
+              border-radius: 4px;
+              background: #e8f5e9;
+              color: #2e7d32;
+              flex-shrink: 0;
+              margin-top: 1px;
+            "
+            >GET</span
+          >
+          <div>
+            <div
+              style="
+                display: flex;
+                gap: 10px;
+                align-items: baseline;
+                flex-wrap: wrap;
+              "
+            >
+              <span
+                style="
+                  font-family: monospace;
+                  font-size: 13px;
+                  font-weight: 500;
+                "
+                >/api/v1/public/slots</span
+              >
+              <span style="font-size: 13px; color: #555"
+                >Browse available slots with live discount prices</span
+              >
+            </div>
+            <div style="display: flex; gap: 5px; margin-top: 4px">
+              <span
+                style="
+                  font-size: 10px;
+                  font-weight: 600;
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  background: #f5f4f0;
+                  color: #666;
+                "
+                >?sport &amp;date &amp;max_price</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+          "
+        >
+          <span
+            style="
+              font-size: 11px;
+              font-weight: 700;
+              padding: 2px 7px;
+              border-radius: 4px;
+              background: #e3f2fd;
+              color: #1565c0;
+              flex-shrink: 0;
+              margin-top: 1px;
+            "
+            >POST</span
+          >
+          <div>
+            <div
+              style="
+                display: flex;
+                gap: 10px;
+                align-items: baseline;
+                flex-wrap: wrap;
+              "
+            >
+              <span
+                style="
+                  font-family: monospace;
+                  font-size: 13px;
+                  font-weight: 500;
+                "
+                >/api/v1/player/bookings</span
+              >
+              <span style="font-size: 13px; color: #555"
+                >Confirm booking and charge card immediately</span
+              >
+            </div>
+            <div style="display: flex; gap: 5px; margin-top: 4px">
+              <span
+                style="
+                  font-size: 10px;
+                  font-weight: 600;
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  background: #e8f5e9;
+                  color: #2e7d32;
+                "
+                >Auth</span
+              >
+              <span
+                style="
+                  font-size: 10px;
+                  font-weight: 600;
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  background: #f5f4f0;
+                  color: #666;
+                "
+                >SELECT FOR UPDATE</span
+              >
+              <span
+                style="
+                  font-size: 10px;
+                  font-weight: 600;
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  background: #fce4ec;
+                  color: #c62828;
+                "
+                >Stripe</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div
+          style="
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 8px 0;
+          "
+        >
+          <span
+            style="
+              font-size: 11px;
+              font-weight: 700;
+              padding: 2px 7px;
+              border-radius: 4px;
+              background: #f3e5f5;
+              color: #6a1b9a;
+              flex-shrink: 0;
+              margin-top: 1px;
+            "
+            >PATCH</span
+          >
+          <div>
+            <div
+              style="
+                display: flex;
+                gap: 10px;
+                align-items: baseline;
+                flex-wrap: wrap;
+              "
+            >
+              <span
+                style="
+                  font-family: monospace;
+                  font-size: 13px;
+                  font-weight: 500;
+                "
+                >/api/v1/player/bookings/{id}</span
+              >
+              <span style="font-size: 13px; color: #555"
+                >Cancel — enforces 24h window platform-side</span
+              >
+            </div>
+            <div style="display: flex; gap: 5px; margin-top: 4px">
+              <span
+                style="
+                  font-size: 10px;
+                  font-weight: 600;
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  background: #e8f5e9;
+                  color: #2e7d32;
+                "
+                >Auth</span
+              >
+              <span
+                style="
+                  font-size: 10px;
+                  font-weight: 600;
+                  padding: 1px 6px;
+                  border-radius: 3px;
+                  background: #f5f4f0;
+                  color: #666;
+                "
+                >403 if not owner</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ss-tags">
+      <span class="ss-tag ss-tag-gray">18 endpoints total</span>
+      <span class="ss-tag ss-tag-gray">6 DB tables</span>
+      <span class="ss-tag ss-tag-gray">locked before build</span>
+    </div>
+  </div>
+
+  <!-- 4 — Backend in Docker -->
+  <div class="ss-slide">
+    <div class="ss-eyebrow">Step 4 — Builder Agent</div>
+    <div class="ss-title">Backend generated, tested, and running.</div>
+    <div class="ss-sub">
+      Fully automated. Agent automatically discover and fix build issues.
+    </div>
+
+    <div
+      style="
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 14px;
+      "
+    >
+      <div
+        style="
+          padding: 14px 20px;
+          background: #fafafa;
+          border-bottom: 1px solid #f0f0f0;
+        "
+      >
+        <div
+          style="
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #aaa;
+            margin-bottom: 10px;
+          "
+        >
+          Phase 1 — Code Generation
+          <span
+            style="
+              background: #eff6ff;
+              color: #1d4ed8;
+              font-size: 10px;
+              font-weight: 600;
+              padding: 2px 7px;
+              border-radius: 8px;
+              margin-left: 4px;
+            "
+            >automated</span
+          >
+        </div>
+        <div
+          style="
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f0f0;
+          "
+        >
+          <div class="ss-num" style="background: #1d4ed8; flex-shrink: 0">
+            1
+          </div>
+          <div>
+            <div class="ss-pipe-title">Define the file interface</div>
+            <div class="ss-pipe-desc">
+              Agent maps every file: path, exports, signatures. All code
+              generated afterward is validated against this.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 6px 0;
+          "
+        >
+          <div class="ss-num" style="background: #1d4ed8; flex-shrink: 0">
+            2
+          </div>
+          <div>
+            <div class="ss-pipe-title">Generate backend code</div>
+            <div class="ss-pipe-desc">
+              Agent writes every file and automatically validates it against the
+              interface. FastAPI routes, SQLAlchemy models, Stripe integration.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          padding: 14px 20px;
+          background: #fafafa;
+          border-bottom: 1px solid #f0f0f0;
+        "
+      >
+        <div
+          style="
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #aaa;
+            margin-bottom: 10px;
+          "
+        >
+          Phase 2 — Automated Testing
+          <span
+            style="
+              background: #eff6ff;
+              color: #1d4ed8;
+              font-size: 10px;
+              font-weight: 600;
+              padding: 2px 7px;
+              border-radius: 8px;
+              margin-left: 4px;
+            "
+            >automated</span
+          >
+        </div>
+        <div
+          style="
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f0f0;
+          "
+        >
+          <div class="ss-num" style="background: #1d4ed8; flex-shrink: 0">
+            3
+          </div>
+          <div>
+            <div class="ss-pipe-title">Lint &amp; fix</div>
+            <div class="ss-pipe-desc">
+              ruff + isort run automatically. If errors remain, an LLM agent
+              patches the files and retries — up to 2 rounds.
+            </div>
+          </div>
+        </div>
+        <div
+          style="
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 6px 0;
+          "
+        >
+          <div class="ss-num" style="background: #1d4ed8; flex-shrink: 0">
+            4
+          </div>
+          <div>
+            <div class="ss-pipe-title">Build container &amp; health check</div>
+            <div class="ss-pipe-desc">
+              Docker image built, container started,
+              <code
+                style="
+                  font-size: 11px;
+                  background: #f3f4f6;
+                  padding: 1px 4px;
+                  border-radius: 3px;
+                "
+                >GET /</code
+              >
+              probed. Pass → done. Fail → LLM reads the error and patches.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        style="
+          padding: 14px 20px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        "
+      >
+        <div
+          style="
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #15803d;
+            box-shadow: 0 0 0 3px #dcfce7;
+            flex-shrink: 0;
+          "
+        ></div>
+        <div>
+          <div style="font-size: 13px; font-weight: 700; color: #15803d">
+            Running · localhost:8080
+          </div>
+          <div style="font-size: 12px; color: #888; margin-top: 1px">
+            Health check passed · Stripe mock · SQLite in-memory
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5 — Frontend -->
+  <div class="ss-slide">
+    <div class="ss-eyebrow">Step 5 — Frontend Agent</div>
+    <div class="ss-title">Frontend generated from the same contract.</div>
+    <div class="ss-sub">
+      Role-scoped pages, hooks, and API clients — all derived automatically.
+    </div>
+
+    <!-- mock tabs -->
+    <div style="display: flex; gap: 8px; margin-bottom: 14px">
+      <button
+        onclick="ssMockTab(0)"
+        id="ssTab0"
+        style="
+          font-size: 12px;
+          font-weight: 600;
+          padding: 5px 12px;
+          border-radius: 6px;
+          border: 1px solid #1a1a1a;
+          background: #1a1a1a;
+          color: #fff;
+          cursor: pointer;
+        "
+      >
+        Player — Search Courts
+      </button>
+      <button
+        onclick="ssMockTab(1)"
+        id="ssTab1"
+        style="
+          font-size: 12px;
+          font-weight: 600;
+          padding: 5px 12px;
+          border-radius: 6px;
+          border: 1px solid #e5e7eb;
+          background: #fff;
+          color: #555;
+          cursor: pointer;
+        "
+      >
+        Club Owner — Manage Slots
+      </button>
+    </div>
+
+    <!-- mock 0: player search -->
+    <div
+      id="ssMock0"
+      style="
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        overflow: hidden;
+        font-size: 13px;
+      "
+    >
+      <!-- fake browser bar -->
+      <div
+        style="
+          background: #f3f4f6;
+          padding: 8px 14px;
+          border-bottom: 1px solid #e5e7eb;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        "
+      >
+        <div style="display: flex; gap: 4px">
+          <div
+            style="
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background: #fca5a5;
+            "
+          ></div>
+          <div
+            style="
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background: #fcd34d;
+            "
+          ></div>
+          <div
+            style="
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background: #6ee7b7;
+            "
+          ></div>
+        </div>
+        <div
+          style="
+            flex: 1;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            padding: 3px 10px;
+            font-size: 11px;
+            color: #aaa;
+            font-family: monospace;
+          "
+        >
+          localhost:3000/search
+        </div>
+      </div>
+      <!-- page content -->
+      <div style="padding: 18px 20px; background: #fff">
+        <div style="font-size: 15px; font-weight: 700; margin-bottom: 4px">
+          Find a court
+        </div>
+        <!-- filters -->
+        <div
+          style="display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap"
+        >
+          <select
+            style="
+              font-size: 12px;
+              padding: 5px 10px;
+              border: 1px solid #e5e7eb;
+              border-radius: 6px;
+              color: #555;
+              background: #fff;
+            "
+          >
+            <option>All sports</option>
+            <option>Tennis</option>
+            <option>Padel</option>
+          </select>
+          <input
+            type="date"
+            style="
+              font-size: 12px;
+              padding: 5px 10px;
+              border: 1px solid #e5e7eb;
+              border-radius: 6px;
+              color: #555;
+            "
+            value="2026-06-05"
+          />
+          <input
+            type="text"
+            placeholder="Max price"
+            style="
+              font-size: 12px;
+              padding: 5px 10px;
+              border: 1px solid #e5e7eb;
+              border-radius: 6px;
+              color: #555;
+              width: 90px;
+            "
+          />
+        </div>
+        <!-- slot cards -->
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <div
+            style="
+              border: 1px solid #e5e7eb;
+              border-radius: 8px;
+              padding: 12px 16px;
+              display: flex;
+              align-items: center;
+              gap: 14px;
+            "
+          >
+            <div style="flex: 1">
+              <div style="font-weight: 700; font-size: 13px">
+                Ace Racket Club
+                <span
+                  style="
+                    font-size: 10px;
+                    font-weight: 600;
+                    background: #eff6ff;
+                    color: #1d4ed8;
+                    padding: 2px 6px;
+                    border-radius: 6px;
+                    margin-left: 4px;
+                  "
+                  >Tennis</span
+                >
+              </div>
+              <div style="font-size: 12px; color: #888; margin-top: 2px">
+                Today · 9:00 – 10:00 AM
+              </div>
+            </div>
+            <div style="text-align: right">
+              <div
+                style="
+                  font-size: 11px;
+                  color: #aaa;
+                  text-decoration: line-through;
+                "
+              >
+                $40
+              </div>
+              <div style="font-size: 16px; font-weight: 700; color: #15803d">
+                $20
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  font-weight: 600;
+                  background: #f0fdf4;
+                  color: #15803d;
+                  padding: 1px 6px;
+                  border-radius: 4px;
+                "
+              >
+                50% off
+              </div>
+            </div>
+            <button
+              style="
+                font-size: 12px;
+                font-weight: 600;
+                padding: 7px 14px;
+                background: #1a1a1a;
+                color: #fff;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+              "
+            >
+              Book
+            </button>
+          </div>
+          <div
+            style="
+              border: 1px solid #e5e7eb;
+              border-radius: 8px;
+              padding: 12px 16px;
+              display: flex;
+              align-items: center;
+              gap: 14px;
+            "
+          >
+            <div style="flex: 1">
+              <div style="font-weight: 700; font-size: 13px">
+                Padel House
+                <span
+                  style="
+                    font-size: 10px;
+                    font-weight: 600;
+                    background: #fdf4ff;
+                    color: #7e22ce;
+                    padding: 2px 6px;
+                    border-radius: 6px;
+                    margin-left: 4px;
+                  "
+                  >Padel</span
+                >
+              </div>
+              <div style="font-size: 12px; color: #888; margin-top: 2px">
+                Today · 6:00 – 7:30 PM
+              </div>
+            </div>
+            <div style="text-align: right">
+              <div
+                style="
+                  font-size: 11px;
+                  color: #aaa;
+                  text-decoration: line-through;
+                "
+              >
+                $60
+              </div>
+              <div style="font-size: 16px; font-weight: 700; color: #b45309">
+                $42
+              </div>
+              <div
+                style="
+                  font-size: 10px;
+                  font-weight: 600;
+                  background: #fffbeb;
+                  color: #b45309;
+                  padding: 1px 6px;
+                  border-radius: 4px;
+                "
+              >
+                30% off
+              </div>
+            </div>
+            <button
+              style="
+                font-size: 12px;
+                font-weight: 600;
+                padding: 7px 14px;
+                background: #1a1a1a;
+                color: #fff;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+              "
+            >
+              Book
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- mock 1: club owner -->
+    <div
+      id="ssMock1"
+      style="
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        overflow: hidden;
+        font-size: 13px;
+        display: none;
+      "
+    >
+      <div
+        style="
+          background: #f3f4f6;
+          padding: 8px 14px;
+          border-bottom: 1px solid #e5e7eb;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        "
+      >
+        <div style="display: flex; gap: 4px">
+          <div
+            style="
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background: #fca5a5;
+            "
+          ></div>
+          <div
+            style="
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background: #fcd34d;
+            "
+          ></div>
+          <div
+            style="
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background: #6ee7b7;
+            "
+          ></div>
+        </div>
+        <div
+          style="
+            flex: 1;
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+            padding: 3px 10px;
+            font-size: 11px;
+            color: #aaa;
+            font-family: monospace;
+          "
+        >
+          localhost:3000/club/slots
+        </div>
+      </div>
+      <div style="padding: 18px 20px; background: #fff">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+          "
+        >
+          <div style="font-size: 15px; font-weight: 700">Manage Slots</div>
+          <button
+            style="
+              font-size: 12px;
+              font-weight: 600;
+              padding: 6px 14px;
+              background: #1a1a1a;
+              color: #fff;
+              border: none;
+              border-radius: 6px;
+              cursor: pointer;
+            "
+          >
+            + Add slot
+          </button>
+        </div>
+        <!-- slot rows -->
+        <div
+          style="
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              padding: 8px 14px;
+              background: #f9fafb;
+              border-bottom: 1px solid #e5e7eb;
+              font-size: 10px;
+              font-weight: 700;
+              text-transform: uppercase;
+              letter-spacing: 0.8px;
+              color: #aaa;
+              gap: 12px;
+            "
+          >
+            <span style="flex: 2">Time</span><span style="flex: 1">Base</span
+            ><span style="flex: 1">Discount tiers</span
+            ><span style="flex: 1">Status</span>
+          </div>
+          <div
+            style="
+              display: flex;
+              padding: 10px 14px;
+              border-bottom: 1px solid #f3f4f6;
+              gap: 12px;
+              align-items: center;
+            "
+          >
+            <span style="flex: 2; font-size: 12px">Today · 9:00 AM</span>
+            <span style="flex: 1; font-size: 12px">$40</span>
+            <span style="flex: 1; font-size: 11px; color: #888"
+              >10% / 30% / 50%</span
+            >
+            <span style="flex: 1"
+              ><span
+                style="
+                  font-size: 10px;
+                  font-weight: 600;
+                  background: #f0fdf4;
+                  color: #15803d;
+                  padding: 2px 7px;
+                  border-radius: 4px;
+                "
+                >Available</span
+              ></span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              padding: 10px 14px;
+              border-bottom: 1px solid #f3f4f6;
+              gap: 12px;
+              align-items: center;
+            "
+          >
+            <span style="flex: 2; font-size: 12px">Today · 11:00 AM</span>
+            <span style="flex: 1; font-size: 12px">$40</span>
+            <span style="flex: 1; font-size: 11px; color: #888"
+              >10% / 30% / 50%</span
+            >
+            <span style="flex: 1"
+              ><span
+                style="
+                  font-size: 10px;
+                  font-weight: 600;
+                  background: #fce4ec;
+                  color: #c62828;
+                  padding: 2px 7px;
+                  border-radius: 4px;
+                "
+                >Booked</span
+              ></span
+            >
+          </div>
+          <div
+            style="
+              display: flex;
+              padding: 10px 14px;
+              gap: 12px;
+              align-items: center;
+            "
+          >
+            <span style="flex: 2; font-size: 12px">Today · 6:00 PM</span>
+            <span style="flex: 1; font-size: 12px">$55</span>
+            <span style="flex: 1; font-size: 11px; color: #888"
+              >10% / 30% / 50%</span
+            >
+            <span style="flex: 1"
+              ><span
+                style="
+                  font-size: 10px;
+                  font-weight: 600;
+                  background: #f0fdf4;
+                  color: #15803d;
+                  padding: 2px 7px;
+                  border-radius: 4px;
+                "
+                >Available</span
+              ></span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var slides = document.querySelectorAll(".ss-slide");
+    var cur = 0;
+    var dotsEl = document.getElementById("ssDots");
+    var ctr = document.getElementById("ssCtr");
+    var prev = document.getElementById("ssPrev");
+    var next = document.getElementById("ssNext");
+
+    slides.forEach(function (_, i) {
+      var d = document.createElement("div");
+      d.className = "ss-dot" + (i === 0 ? " on" : "");
+      d.onclick = function () {
+        go(i);
+      };
+      dotsEl.appendChild(d);
+    });
+
+    function go(idx) {
+      if (idx < 0 || idx >= slides.length) return;
+      slides[cur].classList.remove("on");
+      cur = idx;
+      slides[cur].classList.add("on");
+      dotsEl.querySelectorAll(".ss-dot").forEach(function (d, i) {
+        d.classList.toggle("on", i === cur);
+      });
+      ctr.textContent = cur + 1 + " / " + slides.length;
+      prev.disabled = cur === 0;
+      next.disabled = cur === slides.length - 1;
+    }
+
+    prev.onclick = function () {
+      go(cur - 1);
+    };
+    next.onclick = function () {
+      go(cur + 1);
+    };
+    prev.disabled = true;
+  })();
+</script>
