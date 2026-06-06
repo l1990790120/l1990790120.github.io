@@ -5,7 +5,7 @@ theme = "custom-theme"
 # Enable comments by entering your Disqus shortname
 disqusShortname = "l1990790120"
 # Add your tracking code to enable Google Analytics
-googleAnalytics = "UA-71133003-1"
+googleAnalytics = "G-9ELKXD2TFZ"
 # Posts per page
 [pagination]
 	pagerSize = 10
