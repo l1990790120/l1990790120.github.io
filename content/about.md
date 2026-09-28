@@ -40,7 +40,8 @@ design with technology, always look for ways to make the world a better place.
 <div class="tldr collapse text-secondary" style="margin-top: 2%">
   Graduated with MS in Computer Science specialized in machine learning and AI,
   MA in Economics and BA in Political Science.
-  Currently I am software engineer at Block. Previously I was master data engineer at Capital One, senior
+  Currently I am exploring -1 to 1 at South Park Commons. Previously I was machine learning engineer at
+  Reddit, software engineer at Block, master data engineer at Capital One, senior
   data engineer at Deloitte building streamlined and automated machine
   learning pipeline to shorten data science's experiment to production time.
   <br><br>
@@ -85,7 +86,9 @@ design with technology, always look for ways to make the world a better place.
 
 #### <i class="fa fa-suitcase"></i> Where I Work
 
-Most recently, I was Machine Learning Engineer at Reddit (New York, NY) from 2025-04 to 2026-07, supporting Reddit's indexing platform.
+Currently, I'm exploring -1 to 1 at South Park Commons.
+
+Prior to that, I was Machine Learning Engineer at Reddit (New York, NY) from 2025-04 to 2026-07, supporting Reddit's indexing platform.
 
 Prior to that, I was Software Engineer at Block (New York, NY) supporting Block's core data infrastructure.
 
