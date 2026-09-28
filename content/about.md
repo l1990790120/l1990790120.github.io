@@ -85,7 +85,7 @@ design with technology, always look for ways to make the world a better place.
 
 #### <i class="fa fa-suitcase"></i> Where I Work
 
-Currently, I'm Machine Learning Engineer at Reddit supporting Reddit's indexing platform.
+Most recently, I was Machine Learning Engineer at Reddit (New York, NY) from 2025-04 to 2026-07, supporting Reddit's indexing platform.
 
 Prior to that, I was Software Engineer at Block (New York, NY) supporting Block's core data infrastructure.
 
