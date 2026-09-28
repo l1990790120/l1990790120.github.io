@@ -40,7 +40,7 @@ design with technology, always look for ways to make the world a better place.
 <div class="tldr collapse text-secondary" style="margin-top: 2%">
   Graduated with MS in Computer Science specialized in machine learning and AI,
   MA in Economics and BA in Political Science.
-  Currently I am exploring -1 to 1 at South Park Commons. Previously I was machine learning engineer at
+  Currently I am exploring building the future of small business finance. Previously I was machine learning engineer at
   Reddit, software engineer at Block, master data engineer at Capital One, senior
   data engineer at Deloitte building streamlined and automated machine
   learning pipeline to shorten data science's experiment to production time.
