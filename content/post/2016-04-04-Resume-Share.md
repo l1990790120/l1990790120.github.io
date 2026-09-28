@@ -25,7 +25,7 @@ New York, NY, 10013
 ### Work Experience
 
 **Machine Learning Engineer**, Reddit, New York, NY
-2025-04 to Present
+2025-04 to 2026-07
 
 - Founding member of Reddit's indexing platform team. Scaled from 0 to 100+ production pipelines within the first year, supporting safety, ads, and content understanding teams across the organization. Led many cross-functional customer team onboarding and improve platform usability, accelerating adoption across product teams. Indexes support core ranking and relevance signals across Reddit's feeds, ads, and safety systems to drive user engagement and content quality at scale.
 - Built online and offline LLM inference system serving 200k+ predictions/sec across pipelines. Scaled corresponding offline batch infrastructure to process 100m+ text, image, and video assets for full-history content understanding.
